@@ -14,7 +14,7 @@ export default function TUIPreview({ title, description, imageSrc, alt }: TUIPre
   return (
     <div className="project-detail-section mb-20">
       <h2 className="project-detail-section-title">{title}</h2>
-      <p className="project-detail-section-body mb-20">
+      <p className="project-detail-section-body !mb-12">
         {description}
       </p>
 

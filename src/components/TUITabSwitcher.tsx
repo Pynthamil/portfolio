@@ -23,7 +23,7 @@ export default function TUITabSwitcher() {
   return (
     <div className="project-detail-section mb-20">
       <h2 className="project-detail-section-title">Multi-Tab Experience</h2>
-      <p className="project-detail-section-body mb-8">
+      <p className="project-detail-section-body !mb-12">
         The browser handles multiple simultaneous sessions with ease. Use the
         <span className="font-bold text-[#BFFFA1]"> ↑ Up</span> and
         <span className="font-bold text-[#BFFFA1]"> ↓ Down</span> arrow keys to
