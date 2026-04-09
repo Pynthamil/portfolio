@@ -798,6 +798,73 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,0.05);
 }
 
+/* =====================
+   TUI BROWSER HERO
+   ===================== */
+.tui-hero-container {
+  background: #BFFFA1; /* Vibrant lime green from screenshots */
+  border-radius: 40px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  height: 480px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.tui-terminal-wrapper {
+  width: 90%;
+  height: 85%;
+  position: relative;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  overflow: hidden;
+}
+
+.tui-terminal-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .tui-hero-container {
+    height: 320px;
+    border-radius: 28px;
+  }
+}
+
+/* =====================
+   TUI TAB SWITCHER
+   ===================== */
+.tui-tabs-container {
+  width: 100%;
+  height: 640px;
+  background: #f5f5f7;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  background: #BFFFA1; /* Matching the hero green */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ns-resize;
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .tui-tabs-container {
+    height: 400px;
+    padding: 20px;
+  }
+}
+
 /* ---- Dock ---- */
 .contact-dock {
   margin-top: 96px;

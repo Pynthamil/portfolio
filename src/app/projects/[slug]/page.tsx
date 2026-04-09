@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import TUIHero from "@/components/TUIHero";
+import TUITabSwitcher from "@/components/TUITabSwitcher";
+import TUIPreview from "@/components/TUIPreview";
 
 /* ------------------------------------------------------------------ */
 /*  Data model                                                        */
@@ -274,7 +277,7 @@ export default async function ProjectDetail({
             <p className="project-detail-subtitle">{project.subtitle}</p>
           </div>
 
-          {(project.liveUrl || project.githubUrl) && (
+          {(project.liveUrl || project.githubUrl) && slug !== "terminal-browser" && (
             <a
               href={project.liveUrl || project.githubUrl}
               target="_blank"
@@ -330,6 +333,26 @@ export default async function ProjectDetail({
               </span>
             ))}
           </div>
+        )}
+
+        {/* ---- Custom Interactive Sections ---- */}
+        {slug === "terminal-browser" && (
+          <>
+            <TUIHero />
+            <TUITabSwitcher />
+            <TUIPreview 
+              title="Deep Search Results"
+              description="The terminal isn't just for local files. It can fetch and render complex Wikipedia articles with high fidelity, maintaining its signature retro-future aesthetic while delivering deep content."
+              imageSrc="/assets/tui/wikipedia-results.svg"
+              alt="Wikipedia Results Preview"
+            />
+            <TUIPreview 
+              title="Error Handling"
+              description="Even in a text-based environment, feedback is key. Replicating the web experience means handling 404s and connection errors with clear, stylized TUI messaging."
+              imageSrc="/assets/tui/not-found.svg"
+              alt="404 Not Found Preview"
+            />
+          </>
         )}
 
         {/* ---- Sections ---- */}
