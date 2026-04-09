@@ -37,11 +37,10 @@ const projects = [
   },
   {
     id: 5,
-    title: "Branding",
-    titleSuffix: "for Studio",
-    subtitle: "Visual identity and design system",
-    imageBg: "linear-gradient(135deg, #e8e0ff 0%, #c8bfff 100%)",
-    href: "/projects/branding",
+    title: "Resume Roaster",
+    subtitle: "AI-powered resume roasting platform",
+    image: "/assets/project-cards/resume-roaster.svg",
+    href: "/projects/resume-roaster",
   },
   {
     id: 6,
@@ -49,6 +48,20 @@ const projects = [
     subtitle: "A website for ACM-VIT's Hackathon",
     image: "/assets/project-cards/acm-hackathon-portal.svg",
     href: "/projects/acm-hackathon",
+  },
+  {
+    id: 7,
+    title: "Craftr Docs",
+    subtitle: "The lovechild of Notion, Docs, and Figma",
+    image: "/assets/project-cards/craftr-docs.svg",
+    href: "/projects/craftr-docs",
+  },
+  {
+    id: 8,
+    title: "Portfolios",
+    subtitle: "A collection of portfolios I've designed and built",
+    image: "/assets/project-cards/portfolios.svg",
+    href: "/projects/portfolios",
   },
 ];
 
