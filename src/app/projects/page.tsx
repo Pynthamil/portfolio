@@ -60,6 +60,9 @@ export default function ProjectsPage() {
           <h1 className="about-title">
             my <span>projects</span>
           </h1>
+          <p style={{ color: "#86868b", fontSize: "18px", marginTop: "16px", letterSpacing: "-0.01em" }}>
+            a collection of things i&apos;ve designed and built
+          </p>
         </div>
 
         <div className="projects-grid">
