@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CircleArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Contact channels data                                             */
@@ -31,7 +31,7 @@ const channels: ContactChannel[] = [
     iconHeight: 80,
     bubbleText: "Send your message to me here, darling!",
     bubbleColor: "#FF60B2",
-    inputPlaceholder: "type your message",
+    inputPlaceholder: "   type your message",
   },
   {
     id: "mail",
@@ -88,6 +88,7 @@ const channels: ContactChannel[] = [
 /* ------------------------------------------------------------------ */
 export default function ContactPage() {
   const [activeId, setActiveId] = useState("message");
+  const [message, setMessage] = useState("");
   const active = channels.find((c) => c.id === activeId)!;
 
   return (
@@ -150,15 +151,25 @@ export default function ContactPage() {
             >
               {active.inputPlaceholder ? (
                 /* Message input */
-                <div className="relative">
+                <div className="relative flex items-center w-full bg-white border border-gray-200 rounded-full pl-4 pr-11 py-1 shadow-sm min-h-[44px]">
                   <input
                     type="text"
                     placeholder={active.inputPlaceholder}
-                    className="w-full h-14 bg-white rounded-full px-6 text-lg outline-none"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="flex-1 bg-transparent py-2 text-[16px] outline-none placeholder:text-gray-400/50"
                   />
-                  <button className="absolute right-4 top-1/2 -translate-y-1/2">
-                    <CircleArrowUp className="w-10 h-10" />
-                  </button>
+                  <motion.button
+                    initial={false}
+                    animate={{
+                      backgroundColor: message.trim() ? active.bubbleColor : "#D1D1D6",
+                    }}
+                    whileHover={message.trim() ? { scale: 1.05, filter: "brightness(1.1)" } : {}}
+                    whileTap={message.trim() ? { scale: 0.95 } : {}}
+                    className="absolute right-1.5 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ease-in-out"
+                  >
+                    <ArrowUp className="w-5 h-5 text-white stroke-[3.5px]" />
+                  </motion.button>
                 </div>
               ) : (
                 /* Display value + link */
