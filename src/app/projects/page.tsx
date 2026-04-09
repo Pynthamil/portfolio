@@ -9,31 +9,31 @@ export const metadata: Metadata = {
 const projects = [
   {
     id: 1,
-    title: "DotOS",
-    subtitle: "A context-aware OS for a more personal computer",
-    image: "/project1.png",
-    href: "/projects/dotos",
+    title: "My Blog",
+    subtitle: "A blog for my thoughts and ideas",
+    image: "/assets/project-cards/my-blog.svg",
+    href: "/projects/my-blog",
   },
   {
     id: 2,
-    title: "Take-Out",
-    subtitle: "A gamified food delivery app concept",
-    image: "/project2.png",
-    href: "/projects/take-out",
+    title: "Semantic Email Intelligence",
+    subtitle: "A Second Brain for your Emails",
+    image: "/assets/project-cards/semantic-email.svg",
+    href: "/projects/semantic-email",
   },
   {
     id: 3,
-    title: "DevFlow",
-    subtitle: "A developer productivity toolkit",
-    image: "/project3.png",
-    href: "/projects/devflow",
+    title: "Terminal Browser",
+    subtitle: "A browser that runs in the terminal",
+    image: "/assets/project-cards/terminal-browser.svg",
+    href: "/projects/terminal-browser",
   },
   {
     id: 4,
-    title: "Marketplace",
-    subtitle: "Peer-to-peer commerce, reimagined",
-    image: "/project4.png",
-    href: "/projects/marketplace",
+    title: "Luma",
+    subtitle: "An AI-assisted error management system",
+    image: "/assets/project-cards/luma.svg",
+    href: "/projects/luma",
   },
   {
     id: 5,
@@ -45,10 +45,10 @@ const projects = [
   },
   {
     id: 6,
-    title: "Portfolio",
-    subtitle: "A personal website built with Next.js",
-    imageBg: "linear-gradient(135deg, #e0f0ff 0%, #b8d8ff 100%)",
-    href: "/projects/portfolio",
+    title: "ACM Hackathon Portal",
+    subtitle: "A website for ACM-VIT's Hackathon",
+    image: "/assets/project-cards/acm-hackathon-portal.svg",
+    href: "/projects/acm-hackathon",
   },
 ];
 
@@ -56,6 +56,12 @@ export default function ProjectsPage() {
   return (
     <main>
       <div className="page-wrapper">
+        <div className="about-header" style={{ marginTop: "40px" }}>
+          <h1 className="about-title">
+            my <span>projects</span>
+          </h1>
+        </div>
+
         <div className="projects-grid">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />

@@ -67,8 +67,8 @@ export default function ProjectCard({ project }: Props) {
             src={project.image}
             alt={project.title}
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ objectFit: "cover", objectPosition: "top center" }}
+            className="h-250"
           />
         ) : (
           <div className="card-image-empty" />
