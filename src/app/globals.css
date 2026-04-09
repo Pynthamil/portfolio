@@ -601,17 +601,15 @@ body {
   letter-spacing: -0.04em;
   line-height: 1.15;
   color: #1d1d1f;
-  margin: 0 0 16px;
+  margin: 0 0 8px;
 }
 
-.project-detail-description {
-  font-size: 17px;
-  line-height: 1.65;
-  color: #6e6e73;
-  max-width: 620px;
+.project-detail-subtitle {
+  font-size: 18px;
+  color: #86868b;
   letter-spacing: -0.01em;
   margin: 0;
-  text-align: justify;
+  font-weight: 400;
 }
 
 .project-detail-link-btn {
@@ -658,12 +656,79 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-.project-detail-preview-empty {
-  width: 100%;
-  height: 100%;
-  min-height: 440px;
+/* ---- Intro ---- */
+.project-detail-intro {
+  margin-top: 56px;
+  margin-bottom: 40px;
 }
 
+.project-detail-intro p {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #1d1d1f;
+  letter-spacing: -0.01em;
+  max-width: 760px;
+}
+
+/* ---- Tech stack pills ---- */
+.project-detail-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 56px;
+}
+
+.project-detail-tech-pill {
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: #f5f5f7;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 13px;
+  font-weight: 500;
+  color: #6e6e73;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Content sections ---- */
+.project-detail-section {
+  margin-bottom: 48px;
+}
+
+.project-detail-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #1d1d1f;
+  margin: 0 0 16px;
+}
+
+.project-detail-section-body {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #6e6e73;
+  letter-spacing: -0.01em;
+  margin: 0;
+  max-width: 760px;
+}
+
+/* ---- Outro ---- */
+.project-detail-outro {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.project-detail-outro p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #86868b;
+  letter-spacing: -0.01em;
+  max-width: 760px;
+  font-style: italic;
+}
+
+/* ---- Responsive ---- */
 @media (max-width: 768px) {
   .project-detail-wrapper {
     padding: 120px 20px 60px;
@@ -673,7 +738,19 @@ body {
     font-size: 28px;
   }
 
-  .project-detail-description {
+  .project-detail-subtitle {
+    font-size: 16px;
+  }
+
+  .project-detail-intro p {
+    font-size: 17px;
+  }
+
+  .project-detail-section-title {
+    font-size: 22px;
+  }
+
+  .project-detail-section-body {
     font-size: 15px;
   }
 
@@ -681,8 +758,8 @@ body {
     min-height: 280px;
   }
 
-  .project-detail-preview-empty {
-    min-height: 280px;
+  .project-detail-outro p {
+    font-size: 15px;
   }
 }
 
