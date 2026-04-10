@@ -7,6 +7,7 @@ import TUIPreview from "@/components/TUIPreview";
 import TUIStackedPreview from "@/components/TUIStackedPreview";
 import ProjectPreview from "@/components/ProjectPreview";
 import LumaPreview from "@/components/LumaPreview";
+import BlogStackedPreview from "@/components/BlogStackedPreview";
 
 /* ------------------------------------------------------------------ */
 /*  Data model                                                        */
@@ -340,12 +341,15 @@ export default async function ProjectDetail({
 
         {/* ---- Custom Interactive Sections ---- */}
         {slug === "my-blog" && (
-          <ProjectPreview
-            title="Reading Experience"
-            description="Designed for focus and clarity. The interface adapts to provide the best reading environment for long-form content."
-            imageSrc="/assets/blog/blog-1.svg"
-            alt="Blog Reader Interface"
-          />
+          <>
+            <ProjectPreview
+              title="Reading Experience"
+              description="Designed for focus and clarity. The interface adapts to provide the best reading environment for long-form content."
+              imageSrc="/assets/blog/blog-1.svg"
+              alt="Blog Reader Interface"
+            />
+            <BlogStackedPreview />
+          </>
         )}
         {slug === "luma" && (
           <LumaPreview />
