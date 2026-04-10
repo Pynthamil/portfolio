@@ -350,6 +350,24 @@ export default async function ProjectDetail({
               alt="Blog Reader Interface"
             />
             <BlogStackedPreview />
+            <BlogPreview
+              title="Brand Identity"
+              description="A crisp, minimal logo mark that establishes a distinct aesthetic tone while remaining adaptable across both light and dark modes."
+              imageSrc="/assets/blog/blog-logo.svg"
+              alt="Blog Logo Identity"
+            />
+            <BlogPreview
+              title="Color Palette"
+              description="Carefully selected thematic colors that evoke a soft but vibrant energy, preventing eye strain during long reading sessions."
+              imageSrc="/assets/blog/blog-color.svg"
+              alt="Blog Color Palette"
+            />
+            <BlogPreview
+              title="Textured Backgrounds"
+              description="Subtle background textures add depth and warmth, helping combat pure white harshness while keeping the content feeling grounded."
+              imageSrc="/assets/blog/blog-bg.svg"
+              alt="Blog Background Aesthetics"
+            />
           </>
         )}
         {slug === "luma" && (
