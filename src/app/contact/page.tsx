@@ -231,6 +231,7 @@ export default function ContactPage() {
                     }}
                     whileHover={message.trim() ? { scale: 1.05, filter: "brightness(1.1)" } : {}}
                     whileTap={message.trim() ? { scale: 0.95 } : {}}
+                    className="absolute right-1.5 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ease-in-out"
                     disabled={!message.trim() || isSending || isSent}
                     onClick={handleSubmit}
                   >
