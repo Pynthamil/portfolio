@@ -6,17 +6,21 @@ import React from "react";
 interface IPhoneMockupProps {
   children?: React.ReactNode;
   className?: string;
+  height?: string; // Allow custom hardware height
 }
 
 /**
  * IPhoneMockup - A high-fidelity, reusable iPhone 15 Pro style mockup frame.
  * Only builds the hardware chassis, leaving the screen area for children.
  */
-export default function IPhoneMockup({ children, className }: IPhoneMockupProps) {
+export default function IPhoneMockup({ children, className, height = "719px" }: IPhoneMockupProps) {
   return (
     <div className={cn("relative mx-auto pointer-events-none select-none", className)}>
       {/* Outer Hardware Frame (Silver/Metallic) */}
-      <div className="relative mx-auto border-gray-300 bg-gray-300 dark:border-gray-800 dark:bg-gray-800 border-[8px] rounded-[3rem] h-[719px] w-[360px] shadow-2xl">
+      <div 
+        className="relative mx-auto border-gray-300 bg-gray-300 dark:border-gray-800 dark:bg-gray-800 border-[8px] rounded-[3rem] w-[360px] shadow-2xl transition-all duration-300"
+        style={{ height }}
+      >
         
         {/* Subtle Metallic Highlight Border */}
         <div className="absolute -inset-[2px] rounded-[3.1rem] border-2 border-white/50 pointer-events-none"></div>
@@ -38,8 +42,8 @@ export default function IPhoneMockup({ children, className }: IPhoneMockupProps)
             <div className="w-2.5 h-2.5 rounded-full bg-white/5 shadow-inner"></div>
           </div>
 
-          {/* Screen Content Area (Placeholder) */}
-          <div className="relative w-full h-full bg-white dark:bg-zinc-950 overflow-hidden rounded-[2.2rem]">
+          {/* Screen Content Area (Interactive) */}
+          <div className="relative w-full h-full bg-white dark:bg-zinc-950 overflow-hidden rounded-[2.2rem] pointer-events-auto">
             {children}
           </div>
         </div>
