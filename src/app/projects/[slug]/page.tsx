@@ -8,6 +8,7 @@ import TUIStackedPreview from "@/components/TUIStackedPreview";
 import BlogPreview from "@/components/BlogPreview";
 import LumaPreview from "@/components/LumaPreview";
 import BlogStackedPreview from "@/components/BlogStackedPreview";
+import SemanticPreview from "@/components/SemanticPreview";
 
 /* ------------------------------------------------------------------ */
 /*  Data model                                                        */
@@ -353,6 +354,9 @@ export default async function ProjectDetail({
         )}
         {slug === "luma" && (
           <LumaPreview />
+        )}
+        {slug === "semantic-email" && (
+          <SemanticPreview />
         )}
         {slug === "terminal-browser" && (
           <>
