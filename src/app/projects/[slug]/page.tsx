@@ -9,6 +9,7 @@ import BlogPreview from "@/components/BlogPreview";
 import LumaPreview from "@/components/LumaPreview";
 import BlogStackedPreview from "@/components/BlogStackedPreview";
 import SemanticPreview from "@/components/SemanticPreview";
+import CraftrStackedPreview from "@/components/CraftrStackedPreview";
 
 /* ------------------------------------------------------------------ */
 /*  Data model                                                        */
@@ -375,6 +376,18 @@ export default async function ProjectDetail({
         )}
         {slug === "semantic-email" && (
           <SemanticPreview />
+        )}
+        {slug === "craftr-docs" && (
+          <>
+            <BlogPreview
+              title="Collaborative Canvas"
+              description="A seamless, block-based editing experience that blurs the line between word processing and freeform design."
+              imageSrc="/assets/craftr/craftr-1.svg"
+              alt="Craftr Editor Interface"
+              bgColor="#FFFDE7" // Soft Yellow
+            />
+            <CraftrStackedPreview bgColor="#FFFDE7" />
+          </>
         )}
         {slug === "terminal-browser" && (
           <>
