@@ -5,7 +5,7 @@ import TUIHero from "@/components/TUIHero";
 import TUITabSwitcher from "@/components/TUITabSwitcher";
 import TUIPreview from "@/components/TUIPreview";
 import TUIStackedPreview from "@/components/TUIStackedPreview";
-import ProjectPreview from "@/components/ProjectPreview";
+import BlogPreview from "@/components/BlogPreview";
 import LumaPreview from "@/components/LumaPreview";
 import BlogStackedPreview from "@/components/BlogStackedPreview";
 
@@ -342,7 +342,7 @@ export default async function ProjectDetail({
         {/* ---- Custom Interactive Sections ---- */}
         {slug === "my-blog" && (
           <>
-            <ProjectPreview
+            <BlogPreview
               title="Reading Experience"
               description="Designed for focus and clarity. The interface adapts to provide the best reading environment for long-form content."
               imageSrc="/assets/blog/blog-1.svg"

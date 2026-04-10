@@ -161,7 +161,7 @@ export default function LumaChat() {
             </div>
 
             {/* Bottom Input Section */}
-            <div style={{ position: 'relative', zIndex: 10, padding: '12px 0 24px 0', width: '100%', shrink: 0 }}>
+            <div style={{ position: 'relative', zIndex: 10, padding: '12px 0 24px 0', width: '100%', flexShrink: 0 }}>
                 {/* Suggestions Row */}
                 {!isChatting && (
                     <div style={{ display: 'flex', gap: 12, padding: '0 25px 16px', overflowX: 'auto', scrollbarWidth: 'none' }}>
