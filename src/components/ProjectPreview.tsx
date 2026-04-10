@@ -20,7 +20,7 @@ export default function ProjectPreview({
   description, 
   imageSrc, 
   alt, 
-  bgColor = "#f5f5f7" 
+  bgColor = "#fafafc" 
 }: ProjectPreviewProps) {
   return (
     <div className="project-detail-section mb-20">

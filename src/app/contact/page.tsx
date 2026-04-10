@@ -41,8 +41,8 @@ const channels: ContactChannel[] = [
     iconHeight: 80,
     bubbleText: "Reach me via email anytime!",
     bubbleColor: "#3B82F6",
-    displayValue: "pynthamil@gmail.com",
-    linkUrl: "mailto:pynthamil@gmail.com",
+    displayValue: "pavendanpynthamil@gmail.com",
+    linkUrl: "mailto:pavendanpynthamil@gmail.com",
     linkLabel: "Send email",
   },
   {
@@ -65,8 +65,8 @@ const channels: ContactChannel[] = [
     iconHeight: 80,
     bubbleText: "Find me on the terminal side of things!",
     bubbleColor: "#10B981",
-    displayValue: "pynthamil.dev",
-    linkUrl: "https://pynthamil.dev",
+    displayValue: "my-blog-tan-tau.vercel.app",
+    linkUrl: "https://my-blog-tan-tau.vercel.app/",
     linkLabel: "Visit site",
   },
   {
@@ -78,7 +78,7 @@ const channels: ContactChannel[] = [
     bubbleText: "Let's connect on LinkedIn!",
     bubbleColor: "#0A66C2",
     displayValue: "Pynthamil",
-    linkUrl: "https://linkedin.com/in/pynthamil",
+    linkUrl: "https://www.linkedin.com/in/pynthamil-pavendan-55795228a/",
     linkLabel: "Connect",
   },
 ];

@@ -115,7 +115,7 @@ body {
    PROJECT CARD
    ===================== */
 .project-card {
-  background: #f5f5f7;
+  background: #fafafc;
   border-radius: 40px;
   overflow: hidden;
   cursor: pointer;
@@ -363,7 +363,7 @@ body {
   height: 64px;
   border-radius: 50%;
   overflow: hidden;
-  background: #f5f5f7;
+  background: #fafafc;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -398,7 +398,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #f5f5f7;
+  background: #fafafc;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -407,7 +407,7 @@ body {
 }
 
 .accordion-item.open .accordion-toggle {
-  background: #f5f5f7;
+  background: #fafafc;
   transform: rotate(180deg);
 }
 
@@ -639,7 +639,7 @@ body {
 }
 
 .project-detail-preview {
-  background: #f5f5f7;
+  background: #fafafc;
   border-radius: 28px;
   padding: 18px;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -681,7 +681,7 @@ body {
 .project-detail-tech-pill {
   padding: 6px 16px;
   border-radius: 9999px;
-  background: #f5f5f7;
+  background: #fafafc;
   border: 1px solid rgba(0, 0, 0, 0.06);
   font-size: 13px;
   font-weight: 500;

@@ -14,7 +14,7 @@ export default function LumaPreview() {
       </p>
 
       {/* Reusable Container with IPhoneMockup inside */}
-      <div className="relative w-full h-[850px] bg-[#f5f5f7] rounded-[40px] border border-black/5 flex justify-center items-center shadow-sm overflow-hidden p-12">
+      <div className="relative w-full h-[850px] bg-[#fafafc] rounded-[40px] border border-black/5 flex justify-center items-center shadow-sm overflow-hidden p-12">
         <IPhoneMockup>
           {/* Internal Dashboard UI */}
           <div className="h-full w-full bg-zinc-950 text-white flex flex-col p-6 font-sans">

@@ -77,6 +77,7 @@ export default function AboutAccordion() {
       title: "who am i and what do i do for a living?",
       subtitle: "a little less mystery about me",
       content: [
+        "My name is Pynthamil Pavendan!",
         "I'm a student developer who enjoys turning ideas into things people can actually use",
         "I like building interfaces that feel simple, fast, and intentional",
         "I spend most of my time working with modern web technologies, experimenting with interaction design, and refining the small details that make products feel polished",
