@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Loader2, Check } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 /* ------------------------------------------------------------------ */
 /*  Contact channels data                                             */
@@ -89,7 +90,63 @@ const channels: ContactChannel[] = [
 export default function ContactPage() {
   const [activeId, setActiveId] = useState("message");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [error, setError] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
   const active = channels.find((c) => c.id === activeId)!;
+
+  const handleSubmit = async () => {
+    if (!message.trim() || isSending) return;
+
+    setIsSending(true);
+    setError(false);
+
+    // EmailJS Keys - fallback to simulation if missing
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    try {
+      if (serviceId && templateId && publicKey) {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            message: message,
+            from_name: "Portfolio Visitor",
+            reply_to: "no-reply@portfolio.com",
+          },
+          publicKey
+        );
+      } else {
+        // Simulation mode
+        console.warn("EmailJS keys missing. Running in simulation mode.");
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+      }
+
+      setIsSent(true);
+      setMessage("");
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setIsSent(false);
+      }, 5000);
+    } catch (err: any) {
+      console.error("Failed to send message:", err?.text || err?.message || err || "Unknown error");
+      setError(true);
+      setTimeout(() => setError(false), 3000);
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  const getBubbleText = () => {
+    if (isSending && activeId === "message") return "Sending your message...";
+    if (isSent && activeId === "message") return "Got it! I'll get back to you soon 🚀";
+    if (error && activeId === "message") return "Oops! Something went wrong. Try again?";
+    return active.bubbleText;
+  };
 
   return (
     <main className="page-wrapper min-h-screen flex flex-col items-center">
@@ -109,6 +166,7 @@ export default function ContactPage() {
               height={150}
               priority
               className="drop-shadow-xl"
+              style={{ height: "auto" }}
             />
           </motion.div>
         </div>
@@ -131,7 +189,7 @@ export default function ContactPage() {
               className="speech-bubble mb-6 relative top-15"
               style={{ background: active.bubbleColor, boxShadow: `0 10px 25px ${active.bubbleColor}4D` }}
             >
-              {active.bubbleText}
+              {getBubbleText()}
               <span
                 className="speech-bubble-arrow"
                 style={{ borderBottomColor: active.bubbleColor }}
@@ -157,7 +215,14 @@ export default function ContactPage() {
                     placeholder={active.inputPlaceholder}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="flex-1 bg-transparent py-2 text-[16px] outline-none placeholder:text-gray-400/50"
+                    className="flex-1 bg-transparent py-2 text-[16px] outline-none placeholder:text-gray-400/50 disabled:opacity-50"
+                    disabled={isSending || isSent}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        handleSubmit();
+                      }
+                    }}
                   />
                   <motion.button
                     initial={false}
@@ -166,9 +231,16 @@ export default function ContactPage() {
                     }}
                     whileHover={message.trim() ? { scale: 1.05, filter: "brightness(1.1)" } : {}}
                     whileTap={message.trim() ? { scale: 0.95 } : {}}
-                    className="absolute right-1.5 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ease-in-out"
+                    disabled={!message.trim() || isSending || isSent}
+                    onClick={handleSubmit}
                   >
-                    <ArrowUp className="w-5 h-5 text-white stroke-[3.5px]" />
+                    {isSending ? (
+                      <Loader2 className="w-5 h-5 text-white animate-spin" />
+                    ) : isSent ? (
+                      <Check className="w-5 h-5 text-white" />
+                    ) : (
+                      <ArrowUp className="w-5 h-5 text-white stroke-[3.5px]" />
+                    )}
                   </motion.button>
                 </div>
               ) : (
