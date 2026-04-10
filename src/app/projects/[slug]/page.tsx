@@ -340,7 +340,7 @@ export default async function ProjectDetail({
 
         {/* ---- Custom Interactive Sections ---- */}
         {slug === "my-blog" && (
-          <ProjectPreview 
+          <ProjectPreview
             title="Reading Experience"
             description="Designed for focus and clarity. The interface adapts to provide the best reading environment for long-form content."
             imageSrc="/assets/blog/blog-1.svg"
@@ -352,21 +352,23 @@ export default async function ProjectDetail({
         )}
         {slug === "terminal-browser" && (
           <>
-            <TUIHero />
+            <TUIHero bgColor="#BFFFA1" />
             <TUITabSwitcher />
             <TUIPreview
               title="Deep Search Results"
               description="The terminal isn't just for local files. It can fetch and render complex Wikipedia articles with high fidelity, maintaining its signature retro-future aesthetic while delivering deep content."
               imageSrc="/assets/tui/wikipedia-results.svg"
               alt="Wikipedia Results Preview"
+              bgColor="#BFFFA1"
             />
             <TUIPreview
               title="Error Handling"
               description="Even in a text-based environment, feedback is key. Replicating the web experience means handling 404s and connection errors with clear, stylized TUI messaging."
               imageSrc="/assets/tui/not-found.svg"
               alt="404 Not Found Preview"
+              bgColor="#BFFFA1"
             />
-            <TUIStackedPreview />
+            <TUIStackedPreview bgColor="#BFFFA1" />
           </>
         )}
 

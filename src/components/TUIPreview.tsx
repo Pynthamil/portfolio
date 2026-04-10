@@ -8,11 +8,18 @@ interface TUIPreviewProps {
   description: string;
   imageSrc: string;
   alt: string;
+  bgColor?: string;
 }
 
-export default function TUIPreview({ title, description, imageSrc, alt }: TUIPreviewProps) {
+export default function TUIPreview({ 
+  title, 
+  description, 
+  imageSrc, 
+  alt, 
+  bgColor = "#fafafc" 
+}: TUIPreviewProps) {
   return (
-    <ProjectPreviewSection title={title} description={description} bgColor="#fafafc">
+    <ProjectPreviewSection title={title} description={description} bgColor={bgColor}>
       <ImageDisplay src={imageSrc} alt={alt} className="rounded-2xl shadow-2xl" />
     </ProjectPreviewSection>
   );

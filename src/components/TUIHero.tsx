@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function TUIHero() {
+interface TUIHeroProps {
+  bgColor?: string;
+}
+
+export default function TUIHero({ bgColor = "#BFFFA1" }: TUIHeroProps) {
   return (
     <div className="project-detail-section mb-20">
       <h2 className="project-detail-section-title">Visual Identity</h2>
@@ -14,8 +18,8 @@ export default function TUIHero() {
       </p>
 
       <motion.div
-        className="tui-hero-container relative flex justify-center items-end overflow-hidden bg-[#BFFFA1] cursor-pointer rounded-[40px] border border-black/5 shadow-sm"
-        style={{ height: '480px' }}
+        className="tui-hero-container relative flex justify-center items-end overflow-hidden cursor-pointer rounded-[40px] border border-black/5 shadow-sm"
+        style={{ height: '480px', backgroundColor: bgColor }}
         initial="initial"
         whileHover="hover"
       >
