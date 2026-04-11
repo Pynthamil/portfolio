@@ -154,20 +154,23 @@ function DockItem({ children, className }: DockItemProps) {
       style={{ width }}
       tabIndex={0}
     >
-      {Children.map(children, child =>
-        cloneElement(child as React.ReactElement<any>, { width, isHovered }),
+      {Children.map(children, (child) =>
+        cloneElement(child as React.ReactElement<{ width?: MotionValue<number>; isHovered?: MotionValue<number> }>, {
+          width,
+          isHovered,
+        }),
       )}
     </motion.div>
   )
 }
 
 function DockLabel({ children, className, ...rest }: DockLabelProps) {
-  const restProps = rest as Record<string, unknown>
-  const isHovered = restProps.isHovered as MotionValue<number>
+  const isHovered = (rest as { isHovered?: MotionValue<number> }).isHovered
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const unsubscribe = isHovered.on("change", latest => {
+    if (!isHovered) return
+    const unsubscribe = isHovered.on("change", (latest) => {
       setIsVisible(latest === 1)
     })
 
@@ -197,10 +200,10 @@ function DockLabel({ children, className, ...rest }: DockLabelProps) {
 }
 
 function DockIcon({ children, className, ...rest }: DockIconProps) {
-  const restProps = rest as Record<string, unknown>
-  const width = restProps.width as MotionValue<number>
+  const width = (rest as { width?: MotionValue<number> }).width
+  const fallback = useMotionValue(0)
 
-  const widthTransform = useTransform(width, val => val / 2)
+  const widthTransform = useTransform(width || fallback, (val) => val / 2)
 
   return (
     <motion.div

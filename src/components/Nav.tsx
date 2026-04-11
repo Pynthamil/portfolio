@@ -29,10 +29,14 @@ export default function Nav() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close dropdown when entering a page
-  useEffect(() => {
-    setIsDropdownOpen(false);
-  }, [pathname]);
+  // Reset dropdown when pathname changes (React 19 pattern: Adjusting state during render)
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    if (isDropdownOpen) {
+      setIsDropdownOpen(false);
+    }
+  }
 
   return (
     <nav className="site-nav" ref={navRef}>

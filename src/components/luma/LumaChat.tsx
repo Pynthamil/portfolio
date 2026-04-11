@@ -19,6 +19,7 @@ export default function LumaChat() {
     const [inputValue, setInputValue] = useState('')
     const [messages, setMessages] = useState<Message[]>([])
     const scrollRef = useRef<HTMLDivElement>(null)
+    const messageIdCounter = useRef(0)
 
     // Auto-scroll to bottom
     useEffect(() => {
@@ -31,8 +32,9 @@ export default function LumaChat() {
         const messageToSend = text || inputValue;
         if (!messageToSend.trim()) return;
 
+        messageIdCounter.current += 1;
         const userMsg: Message = {
-            id: Date.now().toString(),
+            id: `user-${messageIdCounter.current}`,
             role: 'user',
             content: messageToSend
         };
@@ -42,8 +44,9 @@ export default function LumaChat() {
 
         // Simulate AI response
         setTimeout(() => {
+            messageIdCounter.current += 1;
             const aiMsg: Message = {
-                id: (Date.now() + 1).toString(),
+                id: `ai-${messageIdCounter.current}`,
                 role: 'ai',
                 content: `hey hey 👋✨\nwhat are we building today...\nanother iconic UI moment or\nchaos for the plot 😌💻`
             };

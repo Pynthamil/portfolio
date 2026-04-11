@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp, Loader2, Check } from "lucide-react";
 import emailjs from "@emailjs/browser";
@@ -93,7 +93,6 @@ export default function ContactPage() {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState(false);
-  const formRef = useRef<HTMLDivElement>(null);
   const active = channels.find((c) => c.id === activeId)!;
 
   const handleSubmit = async () => {
@@ -132,8 +131,9 @@ export default function ContactPage() {
       setTimeout(() => {
         setIsSent(false);
       }, 5000);
-    } catch (err: any) {
-      console.error("Failed to send message:", err?.text || err?.message || err || "Unknown error");
+    } catch (err) {
+      const errorMsg = err instanceof Error ? err.message : String(err);
+      console.error("Failed to send message:", errorMsg);
       setError(true);
       setTimeout(() => setError(false), 3000);
     } finally {

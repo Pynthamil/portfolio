@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useImperativeHandle, forwardRef } from "react";
+import React, { useEffect, useRef, useImperativeHandle, forwardRef, useState } from "react";
 import gsap from "gsap";
 
 export interface ShapeOverlayRef {
@@ -47,35 +47,27 @@ const ShapeOverlay = forwardRef<ShapeOverlayRef, ShapeOverlayProps>(({ onComplet
   const delayPerPath = 0.25;
   const duration = 0.8;
 
-  const allPoints = useRef<number[][]>([]);
-  // Critical fix: Initial state must be 'true' so that points=100 results in an empty path
+  const [allPoints] = useState<number[][]>(() => {
+    const initialPoints: number[][] = [];
+    for (let i = 0; i < numPaths; i++) {
+      initialPoints.push(new Array(numPoints).fill(100));
+    }
+    return initialPoints;
+  });
+
   const isOpenedRef = useRef(true);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
 
-  // Initialize data
-  if (allPoints.current.length === 0) {
-    for (let i = 0; i < numPaths; i++) {
-      allPoints.current.push(new Array(numPoints).fill(100));
-    }
-  }
-
-  useImperativeHandle(ref, () => ({
-    play: () => {
-      toggle();
-    }
-  }));
-
-  const render = () => {
-    if (!pathRefs.current || !allPoints.current) return;
+  // 1. Define Render Logic
+  const render = React.useCallback(() => {
+    if (!pathRefs.current || !allPoints) return;
 
     for (let i = 0; i < numPaths; i++) {
       const path = pathRefs.current[i];
-      const points = allPoints.current[i];
+      const points = allPoints[i];
       if (!path) continue;
 
       let d = "";
-      // points=100 + isOpened=true => Empty (Bottom line)
-      // points=0   + isOpened=true => Full (Whole area 0 to 100)
       d += isOpenedRef.current ? `M 0 0 V ${points[0]} C` : `M 0 ${points[0]} C`;
 
       for (let j = 0; j < numPoints - 1; j++) {
@@ -87,10 +79,44 @@ const ShapeOverlay = forwardRef<ShapeOverlayRef, ShapeOverlayProps>(({ onComplet
       d += isOpenedRef.current ? ` V 100 H 0` : ` V 0 H 0`;
       path.setAttribute("d", d);
     }
-  };
+  }, [allPoints]);
+
+  // 2. Define Toggle Logic
+  const toggle = React.useCallback(() => {
+    if (!tlRef.current || tlRef.current.isActive()) return;
+
+    const pointsDelay: number[] = [];
+    for (let i = 0; i < numPoints; i++) {
+      pointsDelay[i] = Math.random() * delayPointsMax;
+    }
+
+    tlRef.current.clear();
+
+    for (let i = 0; i < numPaths; i++) {
+      const points = allPoints[i];
+      const pathDelay = delayPerPath * i;
+
+      for (let j = 0; j < numPoints; j++) {
+        const delay = pointsDelay[j];
+        tlRef.current.to(points, {
+          [j]: 0,
+          duration: duration,
+          ease: "power2.inOut"
+        }, delay + pathDelay);
+      }
+    }
+
+    tlRef.current.play(0);
+  }, [allPoints, duration]);
+
+  // 4. Register Hooks
+  useImperativeHandle(ref, () => ({
+    play: () => {
+      toggle();
+    }
+  }));
 
   useEffect(() => {
-    // Render the initial 'Empty' state
     render();
 
     tlRef.current = gsap.timeline({
@@ -106,35 +132,7 @@ const ShapeOverlay = forwardRef<ShapeOverlayRef, ShapeOverlayProps>(({ onComplet
     return () => {
       if (tlRef.current) tlRef.current.kill();
     };
-  }, [onComplete]);
-
-  const toggle = () => {
-    if (!tlRef.current || tlRef.current.isActive()) return;
-
-    // We stay in isOpened=true mode for the transition, we just animate the points to 0 to fill screen
-    const pointsDelay: number[] = [];
-    for (let i = 0; i < numPoints; i++) {
-      pointsDelay[i] = Math.random() * delayPointsMax;
-    }
-
-    tlRef.current.clear();
-
-    for (let i = 0; i < numPaths; i++) {
-      const points = allPoints.current[i];
-      const pathDelay = delayPerPath * i;
-
-      for (let j = 0; j < numPoints; j++) {
-        const delay = pointsDelay[j];
-        tlRef.current.to(points, {
-          [j]: 0,
-          duration: duration,
-          ease: "power2.inOut"
-        }, delay + pathDelay);
-      }
-    }
-
-    tlRef.current.play(0);
-  };
+  }, [onComplete, render]);
 
   const currentTheme = THEMES[theme] || THEMES.aurora;
 
@@ -157,11 +155,11 @@ const ShapeOverlay = forwardRef<ShapeOverlayRef, ShapeOverlayProps>(({ onComplet
         </linearGradient>
       </defs>
       <path
-        ref={(el) => (pathRefs.current[0] = el)}
+        ref={(el) => { pathRefs.current[0] = el; }}
         fill="url(#cta-gradient2)"
       ></path>
       <path
-        ref={(el) => (pathRefs.current[1] = el)}
+        ref={(el) => { pathRefs.current[1] = el; }}
         fill="url(#cta-gradient1)"
       ></path>
     </svg>

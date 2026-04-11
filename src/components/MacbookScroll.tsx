@@ -16,7 +16,7 @@ export default function MacbookScroll() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const html = document.documentElement;
+
 
     // Set up frames
     const frameCount = 121;

@@ -3,8 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowLeft, Share2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { SocialPost } from "@/data/socialAssets";
 import SocialStackedSection from "./SocialStackedSection";
 

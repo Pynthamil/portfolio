@@ -5,11 +5,7 @@ import Image from "next/image";
 import ProjectPreviewSection from "./ProjectPreviewSection";
 import ScrollStack, { ScrollStackItem } from "./ScrollStack";
 
-interface TUIStackedPreviewProps {
-  bgColor?: string;
-}
-
-export default function TUIStackedPreview({ bgColor = "#BFFFA1" }: TUIStackedPreviewProps) {
+export default function TUIStackedPreview() {
   const cards = [
     { id: "emerald", title: "Emerald Green", image: "/assets/tui/wikipedia-results.svg" },
     { id: "blue", title: "Ocean Blue", image: "/assets/tui/wikipedia-blue.svg" },

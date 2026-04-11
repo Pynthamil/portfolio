@@ -15,14 +15,16 @@ const categories = [
     description: "Interface architecture and modular software concepts.",
     icon: Layout,
     href: "/projects",
-    active: true
+    active: true,
+    badge: undefined as string | undefined
   },
   {
     title: "Social Media Design",
     description: "Visual narratives and aesthetic storytelling for platforms.",
     icon: Share2,
     href: "/social",
-    active: true
+    active: true,
+    badge: undefined as string | undefined
   }
 ];
 
@@ -37,7 +39,7 @@ export default function NavDropdown({ isOpen, onClose }: NavDropdownProps) {
     >
       <div className="nav-dropdown-content">
         <div className="nav-dropdown-grid">
-          {categories.map((cat, idx) => (
+          {categories.map((cat) => (
             <Link 
               key={cat.title} 
               href={cat.href}

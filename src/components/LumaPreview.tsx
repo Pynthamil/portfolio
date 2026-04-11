@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import ProjectPreviewSection from "./ProjectPreviewSection";
 import IPhoneDisplay from "./displays/iPhoneDisplay";
-import LumaChat from "./luma/LumaChat";
+
 
 export default function LumaPreview() {
   return (

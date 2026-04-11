@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import TUIHero from "@/components/TUIHero";
 import TUITabSwitcher from "@/components/TUITabSwitcher";
-import TUIPreview from "@/components/TUIPreview";
+
 import TUIStackedPreview from "@/components/TUIStackedPreview";
 import BlogPreview from "@/components/BlogPreview";
 import LumaPreview from "@/components/LumaPreview";
@@ -414,7 +414,7 @@ export default async function ProjectDetail({
           <>
             <TUIHero bgColor="#BFFFA1" />
             <TUITabSwitcher />
-            <TUIStackedPreview bgColor="#BFFFA1" />
+            <TUIStackedPreview />
           </>
         )}
         {slug === "portfolios" && (
