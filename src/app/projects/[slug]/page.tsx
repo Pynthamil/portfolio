@@ -414,20 +414,6 @@ export default async function ProjectDetail({
           <>
             <TUIHero bgColor="#BFFFA1" />
             <TUITabSwitcher />
-            <TUIPreview
-              title="Deep Content Exploration"
-              description="The concept imagines fetching deep content like Wikipedia articles with high fidelity. The goal is to maintain a retro-future aesthetic while delivering rich information in a format that feels coherent within a shell environment."
-              imageSrc="/assets/tui/wikipedia-results.svg"
-              alt="Wikipedia Results Concept"
-              bgColor="#BFFFA1"
-            />
-            <TUIPreview
-              title="Error Resilience"
-              description="Perceived reliability is central to the design. The proposal includes clear, stylized TUI messaging for 404s and connection states, ensuring that technical failures are handled with the same minimal aesthetic as successful renders."
-              imageSrc="/assets/tui/not-found.svg"
-              alt="404 Not Found Concept"
-              bgColor="#BFFFA1"
-            />
             <TUIStackedPreview bgColor="#BFFFA1" />
           </>
         )}
