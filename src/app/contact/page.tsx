@@ -72,7 +72,7 @@ const channels: ContactChannel[] = [
   },
   {
     id: "linkedin",
-    icon: "/assets/Linkedin.svg",
+    icon: "/assets/linkedin.svg",
     iconAlt: "Linkedin",
     iconWidth: 65,
     iconHeight: 65,
