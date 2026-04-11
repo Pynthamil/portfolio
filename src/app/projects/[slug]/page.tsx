@@ -11,6 +11,7 @@ import BlogStackedPreview from "@/components/BlogStackedPreview";
 import SemanticPreview from "@/components/SemanticPreview";
 import CraftrStackedPreview from "@/components/CraftrStackedPreview";
 import RoasterPreview from "@/components/RoasterPreview";
+import PortfolioPreview from "@/components/PortfolioPreview";
 
 /* ------------------------------------------------------------------ */
 /*  Data model                                                        */
@@ -406,6 +407,9 @@ export default async function ProjectDetail({
             />
             <TUIStackedPreview bgColor="#BFFFA1" />
           </>
+        )}
+        {slug === "portfolios" && (
+          <PortfolioPreview />
         )}
 
         {/* ---- Sections ---- */}
