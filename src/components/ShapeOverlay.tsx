@@ -7,11 +7,37 @@ export interface ShapeOverlayRef {
   play: () => void;
 }
 
+export type TransitionTheme = 'aurora' | 'solar' | 'emerald' | 'cherry' | 'ice';
+
 interface ShapeOverlayProps {
   onComplete?: () => void;
+  theme?: TransitionTheme;
 }
 
-const ShapeOverlay = forwardRef<ShapeOverlayRef, ShapeOverlayProps>(({ onComplete }, ref) => {
+const THEMES = {
+  aurora: {
+    g1: ["#0a0a0a", "#3c096c"],
+    g2: ["#5a189a", "#c77dff"]
+  },
+  solar: {
+    g1: ["#ff8709", "#f7bdf8"],
+    g2: ["#ffd9b0", "#ff8709"]
+  },
+  emerald: {
+    g1: ["#020202", "#0d2c0b"],
+    g2: ["#1a4301", "#39ff14"]
+  },
+  cherry: {
+    g1: ["#120101", "#7b0000"],
+    g2: ["#ff0055", "#ffcc33"]
+  },
+  ice: {
+    g1: ["#002b36", "#268bd2"],
+    g2: ["#2aa198", "#eee8d5"]
+  }
+};
+
+const ShapeOverlay = forwardRef<ShapeOverlayRef, ShapeOverlayProps>(({ onComplete, theme = 'aurora' }, ref) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRefs = useRef<(SVGPathElement | null)[]>([]);
 
@@ -110,6 +136,8 @@ const ShapeOverlay = forwardRef<ShapeOverlayRef, ShapeOverlayProps>(({ onComplet
     tlRef.current.play(0);
   };
 
+  const currentTheme = THEMES[theme] || THEMES.aurora;
+
   return (
     <svg
       ref={svgRef}
@@ -120,12 +148,12 @@ const ShapeOverlay = forwardRef<ShapeOverlayRef, ShapeOverlayProps>(({ onComplet
     >
       <defs>
         <linearGradient id="cta-gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#0a0a0a" />
-          <stop offset="100%" stopColor="#3c096c" />
+          <stop offset="0%" stopColor={currentTheme.g1[0]} />
+          <stop offset="100%" stopColor={currentTheme.g1[1]} />
         </linearGradient>
         <linearGradient id="cta-gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#5a189a" />
-          <stop offset="100%" stopColor="#c77dff" />
+          <stop offset="0%" stopColor={currentTheme.g2[0]} />
+          <stop offset="100%" stopColor={currentTheme.g2[1]} />
         </linearGradient>
       </defs>
       <path
