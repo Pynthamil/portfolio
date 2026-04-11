@@ -1,5 +1,11 @@
-import { redirect } from "next/navigation";
+import MacbookScroll from "@/components/MacbookScroll";
+import HorizontalScrollText from "@/components/HorizontalScrollText";
 
 export default function Home() {
-  redirect("/projects");
+  return (
+    <main className="min-h-screen">
+      <MacbookScroll />
+      <HorizontalScrollText />
+    </main>
+  );
 }
