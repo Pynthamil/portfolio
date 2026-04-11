@@ -15,7 +15,12 @@ export default function LumaPreview() {
         bgColor="#fafafc"
       >
         <IPhoneDisplay height="820px" mockupHeight="780px">
-          <LumaChat />
+          <Image 
+            src="/assets/luma/Dashboard-green.svg" 
+            alt="Luma Dashboard Concept" 
+            fill 
+            className="object-cover object-top"
+          />
         </IPhoneDisplay>
       </ProjectPreviewSection>
 
