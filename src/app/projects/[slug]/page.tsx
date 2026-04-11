@@ -114,26 +114,26 @@ const projects: Record<string, ProjectData> = {
 
   luma: {
     title: "Luma",
-    subtitle: "An AI-assisted error management system",
+    subtitle: "A conceptual design for intelligent error management",
     description:
-      "Production errors are noisy, repetitive, and exhausting to triage. Luma is an intelligent error management platform that groups, prioritizes, and explains errors using AI — so your team spends time fixing bugs instead of reading stack traces.",
+      "Production environments are inherently chaotic. When errors occur, the resulting noise and repetition can lead to severe alert fatigue and exhausted triage workflows. Luma conceptualizes a shift from raw log aggregation to a decision-support system designed to improve signal clarity.\n\nThe design explores how AI can group and explain complex errors to reduce cognitive load in high-stress environments. By imagining a future where technical issues are translated into understandable language and surfacing potential root causes contextually, the proposal aims to support faster, more confident decision-making for the entire team.",
     heroImage: "/assets/project-cards/luma.svg",
     sections: [
       {
         heading: "Intelligent Grouping",
-        body: "Luma doesn't just match identical stack traces. It uses semantic similarity to group errors that have the same root cause, even if they manifest differently across services. One error, one alert — not a hundred duplicates flooding your Slack channel at 3am.",
+        body: "The concept proposes grouping errors based on conceptual similarity rather than identical logs. This design intent aims to solve the noise reduction problem, helping teams prioritize root causes instead of triaging symptoms through a mental model simplification process.",
       },
       {
-        heading: "AI-Powered Analysis",
-        body: "Each error group gets an AI-generated explanation in plain English: what went wrong, why it likely happened, and suggested fixes with code snippets. Junior developers can understand and resolve issues that would normally require senior-level debugging skills.",
+        heading: "Meaning-Based Analysis",
+        body: "An exploration into translating cryptic technical failures into plain language. The design aims to support both junior and senior developers by providing contextual guidance and explainable fix proposals designed to reduce the mental effort of debugging.",
       },
       {
-        heading: "Workflow Integration",
-        body: "Errors flow into your existing tools. Slack notifications with context. Auto-created Jira tickets with reproduction steps. Grafana dashboard widgets showing error trends. Luma fits into your workflow instead of creating a new one.",
+        heading: "Seamless Integration",
+        body: "The proposal conceptualizes a frictionless adoption path where error insights flow directly into existing developer tools. The design assumes a future where observability dashboards and messaging platforms share a unified, context-aware information layer.",
       },
     ],
     outro:
-      "Error management shouldn't require a dedicated on-call engineer to interpret cryptic logs. Luma makes production issues approachable for the entire team, reducing mean time to resolution and keeping developers sane.",
+      "Luma conceptualizes a world where production issues are approachable for the entire team, aiming to transform error management from a specialized burden into a shared, context-aware workflow that preserves developer focus.",
   },
 
   "resume-roaster": {

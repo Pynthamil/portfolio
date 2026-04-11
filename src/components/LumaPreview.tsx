@@ -11,8 +11,7 @@ export default function LumaPreview() {
     <div className="space-y-4">
       {/* 1. Interactive AI Triage Flow */}
       <ProjectPreviewSection
-        title="AI-Native Triage"
-        description={`Designed for AI from the ground up. Luma doesn't just notify; it analyzes, summarizes, and recommends actions in a familiar chat interface.\n\n(Note: The prototype below is interactive. Try typing "Hi bro" to see it in action.)`}
+        description="The proposal imagines an interface designed for AI-first analysis. Instead of presenting raw stack traces, the system is intended to propose summarized explanations and suggested actions within a familiar conversational interface, reducing the initial friction of incident response."
         bgColor="#fafafc"
       >
         <IPhoneDisplay height="820px" mockupHeight="780px">
@@ -23,7 +22,7 @@ export default function LumaPreview() {
       {/* 2. Contextual Analysis (Resolution Flow) */}
       <ProjectPreviewSection
         title="Deep-Dive Resolution"
-        description={`Going beyond the initial alert. Luma provides deep context into the error's root cause, paired with interactive notes to document the resolution process.`}
+        description="Designed to surface context beyond surface-level alerts. The concept proposes interactive notes that allow teams to document reasoning and maintain a shared understanding of root causes, aiming to build a centralized knowledge base for future resilience."
         bgColor="#ffffff"
       >
         <div className="flex flex-col md:flex-row gap-8 items-center justify-center w-full min-h-[850px]">
@@ -49,7 +48,7 @@ export default function LumaPreview() {
       {/* 3. Clarity & Customization (White Variants) */}
       <ProjectPreviewSection
         title="Clarity & Contrast"
-        description={`A high-fidelity light mode designed for maximum clarity in high-pressure environments. Every detail is optimized for readability and quick decision-making.`}
+        description="High-fidelity light mode conceptualized for maximum readability. The layout hierarchy is intended to support quick scanning and decision-making during high-pressure incidents, prioritizing information density without overwhelming the user."
         bgColor="#fafafc"
       >
         <div className="flex flex-col md:flex-row gap-8 items-center justify-center w-full min-h-[850px]">
