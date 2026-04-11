@@ -385,6 +385,13 @@ export default async function ProjectDetail({
               bgColor="#FFFDE7" // Soft Yellow
             />
             <CraftrStackedPreview bgColor="#FFFDE7" />
+            <BlogPreview
+              title="Speculative Surface Design"
+              description="The concept imagines a future where document covers are not static headers but dynamic, high-fidelity surfaces. The design proposes using generative patterns and rich typography to establish an immediate aesthetic mood for every workspace."
+              imageSrc="/assets/craftr/cover-block.svg"
+              alt="Craftr Cover Block Design"
+              bgColor="#FFFDE7"
+            />
           </>
         )}
         {slug === "terminal-browser" && (
