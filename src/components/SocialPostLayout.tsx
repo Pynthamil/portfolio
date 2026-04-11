@@ -17,22 +17,26 @@ export default function SocialPostLayout({ post }: SocialPostLayoutProps) {
   const remainingSlides = post.slides.slice(1);
 
   return (
-    <main className="min-h-screen" style={{ backgroundColor: post.themeColor + "50" }}>
+    <main className="min-h-screen relative overflow-hidden">
+      {/* Immersive Page Background Gradient */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{ 
+          background: `linear-gradient(to bottom, ${post.themeColor}33, ${post.themeColor}11 40%, transparent 70%)` 
+        }}
+      />
       {/* Minimalist Floating Nav */}
       <nav className="fixed top-0 left-0 right-0 z-[100] py-10 pointer-events-none">
         <div className="max-w-[1400px] mx-auto px-10 md:px-20 flex justify-between items-start">
-          <Link
-            href="/social"
+          <Link 
+            href="/social" 
             className="pointer-events-auto group flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase text-black/20 hover:text-black transition-all duration-500"
           >
-            <div className="w-10 h-10 rounded-full border border-black/5 bg-white/40 backdrop-blur-xl flex items-center justify-center transition-all group-hover:bg-white/80 group-hover:border-black/10">
-              <ArrowLeft size={14} strokeWidth={2.5} className="block translate-y-[0.5px]" />
+            <div className="w-10 h-10 rounded-full border border-black/5 bg-white/40 backdrop-blur-xl grid place-items-center transition-all group-hover:bg-white/80 group-hover:border-black/10 leading-[0] overflow-hidden">
+              <ArrowLeft size={14} strokeWidth={2.5} className="block relative top-[0.5px]" />
             </div>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">Archive</span>
           </Link>
-          <button className="pointer-events-auto w-10 h-10 rounded-full border border-black/5 bg-white/40 backdrop-blur-xl flex items-center justify-center transition-all hover:bg-white/80 hover:border-black/10">
-            <Share2 size={16} strokeWidth={2} className="text-black/30" />
-          </button>
         </div>
       </nav>
 
