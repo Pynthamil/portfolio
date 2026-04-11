@@ -21,9 +21,8 @@ const categories = [
     title: "Social Media Design",
     description: "Visual narratives and aesthetic storytelling for platforms.",
     icon: Share2,
-    href: "#",
-    active: false,
-    badge: "Coming Soon"
+    href: "/social",
+    active: true
   }
 ];
 
