@@ -102,7 +102,7 @@ export default function AboutAccordion() {
       title: "fun facts about me",
       subtitle: "the lore drops",
       content: [
-        "favourite boy band: ENHYPEN",
+
         "music taste: a bit of everything → if it sounds good, I'm listening",
         "I love singing and dancing like nobody's watching (because usually nobody is)",
         "introvert… who also loves to yap when the topic is interesting",
