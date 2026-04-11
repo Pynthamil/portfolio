@@ -11,6 +11,7 @@ export default function LumaPreview() {
     <div className="space-y-4">
       {/* 1. Interactive AI Triage Flow */}
       <ProjectPreviewSection
+        title="AI-First Triage"
         description="The proposal imagines an interface designed for AI-first analysis. Instead of presenting raw stack traces, the system is intended to propose summarized explanations and suggested actions within a familiar conversational interface, reducing the initial friction of incident response."
         bgColor="#fafafc"
       >
