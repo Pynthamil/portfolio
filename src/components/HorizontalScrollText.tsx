@@ -4,7 +4,11 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function HorizontalScrollText() {
+interface HorizontalScrollTextProps {
+  onFinish?: () => void;
+}
+
+export default function HorizontalScrollText({ onFinish }: HorizontalScrollTextProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
 
@@ -33,6 +37,9 @@ export default function HorizontalScrollText() {
           pin: true,
           end: "+=5000px",
           scrub: true,
+          onLeave: () => {
+            if (onFinish) onFinish();
+          }
         },
       });
 
@@ -60,7 +67,7 @@ export default function HorizontalScrollText() {
     return () => {
       ctx.revert(); // Automatically cleans up all ScrollTriggers and tween inline styles
     };
-  }, []);
+  }, [onFinish]);
 
   return (
     <>
