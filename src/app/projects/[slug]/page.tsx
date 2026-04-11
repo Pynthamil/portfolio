@@ -10,6 +10,7 @@ import LumaPreview from "@/components/LumaPreview";
 import BlogStackedPreview from "@/components/BlogStackedPreview";
 import SemanticPreview from "@/components/SemanticPreview";
 import CraftrStackedPreview from "@/components/CraftrStackedPreview";
+import RoasterPreview from "@/components/RoasterPreview";
 
 /* ------------------------------------------------------------------ */
 /*  Data model                                                        */
@@ -376,6 +377,9 @@ export default async function ProjectDetail({
         )}
         {slug === "semantic-email" && (
           <SemanticPreview />
+        )}
+        {slug === "resume-roaster" && (
+          <RoasterPreview />
         )}
         {slug === "craftr-docs" && (
           <>
