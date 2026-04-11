@@ -12,6 +12,7 @@ import SemanticPreview from "@/components/SemanticPreview";
 import CraftrStackedPreview from "@/components/CraftrStackedPreview";
 import RoasterPreview from "@/components/RoasterPreview";
 import PortfolioPreview from "@/components/PortfolioPreview";
+import HackathonPreview from "@/components/HackathonPreview";
 
 /* ------------------------------------------------------------------ */
 /*  Data model                                                        */
@@ -163,26 +164,26 @@ const projects: Record<string, ProjectData> = {
 
   "acm-hackathon": {
     title: "ACM Hackathon Portal",
-    subtitle: "A website for ACM-VIT's Hackathon",
+    subtitle: "A conceptual ecosystem for competitive collaboration",
     description:
-      "ACM-VIT needed a registration and information portal for their flagship hackathon event. I designed and built a responsive web application that handled team registration, event schedules, sponsor showcases, and real-time updates for hundreds of participants.",
+      "Hackathon environments are characterized by high-intensity coordination and tight feedback loops. The ACM Hackathon Portal conceptualizes a unified platform designed to streamline the complexities of registration, team synergy, and real-time event navigation.\n\nThe design explores how a centralized information layer can reduce the friction of large-scale competitive events. By imagining a future where participant workflows are handled ephemerally and contextually, the proposal aims to preserve creative energy and foster deeper networking within technical communities.",
     heroImage: "/assets/project-cards/acm-hackathon-portal.svg",
     sections: [
       {
-        heading: "Registration Flow",
-        body: "The registration system supported both individual and team signups with email verification, team invite links, and role-based access. Team leaders could manage members, and participants received automated confirmation emails with event details and QR codes for check-in.",
+        heading: "Cohesion by Design",
+        body: "The proposed registration and team-building flow is intended to reduce the administrative load on participants. The concept explores automated verification and role-based discovery, aiming to help teams form and validate ideas faster during the initial critical hours of competition.",
       },
       {
-        heading: "Event Experience",
-        body: "A live dashboard showed the event schedule, workshop timings, mentor availability, and announcement feeds. Push notifications kept participants updated on schedule changes. The sponsor showcase gave partners prominent visibility with interactive profiles.",
+        heading: "Dynamic Event Stream",
+        body: "The architecture proposes a live information dashboard designed to surface critical updates, schedule shifts, and mentor availability. Interaction logic centers on immediate comprehension, aiming to provide a calm navigation experience in a dense, fast-moving environment.",
       },
       {
-        heading: "Design & Branding",
-        body: "The visual design matched ACM-VIT's brand guidelines while pushing into a more modern, energetic direction. Bold typography, vibrant gradients, and playful micro-animations created excitement around the event. The site was fully responsive and optimized for mobile check-in.",
+        heading: "Aesthetic Momentum",
+        body: "The visual system is conceptualized to maintain excitement throughout the event. Vibrant typographic systems, responsive hierarchies, and modular layouts aim to create a sense of shared purpose and momentum while ensuring the interface remains accessible across all devices.",
       },
     ],
     outro:
-      "Building for a live event with hundreds of users taught me the importance of reliability and clear UX under pressure. When registration opens and 200 people hit your site simultaneously, there's no room for bugs.",
+      "This concept explores the role of specialized software in facilitating high-stakes creative collaboration. By reimagining the hackathon portal as a context-aware ecosystem, the design aims to transform complex event logistical hurdles into seamless participant successes.",
   },
 
   "craftr-docs": {
@@ -368,6 +369,9 @@ export default async function ProjectDetail({
         )}
         {slug === "luma" && (
           <LumaPreview />
+        )}
+        {slug === "acm-hackathon" && (
+          <HackathonPreview />
         )}
         {slug === "semantic-email" && (
           <SemanticPreview />
