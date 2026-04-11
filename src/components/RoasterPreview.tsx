@@ -26,7 +26,43 @@ export default function RoasterPreview() {
         </div>
       </ProjectPreviewSection>
 
-      {/* 2. Uploading Interface */}
+      {/* 2. Annotation Critique */}
+      <ProjectPreviewSection
+        title="Surgical Critique"
+        description="The AI goes line-by-line through your resume, highlighting specific areas for improvement. Every annotation is a targeted strike on weak phrasing, missing keywords, or layout inconsistencies."
+        bgColor="transparent"
+        containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-tl from-[#FFDBB4] to-[#FFECD5]"
+      >
+        <div className="relative w-[95%] max-w-[850px] flex items-center justify-center">
+          <Image
+            src="/assets/roaster/annotation.svg"
+            alt="Resume Roaster Annotation Critique"
+            width={1100}
+            height={800}
+            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+          />
+        </div>
+      </ProjectPreviewSection>
+
+      {/* 3. Detailed Analysis */}
+      <ProjectPreviewSection
+        title="Granular Analytics"
+        description="Get deep into the meta-data of your career. The analyzer generates a comprehensive breakdown of readability, impact metrics, and ATS-friendliness to ensure you stand out in the pile."
+        bgColor="transparent"
+        containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-r from-[#FFDBB4] to-[#FFECD5]"
+      >
+        <div className="relative w-[95%] max-w-[850px] flex items-center justify-center">
+          <Image
+            src="/assets/roaster/analysis-output.svg"
+            alt="Resume Roaster Deep Analysis"
+            width={1100}
+            height={800}
+            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+          />
+        </div>
+      </ProjectPreviewSection>
+
+      {/* 4. Uploading Interface */}
       <ProjectPreviewSection
         title="Frictionless Upload"
         description="Getting started is as simple as dropping a PDF. The analyzer immediately begins parsing the document, extracting your experience and locking in context for the critique."
@@ -44,7 +80,7 @@ export default function RoasterPreview() {
         </div>
       </ProjectPreviewSection>
 
-      {/* 3. Menu Search */}
+      {/* 5. Menu Search */}
       <ProjectPreviewSection
         title="Immediate Navigation"
         description={`Command-K style search brings instant access. Pull up recent resume roasts, toggle preferences, or trigger a new analysis without losing context.`}

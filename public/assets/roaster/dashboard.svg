@@ -1,10 +1,10 @@
 <svg width="1311" height="870" viewBox="0 0 1311 870" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="1311" height="870" rx="36" fill="#FFC979"/>
 <rect x="16" y="19" width="1280" height="832" rx="40" fill="white"/>
-<rect x="16" y="19" width="249" height="832" fill="#F9F9F9"/>
+<path d="M16 59C16 36.9086 33.9086 19 56 19H265V851H56C33.9086 851 16 833.091 16 811V59Z" fill="#F9F9F9"/>
 <rect x="45" y="198" width="24" height="24" fill="url(#pattern0_119_10847)"/>
 <rect x="387.5" y="404.5" width="785" height="61" rx="30.5" fill="white" stroke="#E6E6E6" stroke-width="3"/>
-<path d="M420.841 445.533V430.013H422.337V445.533H420.841ZM413.835 438.527V437.018H429.342V438.527H413.835Z" fill="black"/>
+<path d="M420.841 441.533V426.013H422.337V441.533H420.841ZM413.835 434.527V433.018H429.342V434.527H413.835Z" fill="black"/>
 <circle cx="1142.5" cy="435.498" r="21.498" fill="#FF9C33"/>
 <g clip-path="url(#clip0_119_10847)">
 <path d="M1148.47 434.303C1148.47 437.599 1145.8 440.275 1142.5 440.275C1139.2 440.275 1136.53 437.599 1136.53 434.303H1134.14C1134.14 438.519 1137.26 441.983 1141.31 442.568V446.247H1143.69V442.568C1147.74 441.983 1150.86 438.519 1150.86 434.303H1148.47V434.303Z" fill="white"/>
