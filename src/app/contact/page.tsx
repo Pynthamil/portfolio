@@ -30,7 +30,7 @@ const channels: ContactChannel[] = [
     iconAlt: "Messages",
     iconWidth: 80,
     iconHeight: 80,
-    bubbleText: "Send your message to me here, darling!",
+    bubbleText: "Feel free to drop me a message here!",
     bubbleColor: "#FF60B2",
     inputPlaceholder: "   type your message",
   },

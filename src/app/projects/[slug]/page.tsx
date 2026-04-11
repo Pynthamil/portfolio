@@ -44,7 +44,7 @@ const projects: Record<string, ProjectData> = {
     description:
       "I wanted a space that felt personal — somewhere I could write about things I'm learning, projects I'm building, and ideas I'm exploring. Most blogging platforms felt too generic, so I built my own from scratch with a focus on reading experience and minimal design.",
     heroImage: "/assets/project-cards/my-blog.svg",
-    liveUrl: "https://pyndulogs.vercel.app",
+    liveUrl: "https://my-blog-tan-tau.vercel.app",
     techStack: ["Next.js", "TypeScript", "Supabase", "Hashnode API", "Tailwind CSS"],
     sections: [
       {
@@ -93,6 +93,7 @@ const projects: Record<string, ProjectData> = {
     subtitle: "A conceptual interface for text-based web navigation",
     description:
       "What if the web felt as native as your command line? Terminal Browser explores a future where web browsing is stripped of visual noise and distilled into a purely functional text-based experience.\n\nThis concept imagines a workflow where developers can access documentation, research, and technical articles without breaking their terminal stream. By conceptualizing the web as structured text, the design aims to reduce the cognitive load associated with modern graphical browsers while prioritizing speed and focus.",
+    liveUrl: "https://my-blog-tan-tau.vercel.app",
     heroImage: "/assets/project-cards/terminal-browser.svg",
     githubUrl: "#",
     sections: [
@@ -291,7 +292,7 @@ export default async function ProjectDetail({
             <p className="project-detail-subtitle">{project.subtitle}</p>
           </div>
 
-          {(project.liveUrl || project.githubUrl) && slug !== "terminal-browser" && (
+          {(project.liveUrl || project.githubUrl) && (
             <a
               href={project.liveUrl || project.githubUrl}
               target="_blank"
