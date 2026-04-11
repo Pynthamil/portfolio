@@ -11,7 +11,7 @@ export default function RoasterPreview() {
       {/* 1. Dashboard */}
       <ProjectPreviewSection
         title="The Roast Report"
-        description="A comprehensive, honest breakdown of your resume's impact. Traverse through AI-graded metrics, flag ATS compatibility issues, and receive brutal but actionable advice on what to fix."
+        description="A structured evaluation layer translates resume content into measurable signals. The report presents clarity, impact strength, and ATS compatibility through digestible scoring systems. Rather than vague advice, the interface highlights what is working, what is not, and why. Each insight is framed to support quick decision-making and immediate iteration."
         bgColor="transparent"
         containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-bl from-[#FFDBB4] to-[#FFECD5]"
       >
@@ -30,7 +30,7 @@ export default function RoasterPreview() {
       {/* 2. Annotation Critique */}
       <ProjectPreviewSection
         title="Surgical Critique"
-        description="The AI goes line-by-line through your resume, highlighting specific areas for improvement. Every annotation is a targeted strike on weak phrasing, missing keywords, or layout inconsistencies."
+        description="The annotation system provides contextual feedback directly on the document surface. Instead of separating critique from content, comments appear inline to preserve reading flow and reduce cognitive switching. Each annotation identifies weak phrasing, missing specificity, or structural inconsistencies. Feedback is intentionally concise to encourage rapid scanning and faster revision cycles."
         bgColor="transparent"
         containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-tl from-[#FFDBB4] to-[#FFECD5]"
       >
@@ -48,7 +48,7 @@ export default function RoasterPreview() {
       {/* 3. Detailed Analysis */}
       <ProjectPreviewSection
         title="Granular Analytics"
-        description="Get deep into the meta-data of your career. The analyzer generates a comprehensive breakdown of readability, impact metrics, and ATS-friendliness to ensure you stand out in the pile."
+        description="Beyond surface-level feedback, the analyzer interprets resume structure as data. Metrics such as readability distribution, keyword relevance, and impact density help users understand how their experience is perceived algorithmically. These signals help translate subjective writing quality into observable patterns that can be improved iteratively."
         bgColor="transparent"
         containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-r from-[#FFDBB4] to-[#FFECD5]"
       >
@@ -66,7 +66,7 @@ export default function RoasterPreview() {
       {/* 4. Uploading Interface */}
       <ProjectPreviewSection
         title="Frictionless Upload"
-        description="Getting started is as simple as dropping a PDF. The analyzer immediately begins parsing the document, extracting your experience and locking in context for the critique."
+        description="The upload interaction is designed to reduce hesitation. Users can drag and drop a PDF and immediately receive structured feedback. The system parses document hierarchy, extracts semantic groupings, and prepares the content for critique within seconds. Reducing friction at this stage improves completion rates and encourages experimentation."
         bgColor="transparent"
         containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-br from-[#FFDBB4] to-[#FFECD5]"
       >
@@ -84,7 +84,7 @@ export default function RoasterPreview() {
       {/* 5. Menu Search */}
       <ProjectPreviewSection
         title="Immediate Navigation"
-        description={`Command-K style search brings instant access. Pull up recent resume roasts, toggle preferences, or trigger a new analysis without losing context.`}
+        description="Command-style search enables fast interaction across the product surface. Users can quickly switch between analyses, revisit past feedback, or initiate new roasts without losing context. The navigation pattern prioritizes speed, familiarity, and minimal interface noise."
         bgColor="transparent"
         containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-tr from-[#FFDBB4] to-[#FFECD5]"
       >

@@ -140,28 +140,27 @@ const projects: Record<string, ProjectData> = {
 
   "resume-roaster": {
     title: "Resume Roaster",
-    subtitle: "AI-powered resume roasting platform",
+    subtitle: "AI critique that improves resumes with clarity, precision, and just enough bite.",
     description:
-      "Getting honest feedback on your resume is hard. Friends are too nice, and professional reviews are expensive. Resume Roaster uses AI to give you brutally honest, actionable feedback on your resume — with just the right amount of humor to keep it fun.",
+      "Getting meaningful feedback on a resume is surprisingly difficult. Peer reviews are often overly polite, while professional services can be inaccessible or slow.\n\nResume Roaster explores how AI can deliver fast, structured, and genuinely useful critique. The product combines natural language analysis with opinionated heuristics to surface weak phrasing, missing impact, and formatting issues that reduce hiring outcomes.\n\nThe experience balances honesty with usability. Feedback is direct, specific, and designed to guide iteration rather than overwhelm.",
     heroImage: "/assets/project-cards/resume-roaster.svg",
     liveUrl: "#",
-    techStack: ["Next.js", "TypeScript", "OpenAI API", "PDF.js", "Framer Motion"],
     sections: [
       {
         heading: "The Roasting Engine",
-        body: "Upload a PDF and get back a detailed analysis covering formatting, content quality, impact metrics, keyword optimization, and ATS compatibility. The AI persona is deliberately opinionated — it tells you what recruiters think but won't say. Tough love, but useful.",
+        body: "The core interaction centers around opinionated AI critique. The system evaluates formatting quality, content strength, keyword relevance, and structural clarity. The voice is intentionally confident to reduce ambiguity in feedback interpretation. The goal is not politeness, but clarity that supports measurable improvement.",
       },
       {
         heading: "Actionable Feedback",
-        body: "Every roast comes with specific, implementable suggestions. Not just 'improve your bullet points' — but exactly how to rewrite them with stronger action verbs and quantified impact. Before/after comparisons show the difference clearly.",
+        body: "Each critique includes concrete rewrite suggestions that demonstrate stronger phrasing and clearer impact. Before-and-after comparisons visualize improvement and reinforce learning patterns users can apply independently in future iterations. The product focuses on teaching users how to think about resume writing, not just correcting individual lines.",
       },
       {
         heading: "Privacy & Trust",
-        body: "Resumes contain sensitive personal information. Files are processed in memory and never stored on disk. No resume data is used for model training. The entire pipeline is ephemeral — upload, analyze, deliver, delete.",
+        body: "Resumes contain sensitive personal data. Files are processed ephemerally in memory and are not stored or reused for model training. The system architecture prioritizes privacy by design, ensuring users maintain control over their information.",
       },
     ],
     outro:
-      "Resume Roaster has helped hundreds of people improve their resumes. The best part? Watching someone go from 'my resume is fine' to 'oh wow, I need to fix this' in about 30 seconds.",
+      "Resume Roaster demonstrates how personality-driven interfaces can increase engagement without compromising usability. By combining structured critique with a distinct voice, the product encourages users to confront weak signals in their professional narrative and iterate quickly. The result is a tool that makes improvement feel immediate, observable, and repeatable.",
   },
 
   "acm-hackathon": {
