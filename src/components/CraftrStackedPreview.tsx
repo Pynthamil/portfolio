@@ -20,7 +20,7 @@ export default function CraftrStackedPreview({ bgColor = "#FFFDE7" }: CraftrStac
   return (
     <ProjectPreviewSection
       title="Dynamic Element Blocks"
-      description="Craftr introduces quick-blocks (QB). Instantly summon powerful dynamic components wrapped in beautiful, distinctive thematic styles just by typing a slash."
+      description="The proposal introduces a modular mental model for content insertion. Through a command-driven system, the design aims to make sophisticated formatting discoverable and immediate, aiming to reduce the cognitive load of managing multiple toolsets."
       bgColor={bgColor}
       containerClassName="p-0 overflow-hidden relative"
     >

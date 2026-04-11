@@ -187,26 +187,26 @@ const projects: Record<string, ProjectData> = {
 
   "craftr-docs": {
     title: "Craftr Docs",
-    subtitle: "The lovechild of Notion, Docs, and Figma",
+    subtitle: "A conceptual exploration of expressive documentation",
     description:
-      "Documentation tools force you to choose: rich formatting or great collaboration? Structured data or freeform writing? Craftr Docs combines the best parts of Notion's blocks, Google Docs' collaboration, and Figma's design tools into a single document editor.",
+      "Documentation tools today often force a compromise between structured information and creative freedom. Craftr Docs explores a hybrid model intended to combine the modular logic of block-based editors with the expressive control of design software.\n\nBy conceptualizing the document as an expansive workspace rather than a rigid page, the design aims to reduce the friction of structuring complex ideas. The proposal imagines a future where documentation is both a tool for thinking and a medium for high-fidelity communication, balancing progressive complexity with intuitive, fast-access interaction patterns.",
     heroImage: "/assets/project-cards/craftr-docs.svg",
     sections: [
       {
-        heading: "Block-Based Editing",
-        body: "Documents are built from composable blocks — text, code, tables, embeds, callouts, toggles, and more. Each block is independently styled and can be rearranged by drag-and-drop. Slash commands make inserting new block types feel instant and discoverable.",
+        heading: "Modular Logic",
+        body: "The architecture proposes a system where every content unit is an independent, rearrangeable block. This design intent aims to support nonlinear thinking, allowing for spatial organization that reflects the user's mental model rather than a fixed template.",
       },
       {
-        heading: "Real-Time Collaboration",
-        body: "Multiple users can edit the same document simultaneously with live cursors, presence indicators, and conflict-free merging powered by Y.js CRDTs. Changes sync in milliseconds. Comments and suggestions live inline with threaded discussions.",
+        heading: "Spatial Organization",
+        body: "Designed to dissolve the boundary between writing and layout. The concept explores a block-based environment intended to allow users to manipulate information spatially, treating the document as a flexible surface rather than a vertical stream.",
       },
       {
-        heading: "Design-Aware Formatting",
-        body: "Unlike typical doc editors, Craftr gives you precise control over spacing, typography, and layout. Create multi-column sections, apply custom color themes, and export to PDF with pixel-perfect formatting. Your docs look as good as they read.",
+        heading: "Contextual Awareness",
+        body: "An exploration into real-time collaboration that prioritizes shared context without disrupting individual focus. The design conceptualizes presence handles and inline discussions as lightweight layers intended to preserve flow during collective efforts.",
       },
     ],
     outro:
-      "Craftr Docs is my most ambitious project — building a collaborative editor from scratch is genuinely hard. But every time I use it to write documentation, I'm reminded why the existing tools weren't enough.",
+      "Craftr Docs explores how documentation tools could evolve beyond utility into creative playgrounds. By reimagining the document as a modular workspace, the concept aims to provide a more natural environment for both structured thinking and fluid expression.",
   },
 
   portfolios: {
@@ -379,7 +379,7 @@ export default async function ProjectDetail({
           <>
             <BlogPreview
               title="Collaborative Canvas"
-              description="A seamless, block-based editing experience that blurs the line between word processing and freeform design."
+              description="Designed to dissolve the boundary between writing and layout. The concept explores a block-based environment intended to allow users to manipulate information spatially, treating the document as a flexible surface rather than a vertical stream."
               imageSrc="/assets/craftr/craftr-1.svg"
               alt="Craftr Editor Interface"
               bgColor="#FFFDE7" // Soft Yellow
