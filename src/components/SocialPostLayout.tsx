@@ -21,8 +21,8 @@ export default function SocialPostLayout({ post }: SocialPostLayoutProps) {
       {/* Minimalist Floating Nav */}
       <nav className="fixed top-0 left-0 right-0 z-[100] py-10 pointer-events-none">
         <div className="max-w-[1400px] mx-auto px-10 md:px-20 flex justify-between items-start">
-          <Link 
-            href="/social" 
+          <Link
+            href="/social"
             className="pointer-events-auto group flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase text-black/20 hover:text-black transition-all duration-500"
           >
             <div className="w-10 h-10 rounded-full border border-black/5 bg-white/40 backdrop-blur-xl flex items-center justify-center transition-all group-hover:bg-white/80 group-hover:border-black/10">
@@ -81,11 +81,12 @@ export default function SocialPostLayout({ post }: SocialPostLayoutProps) {
 
           <div className="project-detail-preview-inner !h-auto !w-full flex justify-center relative z-10 !bg-transparent !border-0 shadow-none">
             <div 
-              className={`relative overflow-hidden rounded-3xl md:rounded-[40px] bg-white/10 backdrop-blur-3xl border border-white/20 transition-all duration-700 group-hover:scale-[1.02] ${post.aspectRatio !== "2/3" ? 'p-6 md:p-12' : 'p-0'}`}
+              className={`relative overflow-hidden rounded-3xl md:rounded-[40px] backdrop-blur-3xl border border-white/20 transition-all duration-700 group-hover:scale-[1.02] ${post.aspectRatio !== "2/3" ? 'p-6 md:p-12' : 'p-0'}`}
               style={{ 
                 width: "100%",
                 maxWidth: post.aspectRatio === "2/3" ? "500px" : "620px",
-                aspectRatio: post.aspectRatio || "1/1"
+                aspectRatio: post.aspectRatio || "1/1",
+                background: `linear-gradient(135deg, ${post.themeColor}22, rgba(255,255,255,0.05), transparent)`
               }}
             >
               <Image

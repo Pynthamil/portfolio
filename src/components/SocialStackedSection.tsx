@@ -45,12 +45,13 @@ export default function SocialStackedSection({
             >
               {/* Internal Chassis that provides the height & centering */}
               <div 
-                className={`relative overflow-hidden rounded-xl md:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-500 ${aspectRatio !== "2/3" ? 'p-4 md:p-8' : 'p-0'}`}
+                className={`relative overflow-hidden rounded-xl md:rounded-2xl backdrop-blur-sm border border-white/10 transition-all duration-500 ${aspectRatio !== "2/3" ? 'p-4 md:p-8' : 'p-0'}`}
                 style={{ 
                   width: "100%",
                   maxWidth: aspectRatio === "2/3" ? "520px" : "620px",
                   aspectRatio: aspectRatio, 
-                  minHeight: "1px"
+                  minHeight: "1px",
+                  background: `linear-gradient(135deg, ${themeColor}11, transparent)`
                 }}
               >
                 <Image
