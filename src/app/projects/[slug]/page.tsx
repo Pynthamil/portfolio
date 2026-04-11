@@ -292,7 +292,7 @@ export default async function ProjectDetail({
             <p className="project-detail-subtitle">{project.subtitle}</p>
           </div>
 
-          {(project.liveUrl || project.githubUrl) && (
+          {(project.liveUrl || project.githubUrl) && slug === "my-blog" && (
             <a
               href={project.liveUrl || project.githubUrl}
               target="_blank"
