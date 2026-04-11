@@ -115,12 +115,12 @@ body {
    PROJECT CARD
    ===================== */
 .project-card {
-  background: #fafafc;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: 40px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -128,7 +128,7 @@ body {
 
 .project-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.1);
 }
 
 /* =====================
@@ -151,13 +151,13 @@ body {
 }
 
 .card-title .for-text {
-  color: #6e6e73;
+  color: #86868b;
   font-weight: 400;
 }
 
 .card-subtitle {
   font-size: 18px;
-  color: #6e6e73;
+  color: #86868b;
   margin-top: 12px;
   letter-spacing: -0.01em;
   line-height: 1.4;
