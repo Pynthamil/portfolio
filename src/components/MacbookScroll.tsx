@@ -50,38 +50,43 @@ export default function MacbookScroll() {
       }
     };
 
-    // Onscroll animation
-    const handleScroll = () => {
-      const scrollTop = html.scrollTop * 2;
-      const maxScrollTop = html.scrollHeight - window.innerHeight;
-      const scrollFraction = scrollTop / maxScrollTop;
-      const frameIndex = Math.min(
-        frameCount - 1,
-        Math.ceil(scrollFraction * frameCount)
-      );
-
-      requestAnimationFrame(() => updateImage(frameIndex + 1));
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // GSAP
+    // GSAP ScrollTrigger for frames
+    const obj = { frame: 0 };
     const container = document.querySelector(".sticky-container");
-    if (headlineRef.current && container) {
-      gsap.to(headlineRef.current, {
-        y: -400,
-        opacity: 0,
+    
+    if (container) {
+      // Frame animation - linked specifically to the container distance
+      gsap.to(obj, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: "none",
         scrollTrigger: {
           trigger: container,
           start: "top top",
-          end: "+=800", // Fades out as you scroll down 800px (before MacBook fully opens)
+          end: "bottom bottom",
           scrub: true,
-        },
+          onUpdate: () => {
+            updateImage(Math.round(obj.frame));
+          }
+        }
       });
+
+      // Headline fade/move
+      if (headlineRef.current) {
+        gsap.to(headlineRef.current, {
+          y: -400,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: container,
+            start: "top top",
+            end: "+=800",
+            scrub: true,
+          },
+        });
+      }
     }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
