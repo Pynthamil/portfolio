@@ -212,26 +212,38 @@ const projects: Record<string, ProjectData> = {
 
   portfolios: {
     title: "Portfolios",
-    subtitle: "A collection of portfolios I've designed and built",
+    subtitle: "Iterative identity exploration through interface design",
     description:
-      "Over the years, I've designed and developed multiple portfolio websites — both for myself and for others. Each one explores a different aesthetic direction, from minimal and typographic to bold and experimental. This is a collection of those explorations.",
+      "Personal websites serve as a controlled environment for testing structural logic and visual rhythm. This collection documents a multi-year evolution of my personal design language, moving from systematic component libraries to high-density workspace aesthetics and exploratory archival transitions.",
     heroImage: "/assets/project-cards/portfolios.svg",
     sections: [
       {
+        heading: "v1 Expressionist Layer",
+        body: "The first generation investigates a personality-forward aesthetic that prioritizes expressive visual storytelling. The design explores high-saturation palettes and botanical motifs to create an emotional connection with the user. Interaction logic focuses on aesthetic-driven hierarchy, utilizing nostalgic elements to define a distinct personal identity.",
+      },
+      {
+        heading: "v2 Terminal Directive",
+        body: "The second major iteration conceptualizes a technical, workspace-inspired layout focused on developer-native environments. This direction explores aggressive grid structures and bento-style information clusters, aiming to bridge the gap between creative fluidity and high-density technical precision through high-contrast navigation.",
+      },
+      {
+        heading: "v3 Speculative Fragments",
+        body: "An abandoned experimental direction that investigated industrial minimalism and high-contrast focused states. While stopped short of completion, these fragments conceptualize a transition toward desaturated surfaces and neon lime accents, preserved as an architectural archeology of a path that was ultimately paused.",
+      },
+      {
         heading: "Design Philosophy",
-        body: "Every portfolio starts with a question: what story does this person want to tell? A developer's portfolio needs different energy than a designer's. I focus on letting the work speak for itself — minimal chrome, generous whitespace, and interactions that feel natural rather than flashy.",
+        body: "Interface design begins with the core narrative. Visual systems should provide a clear framework that supports content rather than competing with it. My approach emphasizes typography as a primary communication tool, using spacing rhythm and intuitive interaction patterns to guide user attention naturally.",
       },
       {
-        heading: "Technical Craft",
-        body: "These sites are built with performance as a priority. Static generation for instant loads, optimized images, minimal JavaScript bundles, and smooth animations that don't jank on mobile. Lighthouse scores above 95 across the board. A portfolio that loads slowly is already a bad first impression.",
+        heading: "Process Reflection",
+        body: "Iteration allows for testing layout logic and interaction pacing without external constraints. Each version represents a snapshot of design thinking, investigating how visual structure influences perception and memorability.",
       },
       {
-        heading: "Iterative Process",
-        body: "No portfolio is ever truly finished. Each version teaches me something new about layout, typography, or interaction design. I treat these projects as a playground for trying new techniques — CSS scroll animations, view transitions, creative grid layouts — before bringing them into client work.",
+        heading: "Iterative Evolution",
+        body: "The progression across versions reveals a shift from strict systematic rules to more expressive workspace metaphors. This constant refinement of visual hierarchy and structural restraint informs a clearer understanding of how to balance personality with functional clarity.",
       },
     ],
     outro:
-      "Building portfolios is how I stay sharp as a frontend developer. There's something satisfying about a project with no constraints except 'make it as good as possible.' This site you're on right now is the latest iteration.",
+      "Portfolio design provides a space to explore new layout systems and interaction ideas without external constraints. Each iteration contributes to a clearer understanding of how visual structure influences perception.",
   },
 };
 

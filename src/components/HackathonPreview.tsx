@@ -46,6 +46,7 @@ export default function HackathonPreview() {
             {dashboardCards.map((card) => (
               <ScrollStackItem
                 key={card.id}
+                label={card.title}
                 itemClassName="!h-auto w-full max-w-[1400px] mx-auto aspect-[4/3] md:aspect-video !p-0 !border-0 overflow-hidden rounded-md md:rounded-lg relative !shadow-none"
               >
                 <Image
@@ -85,6 +86,7 @@ export default function HackathonPreview() {
             {submissionCards.map((card) => (
               <ScrollStackItem
                 key={card.id}
+                label={card.title}
                 itemClassName="!h-auto w-full max-w-[1400px] mx-auto aspect-[4/3] md:aspect-video !p-0 !border-0 overflow-hidden rounded-md md:rounded-lg relative !shadow-none"
               >
                 <Image
