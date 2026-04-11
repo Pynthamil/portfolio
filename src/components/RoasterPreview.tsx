@@ -13,9 +13,15 @@ export default function RoasterPreview() {
         title="The Roast Report"
         description="A structured evaluation layer translates resume content into measurable signals. The report presents clarity, impact strength, and ATS compatibility through digestible scoring systems. Rather than vague advice, the interface highlights what is working, what is not, and why. Each insight is framed to support quick decision-making and immediate iteration."
         bgColor="transparent"
-        containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-bl from-[#FFDBB4] to-[#FFECD5]"
+        containerClassName="p-10 md:p-20 lg:p-32 h-[600px]"
       >
-        <div className="relative w-[95%] max-w-[900px] flex items-center justify-center">
+        <div 
+          className="absolute inset-0 z-0" 
+          style={{ 
+            background: "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6) 0%, transparent 50%), linear-gradient(135deg, #FFDBB4 0%, #FFECD5 40%, #FFF9F3 100%)" 
+          }} 
+        />
+        <div className="relative z-10 w-[95%] max-w-[900px] flex items-center justify-center">
           <Image
             src="/assets/roaster/dashboard.svg"
             alt="Resume Roaster Dashboard"
@@ -32,9 +38,15 @@ export default function RoasterPreview() {
         title="Surgical Critique"
         description="The annotation system provides contextual feedback directly on the document surface. Instead of separating critique from content, comments appear inline to preserve reading flow and reduce cognitive switching. Each annotation identifies weak phrasing, missing specificity, or structural inconsistencies. Feedback is intentionally concise to encourage rapid scanning and faster revision cycles."
         bgColor="transparent"
-        containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-tl from-[#FFDBB4] to-[#FFECD5]"
+        containerClassName="p-10 md:p-20 lg:p-32 h-[600px]"
       >
-        <div className="relative w-[95%] max-w-[850px] flex items-center justify-center">
+        <div 
+          className="absolute inset-0 z-0" 
+          style={{ 
+            background: "radial-gradient(circle at 80% 20%, rgba(255,255,255,0.5) 0%, transparent 50%), linear-gradient(225deg, #FFDBB4 0%, #FFECD5 40%, #FFF9F3 100%)" 
+          }} 
+        />
+        <div className="relative z-10 w-[95%] max-w-[850px] flex items-center justify-center">
           <Image
             src="/assets/roaster/annotation.svg"
             alt="Resume Roaster Annotation Critique"
@@ -50,9 +62,15 @@ export default function RoasterPreview() {
         title="Granular Analytics"
         description="Beyond surface-level feedback, the analyzer interprets resume structure as data. Metrics such as readability distribution, keyword relevance, and impact density help users understand how their experience is perceived algorithmically. These signals help translate subjective writing quality into observable patterns that can be improved iteratively."
         bgColor="transparent"
-        containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-r from-[#FFDBB4] to-[#FFECD5]"
+        containerClassName="p-10 md:p-20 lg:p-32 h-[600px]"
       >
-        <div className="relative w-[95%] max-w-[850px] flex items-center justify-center">
+        <div 
+          className="absolute inset-0 z-0" 
+          style={{ 
+            background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 0%, transparent 70%), linear-gradient(to right, #FFDBB4 0%, #FFECD5 50%, #FFF9F3 100%)" 
+          }} 
+        />
+        <div className="relative z-10 w-[95%] max-w-[850px] flex items-center justify-center">
           <Image
             src="/assets/roaster/analysis-output.svg"
             alt="Resume Roaster Deep Analysis"
@@ -68,9 +86,15 @@ export default function RoasterPreview() {
         title="Frictionless Upload"
         description="The upload interaction is designed to reduce hesitation. Users can drag and drop a PDF and immediately receive structured feedback. The system parses document hierarchy, extracts semantic groupings, and prepares the content for critique within seconds. Reducing friction at this stage improves completion rates and encourages experimentation."
         bgColor="transparent"
-        containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-br from-[#FFDBB4] to-[#FFECD5]"
+        containerClassName="p-10 md:p-20 lg:p-32 h-[600px]"
       >
-        <div className="relative w-[85%] sm:w-[70%] md:w-[60%] max-w-[550px] flex items-center justify-center">
+        <div 
+          className="absolute inset-0 z-0" 
+          style={{ 
+            background: "radial-gradient(circle at 20% 80%, rgba(255,255,255,0.5) 0%, transparent 50%), linear-gradient(45deg, #FFDBB4 0%, #FFECD5 40%, #FFF9F3 100%)" 
+          }} 
+        />
+        <div className="relative z-10 w-[85%] sm:w-[70%] md:w-[60%] max-w-[550px] flex items-center justify-center">
           <Image
             src="/assets/roaster/uploading.svg"
             alt="Resume Roaster File Upload"
@@ -86,9 +110,15 @@ export default function RoasterPreview() {
         title="Immediate Navigation"
         description="Command-style search enables fast interaction across the product surface. Users can quickly switch between analyses, revisit past feedback, or initiate new roasts without losing context. The navigation pattern prioritizes speed, familiarity, and minimal interface noise."
         bgColor="transparent"
-        containerClassName="p-10 md:p-20 lg:p-32 h-[600px] bg-gradient-to-tr from-[#FFDBB4] to-[#FFECD5]"
+        containerClassName="p-10 md:p-20 lg:p-32 h-[600px]"
       >
-        <div className="relative w-[85%] sm:w-[70%] md:w-[60%] max-w-[550px] flex items-center justify-center">
+        <div 
+          className="absolute inset-0 z-0" 
+          style={{ 
+            background: "radial-gradient(circle at 80% 80%, rgba(255,255,255,0.5) 0%, transparent 50%), linear-gradient(315deg, #FFDBB4 0%, #FFECD5 40%, #FFF9F3 100%)" 
+          }} 
+        />
+        <div className="relative z-10 w-[85%] sm:w-[70%] md:w-[60%] max-w-[550px] flex items-center justify-center">
           <Image
             src="/assets/roaster/menu-search.svg"
             alt="Resume Roaster Menu Search"
