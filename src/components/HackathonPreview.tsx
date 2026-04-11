@@ -26,10 +26,16 @@ export default function HackathonPreview() {
       <ProjectPreviewSection
         title="Event Ecosystem"
         description="The concept proposes a centralized information layer designed to support hundreds of participants through real-time updates and seamless team management. The interface prioritizes high-stress usability, aiming to make critical event data immediate and accessible."
-        bgColor="#fafafb"
+        bgColor="transparent"
         containerClassName="p-0 overflow-hidden relative"
       >
-        <div className="w-full h-[400px] md:h-[650px] [&_.scroll-stack-inner]:!px-4 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
+        <div 
+          className="absolute inset-0 z-0" 
+          style={{ 
+            background: "radial-gradient(circle at 10% 10%, rgba(255,255,255,0.7) 0%, transparent 40%), linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 50%, #F5F3FF 100%)" 
+          }} 
+        />
+        <div className="relative z-10 w-full h-[400px] md:h-[650px] [&_.scroll-stack-inner]:!px-4 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
           <ScrollStack
             itemDistance={100}
             itemScale={0.02}
@@ -59,10 +65,16 @@ export default function HackathonPreview() {
       <ProjectPreviewSection
         title="Participation Lifecycle"
         description="Designed to manage the complexity of team-based submissions. The proposed workflow imagines a friction-free transition from registration to final project tracking, intended to preserve participant mental energy for the creative work."
-        bgColor="#ffffff"
+        bgColor="transparent"
         containerClassName="p-0 overflow-hidden relative"
       >
-        <div className="w-full h-[400px] md:h-[650px] [&_.scroll-stack-inner]:!px-4 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
+        <div 
+          className="absolute inset-0 z-0" 
+          style={{ 
+            background: "radial-gradient(circle at 90% 10%, rgba(255,255,255,0.6) 0%, transparent 50%), linear-gradient(225deg, #EEF2FF 0%, #E0E7FF 50%, #FAF5FF 100%)" 
+          }} 
+        />
+        <div className="relative z-10 w-full h-[400px] md:h-[650px] [&_.scroll-stack-inner]:!px-4 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
           <ScrollStack
             itemDistance={100}
             itemScale={0.02}
@@ -93,7 +105,15 @@ export default function HackathonPreview() {
         description="The concept proposes 'Hack Cafe' — a digital space conceptualized for casual interaction and community building. The design aims to balance the intensity of competition with modular social layers intended to foster peer-to-peer networking."
         imageSrc="/assets/hack-portal/hack-cafe.svg"
         alt="Hack Cafe Interface Concept"
-        bgColor="#fafafb"
+        bgColor="transparent"
+        childrenBackground={
+          <div 
+            className="absolute inset-0 z-0" 
+            style={{ 
+              background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, transparent 60%), linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 50%, #FAE8FF 100%)" 
+            }} 
+          />
+        }
       />
     </div>
   );
