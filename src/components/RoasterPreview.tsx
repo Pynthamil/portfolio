@@ -21,6 +21,7 @@ export default function RoasterPreview() {
             alt="Resume Roaster Dashboard"
             width={1200}
             height={900}
+            priority
             className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
           />
         </div>
