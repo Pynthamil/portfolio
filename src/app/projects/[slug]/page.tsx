@@ -64,27 +64,26 @@ const projects: Record<string, ProjectData> = {
 
   "semantic-email": {
     title: "Semantic Email Intelligence",
-    subtitle: "A Second Brain for your Emails",
+    subtitle: "A conceptual model for meaning-based communication",
     description:
-      "Email is broken. We spend hours sorting through noise to find what matters. Semantic Email Intelligence uses AI to understand the context and intent behind every message, turning your inbox into an organized knowledge base that surfaces the right information at the right time.",
+      "Email workflows today are defined by cognitive overload and information retrieval friction. We spend significant mental effort sorting through noise to find what matters. Semantic Email Intelligence conceptualizes a shift from message lists to a knowledge-driven interface.\n\nThe design explores how semantic understanding can transform the inbox into an organized system that surfaces relevant context at the right time. By imagining a future where AI supports decision-making rather than replacing user agency, the proposal aims to reduce the mental load of managing digital communication.",
     heroImage: "/assets/project-cards/semantic-email.svg",
-    techStack: ["Python", "FastAPI", "OpenAI API", "Pinecone", "React", "PostgreSQL"],
     sections: [
       {
-        heading: "Context-Aware Processing",
-        body: "Every incoming email is analyzed for intent, urgency, and topic. The system builds semantic embeddings that capture meaning — not just keywords. This means searching for 'that invoice from last month' actually finds the invoice, even if the word 'invoice' never appeared in the email.",
+        heading: "Meaning-Based Retrieval",
+        body: "Instead of keyword matching, the design proposes a retrieval experience based on semantic embeddings. This aims to simplify the user's mental model by allowing information access through conceptual similarity and intent mapping.",
       },
       {
-        heading: "Smart Categorization",
-        body: "Instead of rigid folders and rules, emails are organized by understanding. Related conversations are linked across threads. Action items are extracted automatically. Follow-ups are suggested based on context. The system learns your patterns and adapts over time.",
+        heading: "Smart Partitioning",
+        body: "The design imagines grouping communication by conceptual intent rather than rigid folders. The link between conversations, tasks, and follow-ups is intended to be surfaced contextually to support intuitive thinking and faster decision-making.",
       },
       {
-        heading: "Privacy-First Architecture",
-        body: "All processing happens on your own infrastructure. Emails are encrypted at rest and in transit. The AI models run locally where possible, with cloud fallback only for heavy processing. You own your data — always.",
+        heading: "Privacy as Trust",
+        body: "Data ownership is framed as a core UX principle. The architectural intent ensures that processing is designed with user control at the center, building trust through transparency and secure memory-based ephemeral workflows.",
       },
     ],
     outro:
-      "This project started from my own frustration with Gmail's search. It's still evolving, but the core idea — that AI should help us manage information, not just generate it — feels more relevant every day.",
+      "This design exploration imagines how a shift in perception from email as a task to email as a knowledge system could redefine our relationship with digital communication.",
   },
 
   "terminal-browser": {
@@ -94,7 +93,6 @@ const projects: Record<string, ProjectData> = {
       "What if the web felt as native as your command line? Terminal Browser explores a future where web browsing is stripped of visual noise and distilled into a purely functional text-based experience.\n\nThis concept imagines a workflow where developers can access documentation, research, and technical articles without breaking their terminal stream. By conceptualizing the web as structured text, the design aims to reduce the cognitive load associated with modern graphical browsers while prioritizing speed and focus.",
     heroImage: "/assets/project-cards/terminal-browser.svg",
     githubUrl: "#",
-    techStack: ["Rust (Proposed)", "Tokio (Proposed)", "HTML Parser", "CSS Engine", "TUI Framework"],
     sections: [
       {
         heading: "Rendering Intent",
@@ -119,7 +117,6 @@ const projects: Record<string, ProjectData> = {
     description:
       "Production errors are noisy, repetitive, and exhausting to triage. Luma is an intelligent error management platform that groups, prioritizes, and explains errors using AI — so your team spends time fixing bugs instead of reading stack traces.",
     heroImage: "/assets/project-cards/luma.svg",
-    techStack: ["Next.js", "TypeScript", "OpenAI API", "PostgreSQL", "Redis", "Docker"],
     sections: [
       {
         heading: "Intelligent Grouping",
@@ -169,7 +166,6 @@ const projects: Record<string, ProjectData> = {
     description:
       "ACM-VIT needed a registration and information portal for their flagship hackathon event. I designed and built a responsive web application that handled team registration, event schedules, sponsor showcases, and real-time updates for hundreds of participants.",
     heroImage: "/assets/project-cards/acm-hackathon-portal.svg",
-    techStack: ["React", "Node.js", "MongoDB", "Express", "Framer Motion"],
     sections: [
       {
         heading: "Registration Flow",
@@ -194,7 +190,6 @@ const projects: Record<string, ProjectData> = {
     description:
       "Documentation tools force you to choose: rich formatting or great collaboration? Structured data or freeform writing? Craftr Docs combines the best parts of Notion's blocks, Google Docs' collaboration, and Figma's design tools into a single document editor.",
     heroImage: "/assets/project-cards/craftr-docs.svg",
-    techStack: ["Next.js", "TypeScript", "Tiptap", "Y.js", "WebSocket", "PostgreSQL"],
     sections: [
       {
         heading: "Block-Based Editing",
@@ -219,7 +214,6 @@ const projects: Record<string, ProjectData> = {
     description:
       "Over the years, I've designed and developed multiple portfolio websites — both for myself and for others. Each one explores a different aesthetic direction, from minimal and typographic to bold and experimental. This is a collection of those explorations.",
     heroImage: "/assets/project-cards/portfolios.svg",
-    techStack: ["Next.js", "React", "Framer Motion", "CSS", "Figma"],
     sections: [
       {
         heading: "Design Philosophy",
