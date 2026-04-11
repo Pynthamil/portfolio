@@ -89,28 +89,28 @@ const projects: Record<string, ProjectData> = {
 
   "terminal-browser": {
     title: "Terminal Browser",
-    subtitle: "A browser that runs in the terminal",
+    subtitle: "A conceptual interface for text-based web navigation",
     description:
-      "What if you could browse the web without leaving your terminal? Terminal Browser is a fully functional web browser that renders pages as styled text in your command line. Built for developers who live in the terminal and want to quickly check documentation, read articles, or test APIs without switching contexts.",
+      "What if the web felt as native as your command line? Terminal Browser explores a future where web browsing is stripped of visual noise and distilled into a purely functional text-based experience.\n\nThis concept imagines a workflow where developers can access documentation, research, and technical articles without breaking their terminal stream. By conceptualizing the web as structured text, the design aims to reduce the cognitive load associated with modern graphical browsers while prioritizing speed and focus.",
     heroImage: "/assets/project-cards/terminal-browser.svg",
     githubUrl: "#",
-    techStack: ["Rust", "Tokio", "HTML Parser", "CSS Engine", "TUI Framework"],
+    techStack: ["Rust (Proposed)", "Tokio (Proposed)", "HTML Parser", "CSS Engine", "TUI Framework"],
     sections: [
       {
-        heading: "Rendering Engine",
-        body: "The browser implements a custom rendering pipeline that converts HTML and CSS into terminal-compatible output. Block elements, inline formatting, tables, lists, and even images (as ASCII art) are supported. The layout engine handles responsive reflow based on terminal width.",
+        heading: "Rendering Intent",
+        body: "The concept proposes a pipeline designed to translate complex HTML and CSS into clean, terminal-adaptive output. The architecture aims to support block elements and inline formatting while ensuring the layout remains readable across varying terminal dimensions.",
       },
       {
-        heading: "Navigation & Interaction",
-        body: "Full keyboard-driven navigation with vim-style bindings. Tab through links, submit forms, scroll smoothly, and manage multiple tabs — all without touching a mouse. History, bookmarks, and session restore are built in. It feels like a proper browser, just text-based.",
+        heading: "Keyboard Native UX",
+        body: "Interaction design centers on keyboard-first logic. By proposing vim-style bindings and shortcut-driven navigation, the interface aims to eliminate the friction of mouse dependency, allowing for a seamless transition between coding and browsing.",
       },
       {
-        heading: "Performance",
-        body: "Built in Rust for speed and memory efficiency. Pages load and render in milliseconds. The async networking layer handles concurrent requests efficiently. Startup time is near-instant compared to graphical browsers. It's the fastest way to check a quick URL.",
+        heading: "Cognitive Efficiency",
+        body: "The minimal interface philosophy is intended to shield the user from the attention-grabbing patterns of the modern web. The design focuses on content hierarchy, aiming to surface relevant information while hiding distractions like ads and complex layouts.",
       },
     ],
     outro:
-      "Terminal Browser started as a weekend experiment and turned into one of my most interesting systems projects. It taught me more about how browsers actually work than any textbook ever could.",
+      "Terminal Browser is an exploration into how browsing could feel when constrained by the terminal environment. It conceptualizes a world where the interface disappears, leaving only the information and the user's intent.",
   },
 
   luma: {
@@ -397,17 +397,17 @@ export default async function ProjectDetail({
             <TUIHero bgColor="#BFFFA1" />
             <TUITabSwitcher />
             <TUIPreview
-              title="Deep Search Results"
-              description="The terminal isn't just for local files. It can fetch and render complex Wikipedia articles with high fidelity, maintaining its signature retro-future aesthetic while delivering deep content."
+              title="Deep Content Exploration"
+              description="The concept imagines fetching deep content like Wikipedia articles with high fidelity. The goal is to maintain a retro-future aesthetic while delivering rich information in a format that feels coherent within a shell environment."
               imageSrc="/assets/tui/wikipedia-results.svg"
-              alt="Wikipedia Results Preview"
+              alt="Wikipedia Results Concept"
               bgColor="#BFFFA1"
             />
             <TUIPreview
-              title="Error Handling"
-              description="Even in a text-based environment, feedback is key. Replicating the web experience means handling 404s and connection errors with clear, stylized TUI messaging."
+              title="Error Resilience"
+              description="Perceived reliability is central to the design. The proposal includes clear, stylized TUI messaging for 404s and connection states, ensuring that technical failures are handled with the same minimal aesthetic as successful renders."
               imageSrc="/assets/tui/not-found.svg"
-              alt="404 Not Found Preview"
+              alt="404 Not Found Concept"
               bgColor="#BFFFA1"
             />
             <TUIStackedPreview bgColor="#BFFFA1" />

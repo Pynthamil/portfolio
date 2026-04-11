@@ -24,10 +24,11 @@ export default function TUITabSwitcher() {
     <div className="project-detail-section mb-20">
       <h2 className="project-detail-section-title">Multi-Tab Experience</h2>
       <p className="project-detail-section-body !mb-12">
-        The browser handles multiple simultaneous sessions with ease. Use the
+        The design aims to handle multiple simultaneous sessions with ease.
+        The concept proposes using the
         <span className="font-bold text-[#BFFFA1]"> ↑ Up</span> and
         <span className="font-bold text-[#BFFFA1]"> ↓ Down</span> arrow keys to
-        switch between open tabs in the preview below.
+        switch between open tabs as conceptualized in the preview below.
       </p>
 
       <div className="tui-tabs-container group relative focus:outline-none">

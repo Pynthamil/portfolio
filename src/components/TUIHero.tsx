@@ -12,9 +12,9 @@ export default function TUIHero({ bgColor = "#BFFFA1" }: TUIHeroProps) {
     <div className="project-detail-section mb-20">
       <h2 className="project-detail-section-title">Visual Identity</h2>
       <p className="project-detail-section-body !mb-12">
-        The Terminal Browser follows a strictly minimalist aesthetic, combining
-        retro terminal vibes with modern interaction patterns. Hover over the
-        container below to reveal the interface.
+        The Terminal Browser explores a strictly minimalist aesthetic, seeking to
+        combine retro terminal vibes with modern interaction patterns. Hover over
+        the container below to imagine the interface.
       </p>
 
       <motion.div

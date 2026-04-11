@@ -18,8 +18,8 @@ export default function TUIStackedPreview({ bgColor = "#BFFFA1" }: TUIStackedPre
 
   return (
     <ProjectPreviewSection
-      title="Different color/theme options"
-      description="Personalization is at the core of the Terminal Browser. Choose from a variety of carefully curated themes that adapt to your workflow."
+      title="Theme Customization"
+      description="Personalization is intended to be core to the Experience. The concept proposes a variety of carefully curated themes designed to adapt to specific developer workflows."
       bgColor={bgColor}
       containerClassName="items-end pb-32 md:pb-60"
     >
