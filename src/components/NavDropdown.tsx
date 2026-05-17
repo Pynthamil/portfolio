@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Layout, Share2, ArrowRight } from "lucide-react";
+import { Layout, Share2, ArrowRight, Code2 } from "lucide-react";
 
 interface NavDropdownProps {
   isOpen: boolean;
@@ -15,6 +15,14 @@ const categories = [
     description: "Interface architecture and modular software concepts.",
     icon: Layout,
     href: "/projects",
+    active: true,
+    badge: undefined as string | undefined
+  },
+  {
+    title: "Coding Projects",
+    description: "Functional implementations, interactive utilities, and tools.",
+    icon: Code2,
+    href: "/coding",
     active: true,
     badge: undefined as string | undefined
   },

@@ -41,7 +41,7 @@ export default function Nav() {
   return (
     <nav className="site-nav" ref={navRef}>
       {navLinks.map((link) => {
-        const isActive = pathname === link.href || (link.isDropdown && pathname.startsWith("/projects"));
+        const isActive = pathname === link.href || (link.isDropdown && (pathname.startsWith("/projects") || pathname.startsWith("/social") || pathname.startsWith("/coding")));
         
         if (link.isDropdown) {
           return (

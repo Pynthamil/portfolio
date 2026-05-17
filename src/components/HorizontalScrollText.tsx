@@ -13,7 +13,7 @@ export default function HorizontalScrollText({ onFinish }: HorizontalScrollTextP
   const textRef = useRef<HTMLHeadingElement>(null);
 
   const textContent =
-    "I build seamless interfaces that blend beautiful typography with rich, dynamic animations. Every pixel is crafted with performant underlying code, ensuring interactions feel as smooth as they look.";
+    "I build high-performance digital experiences with beautiful typography and fluid motion.";
 
   // Splitting text manually to avoid needing premium SplitText plugin
   const words = textContent.split(" ");
