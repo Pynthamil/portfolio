@@ -44,7 +44,7 @@ const projects: Record<string, ProjectData> = {
   },
 
   "codedex-wrapped": {
-    title: "Codédex Wrapped",
+    title: "Codédex App",
     subtitle: "Spotify-wrapped style retro arcade annual developer recap built with Framer Motion",
     description:
       "Every year, developers love to reflect on their learning journey. For the Codédex platform, we conceptualized a Spotify-wrapped style yearly recap feature. Striking a balance between playfulness and technical precision, the recaps are animated like retro-arcade games using Framer Motion and v4 Tailwind layers.",
