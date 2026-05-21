@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   description: "Designer and developer crafting digital experiences.",
 };
 
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+
+
 import Nav from "@/components/Nav";
 
 export default function RootLayout({

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 type Project = {
   id: number;
@@ -15,11 +16,30 @@ type Project = {
 
 type Props = {
   project: Project;
+  onClick?: (e: React.MouseEvent, href: string) => void;
 };
 
-export default function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project, onClick }: Props) {
+  const router = useRouter();
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick(e, project.href);
+    } else {
+      router.push(project.href);
+    }
+  };
+
+  const handleButtonClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onClick) {
+      e.preventDefault();
+      onClick(e, project.href);
+    }
+  };
+
   return (
-    <div className="project-card fade-up">
+    <div className="project-card fade-up" onClick={handleCardClick}>
       {/* Header */}
       <div className="card-header">
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -38,7 +58,7 @@ export default function ProjectCard({ project }: Props) {
           id={`project-${project.id}`}
           aria-label={`View ${project.title}`}
           className="arrow-btn"
-          onClick={(e) => e.stopPropagation()}
+          onClick={handleButtonClick}
         >
           <svg
             width="15"
@@ -67,8 +87,7 @@ export default function ProjectCard({ project }: Props) {
             src={project.image}
             alt={project.title}
             fill
-            style={{ objectFit: "cover", objectPosition: "top center" }}
-            className="h-250"
+            style={{ objectFit: "contain", objectPosition: "center" }}
           />
         ) : (
           <div className="card-image-empty" />
