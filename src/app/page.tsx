@@ -9,7 +9,7 @@ export default function Home() {
       <div className="page-wrapper animate-fade-in">
         {/* Intro Hero Section */}
         <div className="about-header" style={{ marginTop: "40px", marginBottom: "80px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-          <p style={{ color: "#1d1d1f", fontSize: "24px", lineHeight: "1.5", marginTop: "32px", letterSpacing: "-0.02em", maxWidth: "900px", fontWeight: "500", margin: "32px auto 0", textAlign: "justify" }}>
+          <p style={{ color: "#1d1d1f", fontSize: "clamp(24px, 3.5vw, 36px)", lineHeight: "1.4", marginTop: "32px", letterSpacing: "-0.02em", maxWidth: "900px", fontWeight: "500", margin: "32px auto 0", textAlign: "justify" }}>
             I'm a very curious and passionate developer who loves bringing the ideas in my head into life through the help of technology
           </p>
         </div>

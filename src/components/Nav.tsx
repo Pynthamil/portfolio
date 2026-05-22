@@ -58,7 +58,7 @@ export default function Nav() {
               >
                 {isActive && !isDropdownOpen && <span className="nav-dot" aria-hidden="true" />}
                 {link.label}
-                <ChevronDown size={14} className={`nav-chevron ${isDropdownOpen ? "rotated" : ""}`} />
+                <ChevronDown size={15} className={`nav-chevron ${isDropdownOpen ? "rotated" : ""}`} />
               </button>
               <NavDropdown 
                 isOpen={isDropdownOpen} 
