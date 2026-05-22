@@ -13,6 +13,7 @@ import CraftrStackedPreview from "@/components/CraftrStackedPreview";
 import RoasterPreview from "@/components/RoasterPreview";
 import PortfolioPreview from "@/components/PortfolioPreview";
 import HackathonPreview from "@/components/HackathonPreview";
+import ProjectSidebar from "@/components/ProjectSidebar";
 
 /* ------------------------------------------------------------------ */
 /*  Data model                                                        */
@@ -282,8 +283,19 @@ export default async function ProjectDetail({
 
   if (!project) notFound();
 
+  const hasCustomSections = ["my-blog", "luma", "acm-hackathon", "semantic-email", "resume-roaster", "craftr-docs", "terminal-browser", "portfolios"].includes(slug);
+
+  const startIdx = hasCustomSections ? 0 : 1;
+  const remainingSections = project.sections.slice(startIdx);
+  const half = Math.ceil(remainingSections.length / 2);
+  const approachSections = remainingSections.slice(0, half);
+  const outcomesSections = remainingSections.slice(half);
+
   return (
     <main>
+      {/* Floating Sticky Navigation Sidebar */}
+      <ProjectSidebar />
+
       <div className="project-detail-wrapper fade-up">
         {/* ---- Header ---- */}
         <div className="project-detail-header">
@@ -334,105 +346,184 @@ export default async function ProjectDetail({
           </div>
         )}
 
-        {/* ---- Intro ---- */}
-        <div className="project-detail-intro">
-          <p>{project.description}</p>
+        {/* ---- Section 1: Overview ---- */}
+        <div id="overview" className="scroll-mt-24">
+          {/* ---- Intro ---- */}
+          <div className="project-detail-intro">
+            {slug === "my-blog" && (
+              <p>
+                I wanted a space that felt personal — somewhere I could write about things I'm learning, projects I'm building, and ideas I'm exploring. Most blogging platforms felt too generic, so I <span className="highlight-pink">built my own from scratch with a focus on reading experience and minimal design</span>.
+              </p>
+            )}
+            {slug === "semantic-email" && (
+              <p>
+                Email workflows today are defined by cognitive overload and information retrieval friction. We spend significant mental effort sorting through noise to find what matters. Semantic Email Intelligence conceptualizes a <span className="highlight-pink">shift from message lists to a knowledge-driven interface</span>.
+                <br /><br />
+                The design explores how <span className="highlight-pink">semantic understanding can transform the inbox into an organized system</span> that surfaces relevant context at the right time. By imagining a future where AI supports decision-making rather than replacing user agency, the proposal aims to reduce the mental load of managing digital communication.
+              </p>
+            )}
+            {slug === "terminal-browser" && (
+              <p>
+                What if the web felt as native as your command line? Terminal Browser explores a future where web browsing is <span className="highlight-pink">stripped of visual noise and distilled into a purely functional text-based experience</span>.
+                <br /><br />
+                This concept imagines a workflow where developers can access documentation, research, and technical articles without breaking their terminal stream. By conceptualizing the web as structured text, the design aims to reduce the cognitive load associated with modern graphical browsers while <span className="highlight-pink">prioritizing speed and focus</span>.
+              </p>
+            )}
+            {slug === "luma" && (
+              <p>
+                Production environments are inherently chaotic. When errors occur, the resulting noise and repetition can lead to severe alert fatigue and exhausted triage workflows. Luma conceptualizes a <span className="highlight-pink">shift from raw log aggregation to a decision-support system</span> designed to improve signal clarity.
+                <br /><br />
+                The design explores how AI can group and explain complex errors to reduce cognitive load in high-stress environments. By imagining a future where technical issues are translated into understandable language and surfacing potential root causes contextually, the proposal aims to <span className="highlight-pink">support faster, more confident decision-making</span> for the entire team.
+              </p>
+            )}
+            {slug === "resume-roaster" && (
+              <p>
+                Getting meaningful feedback on a resume is surprisingly difficult. Peer reviews are often overly polite, while professional services can be inaccessible or slow.
+                <br /><br />
+                Resume Roaster explores how AI can <span className="highlight-pink">deliver fast, structured, and genuinely useful critique</span>. The product combines natural language analysis with opinionated heuristics to surface weak phrasing, missing impact, and formatting issues that reduce hiring outcomes.
+                <br /><br />
+                The experience <span className="highlight-pink">balances honesty with usability</span>. Feedback is direct, specific, and designed to guide iteration rather than overwhelm.
+              </p>
+            )}
+            {slug === "acm-hackathon" && (
+              <p>
+                Hackathon environments are characterized by high-intensity coordination and tight feedback loops. The ACM Hackathon Portal conceptualizes a unified platform designed to <span className="highlight-pink">streamline the complexities of registration, team synergy, and real-time event navigation</span>.
+                <br /><br />
+                The design explores how a centralized information layer can reduce the friction of large-scale competitive events. By imagining a future where participant workflows are handled ephemerally and contextually, the proposal aims to <span className="highlight-pink">preserve creative energy and foster deeper networking</span> within technical communities.
+              </p>
+            )}
+            {slug === "craftr-docs" && (
+              <p>
+                Documentation tools today often force a compromise between structured information and creative freedom. Craftr Docs explores a hybrid model intended to <span className="highlight-pink">combine the modular logic of block-based editors with the expressive control of design software</span>.
+                <br /><br />
+                By conceptualizing the <span className="highlight-pink">document as an expansive workspace rather than a rigid page</span>, the design aims to reduce the friction of structuring complex ideas. The proposal imagines a future where documentation is both a tool for thinking and a medium for high-fidelity communication, balancing progressive complexity with intuitive, fast-access interaction patterns.
+              </p>
+            )}
+            {slug === "portfolios" && (
+              <p>
+                Personal websites serve as a controlled environment for <span className="highlight-pink">testing structural logic and visual rhythm</span>. This collection documents a <span className="highlight-pink">multi-year evolution of my personal design language</span>, moving from systematic component libraries to high-density workspace aesthetics and exploratory archival transitions.
+              </p>
+            )}
+            {!hasCustomSections && (
+              <p>{project.description}</p>
+            )}
+          </div>
+
+          {/* ---- Tech stack ---- */}
+          {project.techStack && project.techStack.length > 0 && (
+            <div className="project-detail-tech-stack">
+              {project.techStack.map((tech) => (
+                <span key={tech} className="project-detail-tech-pill">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* ---- Tech stack ---- */}
-        {project.techStack && project.techStack.length > 0 && (
-          <div className="project-detail-tech-stack">
-            {project.techStack.map((tech) => (
-              <span key={tech} className="project-detail-tech-pill">
-                {tech}
-              </span>
-            ))}
+        {/* ---- Section 2: Process (Custom or first standard section) ---- */}
+        <div id="process" className="scroll-mt-24">
+          {slug === "my-blog" && (
+            <>
+              <BlogPreview
+                title="Reading Experience"
+                description="Designed for focus and clarity. The interface adapts to provide the best reading environment for long-form content."
+                imageSrc="/assets/blog/blog-1.svg"
+                alt="Blog Reader Interface"
+              />
+              <BlogStackedPreview />
+              <BlogPreview
+                title="Brand Identity"
+                description="A crisp, minimal logo mark that establishes a distinct aesthetic tone while remaining adaptable across both light and dark modes."
+                imageSrc="/assets/blog/blog-logo.svg"
+                alt="Blog Logo Identity"
+              />
+              <BlogPreview
+                title="Color Palette"
+                description="Carefully selected thematic colors that evoke a soft but vibrant energy, preventing eye strain during long reading sessions."
+                imageSrc="/assets/blog/blog-color.svg"
+                alt="Blog Color Palette"
+              />
+              <BlogPreview
+                title="Textured Backgrounds"
+                description="Subtle background textures add depth and warmth, helping combat pure white harshness while keeping the content feeling grounded."
+                imageSrc="/assets/blog/blog-bg.svg"
+                alt="Blog Background Aesthetics"
+              />
+            </>
+          )}
+          {slug === "luma" && (
+            <LumaPreview />
+          )}
+          {slug === "acm-hackathon" && (
+            <HackathonPreview />
+          )}
+          {slug === "semantic-email" && (
+            <SemanticPreview />
+          )}
+          {slug === "resume-roaster" && (
+            <RoasterPreview />
+          )}
+          {slug === "craftr-docs" && (
+            <>
+              <BlogPreview
+                title="Collaborative Canvas"
+                description="Designed to dissolve the boundary between writing and layout. The concept explores a block-based environment intended to allow users to manipulate information spatially, treating the document as a flexible surface rather than a vertical stream."
+                imageSrc="/assets/craftr/craftr-1.svg"
+                alt="Craftr Editor Interface"
+                bgColor="#FFFDE7" // Soft Yellow
+              />
+              <CraftrStackedPreview bgColor="#FFFDE7" />
+              <BlogPreview
+                title="Speculative Surface Design"
+                description="The concept imagines a future where document covers are not static headers but dynamic, high-fidelity surfaces. The design proposes using generative patterns and rich typography to establish an immediate aesthetic mood for every workspace."
+                imageSrc="/assets/craftr/cover-block.svg"
+                alt="Craftr Cover Block Design"
+                bgColor="#FFFDE7"
+              />
+            </>
+          )}
+          {slug === "terminal-browser" && (
+            <>
+              <TUIHero bgColor="#BFFFA1" />
+              <TUITabSwitcher />
+              <TUIStackedPreview />
+            </>
+          )}
+          {slug === "portfolios" && (
+            <PortfolioPreview />
+          )}
+          {!hasCustomSections && project.sections.length > 0 && (
+            <div className="project-detail-section">
+              <h2 className="project-detail-section-title">{project.sections[0].heading}</h2>
+              <p className="project-detail-section-body">{project.sections[0].body}</p>
+            </div>
+          )}
+        </div>
+
+        {/* ---- Section 3: Approach ---- */}
+        <div id="approach" className="scroll-mt-24">
+          {approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* ---- Section 4: Outcomes ---- */}
+        <div id="outcomes" className="scroll-mt-24">
+          {outcomesSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+
+          {/* ---- Outro ---- */}
+          <div className="project-detail-outro">
+            <p>{project.outro}</p>
           </div>
-        )}
-
-        {/* ---- Custom Interactive Sections ---- */}
-        {slug === "my-blog" && (
-          <>
-            <BlogPreview
-              title="Reading Experience"
-              description="Designed for focus and clarity. The interface adapts to provide the best reading environment for long-form content."
-              imageSrc="/assets/blog/blog-1.svg"
-              alt="Blog Reader Interface"
-            />
-            <BlogStackedPreview />
-            <BlogPreview
-              title="Brand Identity"
-              description="A crisp, minimal logo mark that establishes a distinct aesthetic tone while remaining adaptable across both light and dark modes."
-              imageSrc="/assets/blog/blog-logo.svg"
-              alt="Blog Logo Identity"
-            />
-            <BlogPreview
-              title="Color Palette"
-              description="Carefully selected thematic colors that evoke a soft but vibrant energy, preventing eye strain during long reading sessions."
-              imageSrc="/assets/blog/blog-color.svg"
-              alt="Blog Color Palette"
-            />
-            <BlogPreview
-              title="Textured Backgrounds"
-              description="Subtle background textures add depth and warmth, helping combat pure white harshness while keeping the content feeling grounded."
-              imageSrc="/assets/blog/blog-bg.svg"
-              alt="Blog Background Aesthetics"
-            />
-          </>
-        )}
-        {slug === "luma" && (
-          <LumaPreview />
-        )}
-        {slug === "acm-hackathon" && (
-          <HackathonPreview />
-        )}
-        {slug === "semantic-email" && (
-          <SemanticPreview />
-        )}
-        {slug === "resume-roaster" && (
-          <RoasterPreview />
-        )}
-        {slug === "craftr-docs" && (
-          <>
-            <BlogPreview
-              title="Collaborative Canvas"
-              description="Designed to dissolve the boundary between writing and layout. The concept explores a block-based environment intended to allow users to manipulate information spatially, treating the document as a flexible surface rather than a vertical stream."
-              imageSrc="/assets/craftr/craftr-1.svg"
-              alt="Craftr Editor Interface"
-              bgColor="#FFFDE7" // Soft Yellow
-            />
-            <CraftrStackedPreview bgColor="#FFFDE7" />
-            <BlogPreview
-              title="Speculative Surface Design"
-              description="The concept imagines a future where document covers are not static headers but dynamic, high-fidelity surfaces. The design proposes using generative patterns and rich typography to establish an immediate aesthetic mood for every workspace."
-              imageSrc="/assets/craftr/cover-block.svg"
-              alt="Craftr Cover Block Design"
-              bgColor="#FFFDE7"
-            />
-          </>
-        )}
-        {slug === "terminal-browser" && (
-          <>
-            <TUIHero bgColor="#BFFFA1" />
-            <TUITabSwitcher />
-            <TUIStackedPreview />
-          </>
-        )}
-        {slug === "portfolios" && (
-          <PortfolioPreview />
-        )}
-
-        {/* ---- Sections ---- */}
-        {project.sections.map((section, i) => (
-          <div key={i} className="project-detail-section">
-            <h2 className="project-detail-section-title">{section.heading}</h2>
-            <p className="project-detail-section-body">{section.body}</p>
-          </div>
-        ))}
-
-        {/* ---- Outro ---- */}
-        <div className="project-detail-outro">
-          <p>{project.outro}</p>
         </div>
       </div>
     </main>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Inter, Geist, Caveat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -7,6 +7,12 @@ const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
@@ -18,10 +24,8 @@ export const metadata: Metadata = {
   description: "Designer and developer crafting digital experiences.",
 };
 
-<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
-
-
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -29,10 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(inter.className, "font-sans", geist.variable)}>
+    <html lang="en" className={cn(inter.className, "font-sans", geist.variable, caveat.variable)}>
       <body>
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );
