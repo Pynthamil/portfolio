@@ -11,18 +11,18 @@ interface NavDropdownProps {
 
 const categories = [
   {
-    title: "Product Design",
-    description: "Interface architecture and modular software concepts.",
-    icon: Layout,
-    href: "/projects",
-    active: true,
-    badge: undefined as string | undefined
-  },
-  {
     title: "Coding Projects",
     description: "Functional implementations, interactive utilities, and tools.",
     icon: Code2,
     href: "/coding",
+    active: true,
+    badge: undefined as string | undefined
+  },
+  {
+    title: "Product Design",
+    description: "Interface architecture and modular software concepts.",
+    icon: Layout,
+    href: "/projects",
     active: true,
     badge: undefined as string | undefined
   },
