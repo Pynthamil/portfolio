@@ -38,11 +38,7 @@ export default function Nav() {
     }
   }
 
-  // Hide global Nav on coding project detail pages to prevent overlap with sticky project header
-  const isCodingDetailPage = pathname.startsWith("/coding/") && pathname !== "/coding";
-  if (isCodingDetailPage) {
-    return null;
-  }
+
 
   return (
     <nav className="site-nav" ref={navRef}>

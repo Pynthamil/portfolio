@@ -1910,4 +1910,135 @@ body {
   border-radius: 24px;
   border: 1px solid rgba(0, 0, 0, 0.04);
 }
+
+/* =====================
+   PREMIUM LOADER
+   ===================== */
+.premium-loader-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.premium-loader-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 34, 255, 0.04) 0%, transparent 70%);
+  filter: blur(45px);
+  animation: loaderGlowPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.premium-loader-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  z-index: 10;
+}
+
+.premium-loader-ring-container {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer ring rotating */
+.premium-loader-ring-outer {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-top-color: #0022ff;
+  border-bottom-color: rgba(0, 34, 255, 0.08);
+  border-radius: 50%;
+  animation: loaderSpin 1.8s cubic-bezier(0.5, 0.1, 0.1, 0.9) infinite;
+}
+
+/* Inner ring rotating opposite */
+.premium-loader-ring-inner {
+  position: absolute;
+  inset: 8px;
+  border: 2px solid transparent;
+  border-left-color: #0022ff;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: loaderSpinReverse 1.2s cubic-bezier(0.5, 0.1, 0.1, 0.9) infinite;
+}
+
+/* Center monogram */
+.premium-loader-monogram {
+  font-family: var(--font-caveat), cursive;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0022ff;
+  animation: loaderTextPulse 2s ease-in-out infinite;
+  user-select: none;
+  margin-top: -2px;
+}
+
+.premium-loader-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  animation: loaderTextShimmer 2.5s ease-in-out infinite;
+  user-select: none;
+}
+
+/* Animations */
+@keyframes loaderSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes loaderSpinReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes loaderGlowPulse {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1.2;
+  }
+}
+
+@keyframes loaderTextPulse {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes loaderTextShimmer {
+  0%, 100% {
+    opacity: 0.4;
+    letter-spacing: 0.25em;
+  }
+  50% {
+    opacity: 0.9;
+    letter-spacing: 0.3em;
+  }
+}
 

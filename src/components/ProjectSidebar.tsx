@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 export default function ProjectSidebar() {
   const pathname = usePathname();
-  const isCoding = pathname.startsWith("/coding");
   
   const [activeSection, setActiveSection] = useState("overview");
   const [isVisible, setIsVisible] = useState(false);
@@ -20,9 +19,7 @@ export default function ProjectSidebar() {
       }
 
       // 2. Active section detection (Scrollspy)
-      const sectionIds = isCoding
-        ? ["overview", "ideation", "design", "implementation"]
-        : ["overview", "process", "approach", "outcomes"];
+      const sectionIds = ["overview", "process", "approach", "outcomes"];
       let currentActive = "overview";
 
       for (const id of sectionIds) {
@@ -44,7 +41,7 @@ export default function ProjectSidebar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isCoding]);
+  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -58,19 +55,12 @@ export default function ProjectSidebar() {
     }
   };
 
-  const sections = isCoding
-    ? [
-        { id: "overview", label: "Overview" },
-        { id: "ideation", label: "Ideation" },
-        { id: "design", label: "Design" },
-        { id: "implementation", label: "Implementation" }
-      ]
-    : [
-        { id: "overview", label: "Overview" },
-        { id: "process", label: "Process" },
-        { id: "approach", label: "Approach" },
-        { id: "outcomes", label: "Outcomes" }
-      ];
+  const sections = [
+    { id: "overview", label: "Overview" },
+    { id: "process", label: "Process" },
+    { id: "approach", label: "Approach" },
+    { id: "outcomes", label: "Outcomes" }
+  ];
 
   if (!isVisible) return null;
 
