@@ -1,8 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { productDesignProjects } from "@/data/projectsData";
 import TUIHero from "@/components/TUIHero";
 import TUITabSwitcher from "@/components/TUITabSwitcher";
+import BackButton from "@/components/BackButton";
 
 import TUIStackedPreview from "@/components/TUIStackedPreview";
 import BlogPreview from "@/components/BlogPreview";
@@ -283,6 +286,13 @@ export default async function ProjectDetail({
 
   if (!project) notFound();
 
+  const slugList = ["my-blog", "semantic-email", "terminal-browser", "luma", "resume-roaster", "acm-hackathon", "craftr-docs", "portfolios"];
+  const currentIndex = slugList.indexOf(slug);
+  const nextIndex = (currentIndex + 1) % slugList.length;
+  const nextSlug = slugList[nextIndex];
+  const nextProject = projects[nextSlug];
+  const nextProjectCard = productDesignProjects.find(p => p.href === `/projects/${nextSlug}`);
+
   const hasCustomSections = ["my-blog", "luma", "acm-hackathon", "semantic-email", "resume-roaster", "craftr-docs", "terminal-browser", "portfolios"].includes(slug);
 
   const startIdx = hasCustomSections ? 0 : 1;
@@ -297,6 +307,9 @@ export default async function ProjectDetail({
       <ProjectSidebar />
 
       <div className="project-detail-wrapper fade-up">
+        {/* Go Back Link */}
+        <BackButton>Back to Projects</BackButton>
+
         {/* ---- Header ---- */}
         <div className="project-detail-header">
           <div className="project-detail-text">
@@ -471,21 +484,19 @@ export default async function ProjectDetail({
                 description="Designed to dissolve the boundary between writing and layout. The concept explores a block-based environment intended to allow users to manipulate information spatially, treating the document as a flexible surface rather than a vertical stream."
                 imageSrc="/assets/craftr/craftr-1.svg"
                 alt="Craftr Editor Interface"
-                bgColor="#FFFDE7" // Soft Yellow
               />
-              <CraftrStackedPreview bgColor="#FFFDE7" />
+              <CraftrStackedPreview />
               <BlogPreview
                 title="Speculative Surface Design"
                 description="The concept imagines a future where document covers are not static headers but dynamic, high-fidelity surfaces. The design proposes using generative patterns and rich typography to establish an immediate aesthetic mood for every workspace."
                 imageSrc="/assets/craftr/cover-block.svg"
                 alt="Craftr Cover Block Design"
-                bgColor="#FFFDE7"
               />
             </>
           )}
           {slug === "terminal-browser" && (
             <>
-              <TUIHero bgColor="#BFFFA1" />
+              <TUIHero />
               <TUITabSwitcher />
               <TUIStackedPreview />
             </>
@@ -523,6 +534,45 @@ export default async function ProjectDetail({
           {/* ---- Outro ---- */}
           <div className="project-detail-outro">
             <p>{project.outro}</p>
+          </div>
+
+          {/* ---- Next Project Link ---- */}
+          <div className="next-project-section">
+            {/* Left Side: Pointing Character */}
+            <div className="next-project-character-container">
+              <div className="character-doodle-wrapper">
+                <img 
+                  src="/assets/girl_doodle.png" 
+                  alt="Pynthamil pointing illustration" 
+                  className="character-doodle" 
+                />
+              </div>
+            </div>
+
+            {/* Right Side: Next Project Card */}
+            <div className="next-project-card-container">
+              <span className="next-project-title-label">Next Project</span>
+              <h3 className="next-project-card-label">Check this out!</h3>
+              <div className="next-project-arrows">
+                <span>&darr;</span>
+                <span>&darr;</span>
+                <span>&darr;</span>
+              </div>
+              {nextProjectCard && (
+                <Link href={nextProjectCard.href} className="next-project-card-link">
+                  <div className="next-project-card-graphic" style={nextProjectCard.imageBg ? { background: nextProjectCard.imageBg } : undefined}>
+                    {nextProjectCard.image ? (
+                      <img src={nextProjectCard.image} alt={nextProjectCard.title} />
+                    ) : (
+                      <div className="card-image-empty" />
+                    )}
+                  </div>
+                  <div className="next-project-card-title-hover">
+                    {nextProjectCard.title} &rarr;
+                  </div>
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </div>

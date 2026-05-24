@@ -20,7 +20,7 @@ interface ProjectPreviewSectionProps {
 export default function ProjectPreviewSection({
   title,
   description,
-  bgColor = "#fafafc",
+  bgColor = "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)",
   children,
   className,
   containerClassName,
@@ -37,7 +37,7 @@ export default function ProjectPreviewSection({
           "relative w-full rounded-[40px] border border-black/5 flex justify-center items-center shadow-sm overflow-hidden p-8 md:p-12 transition-colors duration-500",
           containerClassName
         )}
-        style={{ backgroundColor: bgColor }}
+        style={{ background: bgColor }}
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}

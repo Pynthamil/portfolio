@@ -26,8 +26,8 @@ export default function TUITabSwitcher() {
       <p className="project-detail-section-body !mb-12">
         The design aims to handle multiple simultaneous sessions with ease.
         The concept proposes using the
-        <span className="font-bold text-[#BFFFA1]"> ↑ Up</span> and
-        <span className="font-bold text-[#BFFFA1]"> ↓ Down</span> arrow keys to
+        <span className="highlight-blue">↑ Up</span> and
+        <span className="highlight-blue">↓ Down</span> arrow keys to
         switch between open tabs as conceptualized in the preview below.
       </p>
 
@@ -55,10 +55,10 @@ export default function TUITabSwitcher() {
 
         {/* Interaction Hint */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-          <div className="bg-black/90 backdrop-blur-md text-[#BFFFA1] text-[12px] font-bold px-5 py-2.5 rounded-full border border-[#BFFFA1]/20 flex items-center gap-3 shadow-xl uppercase tracking-widest">
+          <div className="bg-black/90 backdrop-blur-md text-sky-400 text-[12px] font-bold px-5 py-2.5 rounded-full border border-sky-400/20 flex items-center gap-3 shadow-xl uppercase tracking-widest">
             <div className="flex gap-1">
-              <span className="bg-[#BFFFA1] text-black px-1.5 py-0.5 rounded text-[10px]">↑</span>
-              <span className="bg-[#BFFFA1] text-black px-1.5 py-0.5 rounded text-[10px]">↓</span>
+              <span className="bg-sky-400 text-black px-1.5 py-0.5 rounded text-[10px]">↑</span>
+              <span className="bg-sky-400 text-black px-1.5 py-0.5 rounded text-[10px]">↓</span>
             </div>
             Use Arrows to switch tabs
           </div>

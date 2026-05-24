@@ -42,16 +42,16 @@ body {
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 9999px;
   padding: 10px 10px;
   display: flex;
   align-items: center;
   gap: 6px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
   white-space: nowrap;
 }
 
@@ -767,7 +767,7 @@ body {
 .project-detail-wrapper {
   max-width: 900px;
   margin: 0 auto;
-  padding: 160px 40px 80px;
+  padding: 160px 40px 40px;
 }
 
 .project-detail-header {
@@ -923,7 +923,7 @@ body {
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .project-detail-wrapper {
-    padding: 120px 20px 60px;
+    padding: 120px 20px 40px;
   }
 
   .project-detail-title {
@@ -994,8 +994,8 @@ body {
    TUI BROWSER HERO
    ===================== */
 .tui-hero-container {
-  background: #BFFFA1;
-  /* Vibrant lime green from screenshots */
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  /* Unified sky blue gradient */
   border-radius: 40px;
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -1043,8 +1043,8 @@ body {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
-  background: #BFFFA1;
-  /* Matching the hero green */
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  /* Matching the unified sky blue gradient */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1783,6 +1783,16 @@ body {
   -webkit-box-decoration-break: clone;
 }
 
+.highlight-blue {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 .highlight-yellow {
   background-color: #fef08a;
   color: #854d0e;
@@ -2040,5 +2050,317 @@ body {
     opacity: 0.9;
     letter-spacing: 0.3em;
   }
+}
+
+/* =====================
+   NEXT PROJECT SECTION (NEW)
+   ===================== */
+.next-project-section {
+  max-width: 800px;
+  margin: 100px auto 10px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.next-project-character-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.dialogue-bubble-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  transform: translateX(10px);
+}
+
+.dialogue-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #86868b;
+  margin-bottom: 4px;
+  margin-left: 24px;
+}
+
+.dialogue-bubble {
+  background: #0078FF; /* Beautiful iMessage blue */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 120, 255, 0.15);
+  white-space: nowrap;
+}
+
+/* Bubble tail */
+.dialogue-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 22px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #0078FF;
+}
+
+.character-doodle-wrapper {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.character-doodle {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.next-project-title-label {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 4px;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.next-project-card-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #86868b;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.next-project-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 280px;
+  position: relative;
+}
+
+.next-project-arrows {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  animation: arrowBounce 2s infinite ease-in-out;
+}
+
+.next-project-arrows span {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ccc;
+  line-height: 1;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.next-project-card-link {
+  width: 100%;
+  max-width: 280px;
+  text-decoration: none;
+  display: block;
+}
+
+.next-project-card-graphic {
+  width: 100%;
+  aspect-ratio: 1.6 / 1;
+  background: #1d1d1f;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease, border-color 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.next-project-card-graphic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.next-project-card-link:hover .next-project-card-graphic {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.16);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.next-project-card-link:hover .next-project-card-graphic img {
+  transform: scale(1.02);
+}
+
+.next-project-card-title-hover {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1d1d1f;
+  text-align: center;
+  margin-top: 12px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.next-project-card-link:hover .next-project-card-title-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+  .next-project-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 80px;
+    padding: 30px 0;
+  }
+  .next-project-character-container,
+  .next-project-card-container {
+    width: 100%;
+  }
+}
+
+/* =====================
+   HOME HERO AVATAR SECTION
+   ===================== */
+.home-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  max-width: 900px;
+  margin: 60px auto 140px;
+  padding: 0 20px;
+}
+
+.home-avatar-wrapper {
+  flex-shrink: 0;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.home-hero-text {
+  color: #1d1d1f;
+  font-size: clamp(24px, 3.5vw, 36px);
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .home-hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 40px auto 90px;
+  }
+  .home-hero-text {
+    text-align: left;
+  }
+}
+
+/* =====================
+   GO BACK LINK
+   ===================== */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #86868b;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+  color: #1d1d1f;
+  transform: translateX(-3px);
+}
+
+/* =====================
+   LOCKED CARD & FIGMA HOVER OVERLAY
+   ===================== */
+.project-card.is-locked,
+.project-card.is-locked * {
+  cursor: none !important;
+}
+
+.lock-indicator-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f5f5f7;
+  color: #86868b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-member-tag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+
+.figma-cursor {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.figma-tag-pill {
+  background: #A153FF;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 0 8px 8px 8px;
+  box-shadow: 0 4px 12px rgba(161, 83, 255, 0.3);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  transform: translateY(6px);
 }
 

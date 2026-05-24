@@ -9,7 +9,7 @@ interface CraftrStackedPreviewProps {
   bgColor?: string;
 }
 
-export default function CraftrStackedPreview({ bgColor = "#FFFDE7" }: CraftrStackedPreviewProps) {
+export default function CraftrStackedPreview({ bgColor = "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" }: CraftrStackedPreviewProps) {
   const cards = [
     { id: "1", image: "/assets/craftr/pink-qb.svg" },
     { id: "2", image: "/assets/craftr/orange-qb.svg" },

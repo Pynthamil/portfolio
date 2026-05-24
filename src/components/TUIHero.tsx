@@ -7,7 +7,7 @@ interface TUIHeroProps {
   bgColor?: string;
 }
 
-export default function TUIHero({ bgColor = "#BFFFA1" }: TUIHeroProps) {
+export default function TUIHero({ bgColor = "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" }: TUIHeroProps) {
   return (
     <div className="project-detail-section mb-20">
       <h2 className="project-detail-section-title">Visual Identity</h2>
@@ -19,7 +19,7 @@ export default function TUIHero({ bgColor = "#BFFFA1" }: TUIHeroProps) {
 
       <motion.div
         className="tui-hero-container relative flex justify-center items-end overflow-hidden cursor-pointer rounded-[40px] border border-black/5 shadow-sm"
-        style={{ height: '480px', backgroundColor: bgColor }}
+        style={{ height: '480px', background: bgColor }}
         initial="initial"
         whileHover="hover"
       >

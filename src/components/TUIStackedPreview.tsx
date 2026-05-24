@@ -23,7 +23,7 @@ export default function TUIStackedPreview() {
       <div 
         className="absolute inset-0 z-0" 
         style={{ 
-          background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, transparent 60%), linear-gradient(135deg, #F7FEE7 0%, #BFFFA1 50%, #D9F99D 100%)" 
+          background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, transparent 60%), linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" 
         }} 
       />
       <div className="relative z-10 w-full h-[400px] md:h-[700px] [&_.scroll-stack-inner]:!px-2 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">

@@ -18,7 +18,7 @@ export default function BlogPreview({
   description,
   imageSrc,
   alt,
-  bgColor = "#E6E6FA", // Lavendar theme
+  bgColor = "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)",
   childrenBackground,
 }: BlogPreviewProps) {
   return (

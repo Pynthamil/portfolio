@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import FocusTimerPreview from "@/components/displays/FocusTimerPreview";
 import TextParserVisualizer from "@/components/displays/TextParserVisualizer";
 import ProjectSidebar from "@/components/ProjectSidebar";
-import CodedexFeaturesShowcase from "@/components/displays/CodedexFeaturesShowcase";
+import { codingProjects } from "@/data/projectsData";
+import BackButton from "@/components/BackButton";
 
 type ProjectSection = {
   heading: string;
@@ -115,6 +117,13 @@ export default async function CodingProjectPage({ params }: Props) {
     notFound();
   }
 
+  const slugList = ["focus-fuel", "codedex-wrapped", "semantic-parser"];
+  const currentIndex = slugList.indexOf(slug);
+  const nextIndex = (currentIndex + 1) % slugList.length;
+  const nextSlug = slugList[nextIndex];
+  const nextProject = projects[nextSlug];
+  const nextProjectCard = codingProjects.find(p => p.href === `/coding/${nextSlug}`);
+
   const remainingSections = project.sections;
   const half = Math.ceil(remainingSections.length / 2);
   const approachSections = remainingSections.slice(0, half);
@@ -126,6 +135,9 @@ export default async function CodingProjectPage({ params }: Props) {
       <ProjectSidebar />
 
       <div className="project-detail-wrapper fade-up">
+        {/* Go Back Link */}
+        <BackButton>Back to Coding</BackButton>
+
         {/* ---- Header ---- */}
         <div className="project-detail-header">
           <div className="project-detail-text">
@@ -217,7 +229,7 @@ export default async function CodingProjectPage({ params }: Props) {
                 </span>
               </div>
               <div className="detail-showcase-grid">
-                <div className="detail-showcase-card" style={{ minHeight: "340px", backgroundColor: "#fafafc" }}>
+                <div className="detail-showcase-card" style={{ minHeight: "340px", background: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" }}>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     <svg width="120" height="120" viewBox="0 0 64 64" fill="none">
                       {/* Pot */}
@@ -245,7 +257,7 @@ export default async function CodingProjectPage({ params }: Props) {
                     </div>
                   </div>
                 </div>
-                <div className="detail-showcase-card" style={{ padding: "16px" }}>
+                <div className="detail-showcase-card" style={{ padding: "16px", background: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" }}>
                   <div style={{ width: "100%", height: "100%" }}>
                     <FocusTimerPreview />
                   </div>
@@ -262,7 +274,7 @@ export default async function CodingProjectPage({ params }: Props) {
                 </span>
               </div>
               <div className="detail-showcase-grid">
-                <div className="detail-showcase-card" style={{ minHeight: "340px", backgroundColor: "#0c1017", color: "#ffffff", borderColor: "rgba(255,255,255,0.08)" }}>
+                <div className="detail-showcase-card" style={{ minHeight: "340px", background: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" }}>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
                     <svg width="120" height="120" viewBox="0 0 100 100" fill="none">
                       <circle cx="50" cy="50" r="10" fill="rgba(0, 240, 255, 0.15)" stroke="#00f0ff" strokeWidth="2" />
@@ -279,12 +291,12 @@ export default async function CodingProjectPage({ params }: Props) {
                       <circle cx="50" cy="50" r="32" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
                     </svg>
                     <div style={{ marginTop: "20px", textAlign: "center" }}>
-                      <h3 style={{ fontSize: "19px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>Parsing Engine</h3>
-                      <p className="font-handwritten" style={{ fontSize: "20px", color: "#00f0ff", margin: "4px 0 0", fontWeight: "600" }}>Knowledge Nodes</p>
+                      <h3 style={{ fontSize: "19px", fontWeight: "700", color: "#1d1d1f", letterSpacing: "-0.02em" }}>Parsing Engine</h3>
+                      <p className="font-handwritten" style={{ fontSize: "20px", color: "#e0009c", margin: "4px 0 0", fontWeight: "600" }}>Knowledge Nodes</p>
                     </div>
                   </div>
                 </div>
-                <div className="detail-showcase-card" style={{ padding: "16px" }}>
+                <div className="detail-showcase-card" style={{ padding: "16px", background: "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" }}>
                   <div style={{ width: "100%", height: "100%" }}>
                     <TextParserVisualizer />
                   </div>
@@ -294,7 +306,14 @@ export default async function CodingProjectPage({ params }: Props) {
           )}
 
           {slug === "codedex-wrapped" && (
-            <CodedexFeaturesShowcase />
+            <div className="project-detail-section" style={{ marginBottom: "48px" }}>
+              <h2 className="project-detail-section-title">Platform Features</h2>
+              <img
+                src="/assets/codedex/Features.svg"
+                alt="Codédex App Features"
+                className="w-full h-auto mt-8 rounded-[24px] overflow-hidden"
+              />
+            </div>
           )}
         </div>
 
@@ -462,6 +481,45 @@ export default async function CodingProjectPage({ params }: Props) {
           {/* ---- Outro ---- */}
           <div className="project-detail-outro">
             <p>{project.outro}</p>
+          </div>
+
+          {/* ---- Next Project Link ---- */}
+          <div className="next-project-section">
+            {/* Left Side: Pointing Character */}
+            <div className="next-project-character-container">
+              <div className="character-doodle-wrapper">
+                <img 
+                  src="/assets/girl_doodle.png" 
+                  alt="Pynthamil pointing illustration" 
+                  className="character-doodle" 
+                />
+              </div>
+            </div>
+
+            {/* Right Side: Next Project Card */}
+            <div className="next-project-card-container">
+              <span className="next-project-title-label">Next Project</span>
+              <h3 className="next-project-card-label">Check this out!</h3>
+              <div className="next-project-arrows">
+                <span>&darr;</span>
+                <span>&darr;</span>
+                <span>&darr;</span>
+              </div>
+              {nextProjectCard && (
+                <Link href={nextProjectCard.href} className="next-project-card-link">
+                  <div className="next-project-card-graphic" style={nextProjectCard.imageBg ? { background: nextProjectCard.imageBg } : undefined}>
+                    {nextProjectCard.image ? (
+                      <img src={nextProjectCard.image} alt={nextProjectCard.title} />
+                    ) : (
+                      <div className="card-image-empty" />
+                    )}
+                  </div>
+                  <div className="next-project-card-title-hover">
+                    {nextProjectCard.title} &rarr;
+                  </div>
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </div>

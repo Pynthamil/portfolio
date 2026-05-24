@@ -9,7 +9,7 @@ interface BlogStackedPreviewProps {
   bgColor?: string;
 }
 
-export default function BlogStackedPreview({ bgColor = "#E6E6FA" }: BlogStackedPreviewProps) {
+export default function BlogStackedPreview({ bgColor = "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" }: BlogStackedPreviewProps) {
   const cards = [
     { id: "1", image: "/assets/blog/banner1.svg" },
     { id: "2", image: "/assets/blog/banner2.svg" },

@@ -96,63 +96,7 @@ export default function FocusTimerPreview() {
       <div className="absolute -top-24 -left-24 w-48 h-48 rounded-full bg-emerald-500/10 blur-[80px] pointer-events-none" />
       <div className="absolute -bottom-24 -right-24 w-48 h-48 rounded-full bg-cyan-500/10 blur-[80px] pointer-events-none" />
 
-      {/* Left side: Interactive Timer */}
-      <div className="flex-1 flex flex-col justify-between items-center bg-neutral-900/50 rounded-2xl p-6 border border-neutral-800/40">
-        <div className="flex gap-3 mb-6 w-full justify-center">
-          <button
-            onClick={() => setMode(false)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200 ${
-              !isBreak
-                ? "bg-emerald-500 text-neutral-950 shadow-lg shadow-emerald-500/20"
-                : "bg-neutral-800 text-neutral-400 hover:text-white"
-            }`}
-          >
-            <Flame size={14} /> Focus
-          </button>
-          <button
-            onClick={() => setMode(true)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200 ${
-              isBreak
-                ? "bg-cyan-500 text-neutral-950 shadow-lg shadow-cyan-500/20"
-                : "bg-neutral-800 text-neutral-400 hover:text-white"
-            }`}
-          >
-            <Coffee size={14} /> Break
-          </button>
-        </div>
-
-        {/* Display Timer */}
-        <div className="my-4 text-center">
-          <div className="text-6xl md:text-7xl font-mono font-bold tracking-tight bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
-            {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
-          </div>
-          <div className="text-xs uppercase tracking-widest text-neutral-500 mt-2">
-            {isBreak ? "Relax & Fuel up" : "Time to craft code"}
-          </div>
-        </div>
-
-        {/* Controls */}
-        <div className="flex gap-4 mt-6">
-          <button
-            onClick={handleToggle}
-            className={`w-14 h-14 rounded-full flex items-center justify-center transition-transform active:scale-95 ${
-              isActive
-                ? "bg-neutral-800 text-white hover:bg-neutral-700"
-                : "bg-white text-neutral-950 hover:bg-neutral-100"
-            }`}
-          >
-            {isActive ? <Pause size={24} /> : <Play size={24} className="ml-1" />}
-          </button>
-          <button
-            onClick={handleReset}
-            className="w-14 h-14 rounded-full bg-neutral-800/80 hover:bg-neutral-800 text-neutral-400 hover:text-white flex items-center justify-center transition-transform active:scale-95 border border-neutral-700/50"
-          >
-            <RotateCcw size={20} />
-          </button>
-        </div>
-      </div>
-
-      {/* Right side: Mascot and Terminal Logs */}
+      {/* Left side: Mascot and Terminal Logs */}
       <div className="flex-1 flex flex-col justify-between gap-6">
         {/* Animated Sprout Mascot Area */}
         <div className="bg-neutral-900/50 rounded-2xl p-6 border border-neutral-800/40 flex flex-col items-center justify-center min-h-[220px]">
@@ -255,6 +199,62 @@ export default function FocusTimerPreview() {
               ))}
             </AnimatePresence>
           </div>
+        </div>
+      </div>
+
+      {/* Right side: Interactive Timer */}
+      <div className="flex-1 flex flex-col justify-between items-center bg-neutral-900/50 rounded-2xl p-6 border border-neutral-800/40">
+        <div className="flex gap-3 mb-6 w-full justify-center">
+          <button
+            onClick={() => setMode(false)}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200 ${
+              !isBreak
+                ? "bg-emerald-500 text-neutral-950 shadow-lg shadow-emerald-500/20"
+                : "bg-neutral-800 text-neutral-400 hover:text-white"
+            }`}
+          >
+            <Flame size={14} /> Focus
+          </button>
+          <button
+            onClick={() => setMode(true)}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200 ${
+              isBreak
+                ? "bg-cyan-500 text-neutral-950 shadow-lg shadow-cyan-500/20"
+                : "bg-neutral-800 text-neutral-400 hover:text-white"
+            }`}
+          >
+            <Coffee size={14} /> Break
+          </button>
+        </div>
+
+        {/* Display Timer */}
+        <div className="my-4 text-center">
+          <div className="text-6xl md:text-7xl font-mono font-bold tracking-tight bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
+            {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
+          </div>
+          <div className="text-xs uppercase tracking-widest text-neutral-500 mt-2">
+            {isBreak ? "Relax & Fuel up" : "Time to craft code"}
+          </div>
+        </div>
+
+        {/* Controls */}
+        <div className="flex gap-4 mt-6">
+          <button
+            onClick={handleToggle}
+            className={`w-14 h-14 rounded-full flex items-center justify-center transition-transform active:scale-95 ${
+              isActive
+                ? "bg-neutral-800 text-white hover:bg-neutral-700"
+                : "bg-white text-neutral-950 hover:bg-neutral-100"
+            }`}
+          >
+            {isActive ? <Pause size={24} /> : <Play size={24} className="ml-1" />}
+          </button>
+          <button
+            onClick={handleReset}
+            className="w-14 h-14 rounded-full bg-neutral-800/80 hover:bg-neutral-800 text-neutral-400 hover:text-white flex items-center justify-center transition-transform active:scale-95 border border-neutral-700/50"
+          >
+            <RotateCcw size={20} />
+          </button>
         </div>
       </div>
     </div>

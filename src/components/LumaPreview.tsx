@@ -13,7 +13,6 @@ export default function LumaPreview() {
       <ProjectPreviewSection
         title="AI-First Triage"
         description="The proposal imagines an interface designed for AI-first analysis. Instead of presenting raw stack traces, the system is intended to propose summarized explanations and suggested actions within a familiar conversational interface, reducing the initial friction of incident response."
-        bgColor="#fafafc"
       >
         <IPhoneDisplay height="820px" mockupHeight="780px">
           <Image 
@@ -29,7 +28,6 @@ export default function LumaPreview() {
       <ProjectPreviewSection
         title="Deep-Dive Resolution"
         description="Designed to surface context beyond surface-level alerts. The concept proposes interactive notes that allow teams to document reasoning and maintain a shared understanding of root causes, aiming to build a centralized knowledge base for future resilience."
-        bgColor="#ffffff"
       >
         <div className="flex flex-col md:flex-row gap-8 items-center justify-center w-full min-h-[850px]">
           <IPhoneDisplay height="820px" mockupHeight="780px" className="md:scale-[0.95] origin-top">
@@ -55,7 +53,6 @@ export default function LumaPreview() {
       <ProjectPreviewSection
         title="Clarity & Contrast"
         description="High-fidelity light mode conceptualized for maximum readability. The layout hierarchy is intended to support quick scanning and decision-making during high-pressure incidents, prioritizing information density without overwhelming the user."
-        bgColor="#fafafc"
       >
         <div className="flex flex-col md:flex-row gap-8 items-center justify-center w-full min-h-[850px]">
           <IPhoneDisplay height="820px" mockupHeight="780px" className="md:scale-[0.95] origin-top">
