@@ -19,7 +19,7 @@ export default function ProjectSidebar() {
       }
 
       // 2. Active section detection (Scrollspy)
-      const sectionIds = ["overview", "process", "approach", "outcomes"];
+      const sectionIds = ["overview", "design", "implementation", "results"];
       let currentActive = "overview";
 
       for (const id of sectionIds) {
@@ -57,9 +57,9 @@ export default function ProjectSidebar() {
 
   const sections = [
     { id: "overview", label: "Overview" },
-    { id: "process", label: "Process" },
-    { id: "approach", label: "Approach" },
-    { id: "outcomes", label: "Outcomes" }
+    { id: "design", label: "Design" },
+    { id: "implementation", label: "Implementation" },
+    { id: "results", label: "Results" }
   ];
 
   if (!isVisible) return null;

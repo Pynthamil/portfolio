@@ -1879,8 +1879,13 @@ body {
   margin: 32px 0 48px;
 }
 
+.detail-showcase-grid.is-equal {
+  grid-template-columns: 1fr 1fr;
+}
+
 @media (max-width: 768px) {
-  .detail-showcase-grid {
+  .detail-showcase-grid,
+  .detail-showcase-grid.is-equal {
     grid-template-columns: 1fr;
   }
 }
@@ -2424,4 +2429,105 @@ body {
     gap: 20px;
   }
 }
+
+.detail-showcase-card.is-wide-card {
+  width: calc(100% + 80px);
+  margin-left: -40px;
+}
+
+@media (max-width: 900px) {
+  .detail-showcase-card.is-wide-card {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* =====================
+   RESUME PAGE
+   ===================== */
+.resume-actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+.resume-download-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #1d1d1f;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.resume-download-btn:hover {
+  background: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.resume-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.resume-paper {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 0;
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.resume-paper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.1);
+}
+
+.resume-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .site-nav,
+  .site-footer,
+  .resume-actions-container,
+  .about-header {
+    display: none !important;
+  }
+  .page-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .resume-container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .resume-paper {
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    max-width: 100% !important;
+  }
+}
+
 

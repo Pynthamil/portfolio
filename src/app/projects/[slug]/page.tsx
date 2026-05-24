@@ -434,8 +434,8 @@ export default async function ProjectDetail({
           )}
         </div>
 
-        {/* ---- Section 2: Process (Custom or first standard section) ---- */}
-        <div id="process" className="scroll-mt-24">
+        {/* ---- Section 2: Design (Custom or first standard section) ---- */}
+        <div id="design" className="scroll-mt-24">
           {slug === "my-blog" && (
             <>
               <BlogPreview
@@ -512,8 +512,8 @@ export default async function ProjectDetail({
           )}
         </div>
 
-        {/* ---- Section 3: Approach ---- */}
-        <div id="approach" className="scroll-mt-24">
+        {/* ---- Section 3: Implementation ---- */}
+        <div id="implementation" className="scroll-mt-24">
           {approachSections.map((section, i) => (
             <div key={i} className="project-detail-section">
               <h2 className="project-detail-section-title">{section.heading}</h2>
@@ -522,8 +522,8 @@ export default async function ProjectDetail({
           ))}
         </div>
 
-        {/* ---- Section 4: Outcomes ---- */}
-        <div id="outcomes" className="scroll-mt-24">
+        {/* ---- Section 4: Results ---- */}
+        <div id="results" className="scroll-mt-24">
           {outcomesSections.map((section, i) => (
             <div key={i} className="project-detail-section">
               <h2 className="project-detail-section-title">{section.heading}</h2>

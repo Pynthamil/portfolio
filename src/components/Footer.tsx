@@ -15,6 +15,9 @@ export default function Footer() {
         <a href="https://www.linkedin.com/in/pynthamil-pavendan-55795228a/" target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
+        <Link href="/resume">
+          Resume
+        </Link>
         <Link href="/contact">
           Contact
         </Link>

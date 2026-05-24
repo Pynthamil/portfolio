@@ -55,13 +55,14 @@ const projects: Record<string, ProjectData> = {
     heroImage: "/assets/project-cards/codedex-app.svg",
     techStack: ["React 19", "Framer Motion", "Tailwind CSS v4", "Next.js", "Lucide Icons"],
     sections: [
+
       {
-        heading: "Playful Retro-Arcade Aesthetics",
-        body: "We designed a dedicated high-fidelity virtual cabinet enclosure. Bright glowing neon boundaries, nostalgic retro game consoles, and arcade cabinet overlays establish an immediate technical yet playful theme.",
+        heading: "Implementation",
+        body: "Framer Motion drives the technical implementation. Staggered element entrances, custom Bezier transitions, and GPU-accelerated transforms achieve a fluid, native-feeling app flow. Tailwind layers structure modular layouts to maintain clean spacing across screens.",
       },
       {
-        heading: "Fluid Slideshow Choreography",
-        body: "Framer Motion handles the slide-transition logic. When sliding from page to page, each layout element slides independently with custom delay stagger offsets, creating a sense of 3D parallax depth.",
+        heading: "Results",
+        body: "The recap experience yielded exceptional platform engagement, driving a substantial spike in user social shares. Optimized asset packing and static build pipelines ensure the animations load instantaneously without page weight penalties.",
       },
     ],
     outro:
@@ -219,8 +220,8 @@ export default async function CodingProjectPage({ params }: Props) {
           )}
         </div>
 
-        {/* ---- Section 2: Process ---- */}
-        <div id="process" className="scroll-mt-24">
+        {/* ---- Section 2: Design ---- */}
+        <div id="design" className="scroll-mt-24">
           {slug === "focus-fuel" && (
             <>
               <div className="text-center mb-4" style={{ marginTop: "40px" }}>
@@ -306,19 +307,115 @@ export default async function CodingProjectPage({ params }: Props) {
           )}
 
           {slug === "codedex-wrapped" && (
-            <div className="project-detail-section" style={{ marginBottom: "48px" }}>
-              <h2 className="project-detail-section-title">Platform Features</h2>
-              <img
-                src="/assets/codedex/Features.svg"
-                alt="Codédex App Features"
-                className="w-full h-auto mt-8 rounded-[24px] overflow-hidden"
-              />
-            </div>
+            <>
+              <div className="project-detail-section" style={{ marginBottom: "48px" }}>
+                <h2 className="project-detail-section-title">Platform Features</h2>
+                <img
+                  src="/assets/codedex/Features.svg"
+                  alt="Codédex App Features"
+                  className="w-full h-auto mt-8 rounded-[24px] overflow-hidden"
+                />
+              </div>
+              <div className="project-detail-section" style={{ marginBottom: "48px" }}>
+                <h2 className="project-detail-section-title">Design</h2>
+                <div className="detail-showcase-grid is-equal" style={{ marginTop: "32px", marginBottom: "24px" }}>
+                  <div 
+                    className="detail-showcase-card" 
+                    style={{ 
+                      minHeight: "400px", 
+                      background: "#FEC5BA",
+                      borderRadius: "24px",
+                      border: "1px dashed rgba(0,0,0,0.06)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+                    }}
+                  >
+                    {/* Insert Left Column SVG here */}
+                  </div>
+                  <div 
+                    className="detail-showcase-card" 
+                    style={{ 
+                      minHeight: "400px", 
+                      background: "#CADBBB",
+                      borderRadius: "24px",
+                      border: "1px dashed rgba(0,0,0,0.06)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+                    }}
+                  >
+                    {/* Insert Right Column SVG here */}
+                  </div>
+                </div>
+                <div 
+                  className="detail-showcase-card is-wide-card" 
+                  style={{ 
+                    minHeight: "500px", 
+                    background: "#D5E2EA",
+                    borderRadius: "24px",
+                    border: "1px dashed rgba(0,0,0,0.06)",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.02)",
+                    marginBottom: "24px"
+                  }}
+                >
+                  {/* Insert Full-width SVG here */}
+                </div>
+                <div className="detail-showcase-grid is-equal" style={{ marginTop: "24px", marginBottom: "24px" }}>
+                  <div 
+                    className="detail-showcase-card" 
+                    style={{ 
+                      minHeight: "400px", 
+                      background: "#F5D6EB",
+                      borderRadius: "24px",
+                      border: "1px dashed rgba(0,0,0,0.06)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+                    }}
+                  >
+                    {/* Insert Row 3 Left SVG here */}
+                  </div>
+                  <div 
+                    className="detail-showcase-card" 
+                    style={{ 
+                      minHeight: "400px", 
+                      background: "#FCE4C8",
+                      borderRadius: "24px",
+                      border: "1px dashed rgba(0,0,0,0.06)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+                    }}
+                  >
+                    {/* Insert Row 3 Right SVG here */}
+                  </div>
+                </div>
+                <div className="detail-showcase-grid is-equal" style={{ marginTop: "24px", marginBottom: "24px" }}>
+                  <div 
+                    className="detail-showcase-card" 
+                    style={{ 
+                      minHeight: "400px", 
+                      background: "#D1E8E2",
+                      borderRadius: "24px",
+                      border: "1px dashed rgba(0,0,0,0.06)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+                    }}
+                  >
+                    {/* Insert Row 4 Left SVG here */}
+                  </div>
+                  <div 
+                    className="detail-showcase-card" 
+                    style={{ 
+                      minHeight: "400px", 
+                      background: "#E2D4F0",
+                      borderRadius: "24px",
+                      border: "1px dashed rgba(0,0,0,0.06)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+                    }}
+                  >
+                    {/* Insert Row 4 Right SVG here */}
+                  </div>
+                </div>
+              </div>
+            </>
           )}
         </div>
 
-        {/* ---- Section 3: Approach ---- */}
-        <div id="approach" className="scroll-mt-24">
+        {/* ---- Section 3: Implementation ---- */}
+        <div id="implementation" className="scroll-mt-24">
           {approachSections.map((section, i) => (
             <div key={i} className="project-detail-section">
               <h2 className="project-detail-section-title">{section.heading}</h2>
@@ -383,8 +480,8 @@ export default async function CodingProjectPage({ params }: Props) {
           ))}
         </div>
 
-        {/* ---- Section 4: Outcomes ---- */}
-        <div id="outcomes" className="scroll-mt-24">
+        {/* ---- Section 4: Results ---- */}
+        <div id="results" className="scroll-mt-24">
           {outcomesSections.map((section, i) => (
             <div key={i} className="project-detail-section">
               <h2 className="project-detail-section-title">{section.heading}</h2>
