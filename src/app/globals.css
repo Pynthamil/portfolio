@@ -2431,15 +2431,8 @@ body {
 }
 
 .detail-showcase-card.is-wide-card {
-  width: calc(100% + 80px);
-  margin-left: -40px;
-}
-
-@media (max-width: 900px) {
-  .detail-showcase-card.is-wide-card {
-    width: 100%;
-    margin-left: 0;
-  }
+  width: 100%;
+  margin-left: 0;
 }
 
 /* =====================
