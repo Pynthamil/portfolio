@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type Project = {
   id: number;
@@ -25,6 +25,11 @@ export default function ProjectCard({ project, onClick }: Props) {
   const isLocked = project.title === "GitPerson" || project.title === "ReadMeFlier";
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
 
   const handleCardClick = (e: React.MouseEvent) => {
     if (isLocked) {
@@ -54,15 +59,15 @@ export default function ProjectCard({ project, onClick }: Props) {
     <div
       className={`project-card fade-up ${isLocked ? "is-locked" : ""}`}
       onClick={handleCardClick}
-      onMouseMove={isLocked ? (e) => {
+      onMouseMove={isLocked && !isTouch ? (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         setMousePos({
           x: e.clientX - rect.left,
           y: e.clientY - rect.top,
         });
       } : undefined}
-      onMouseEnter={isLocked ? () => setIsHovered(true) : undefined}
-      onMouseLeave={isLocked ? () => setIsHovered(false) : undefined}
+      onMouseEnter={isLocked && !isTouch ? () => setIsHovered(true) : undefined}
+      onMouseLeave={isLocked && !isTouch ? () => setIsHovered(false) : undefined}
     >
       {/* Header */}
       <div className="card-header">
@@ -140,7 +145,14 @@ export default function ProjectCard({ project, onClick }: Props) {
       {isLocked && (
         <div 
           className="figma-member-tag"
-          style={{
+          style={isTouch ? {
+            left: "50%",
+            top: "65%",
+            transform: "translate(-50%, -50%)",
+            opacity: 1,
+            pointerEvents: "none",
+            position: "absolute",
+          } : {
             left: `${mousePos.x}px`,
             top: `${mousePos.y}px`,
             opacity: isHovered ? 1 : 0,
@@ -148,10 +160,17 @@ export default function ProjectCard({ project, onClick }: Props) {
             position: "absolute",
           }}
         >
-          <svg width="14" height="18" viewBox="0 0 14 18" fill="none" className="figma-cursor">
-            <path d="M0 0V17.5L5.05 12.45H13.5L0 0Z" fill="#A153FF" />
-          </svg>
-          <span className="figma-tag-pill">Pynthamil - currently developing</span>
+          {!isTouch && (
+            <svg width="14" height="18" viewBox="0 0 14 18" fill="none" className="figma-cursor">
+              <path d="M0 0V17.5L5.05 12.45H13.5L0 0Z" fill="#A153FF" />
+            </svg>
+          )}
+          <span 
+            className="figma-tag-pill"
+            style={isTouch ? { borderRadius: "12px", transform: "none" } : undefined}
+          >
+            Pynthamil - currently developing
+          </span>
         </div>
       )}
     </div>

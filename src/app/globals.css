@@ -2354,6 +2354,13 @@ body {
     transform: translate(-50%, -50%) !important;
     opacity: 1 !important;
   }
+  .project-card.is-locked .figma-member-tag .figma-cursor {
+    display: none !important;
+  }
+  .project-card.is-locked .figma-member-tag .figma-tag-pill {
+    border-radius: 12px !important;
+    transform: none !important;
+  }
 }
 
 .figma-cursor {
