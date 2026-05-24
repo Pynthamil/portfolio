@@ -2363,4 +2363,49 @@ body {
   letter-spacing: -0.01em;
   transform: translateY(6px);
 }
+
+/* =====================
+   SITE FOOTER (APPLE STYLE)
+   ===================== */
+.site-footer {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 40px 60px 48px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #86868b;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.site-footer a {
+  color: #86868b;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.site-footer a:hover {
+  color: #1d1d1f;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 32px 20px 40px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    gap: 20px;
+  }
+}
 
