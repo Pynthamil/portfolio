@@ -293,6 +293,11 @@ export default async function ProjectDetail({
   const nextProject = projects[nextSlug];
   const nextProjectCard = productDesignProjects.find(p => p.href === `/projects/${nextSlug}`);
 
+  const prevIndex = (currentIndex - 1 + slugList.length) % slugList.length;
+  const prevSlug = slugList[prevIndex];
+  const prevProject = projects[prevSlug];
+  const prevProjectCard = productDesignProjects.find(p => p.href === `/projects/${prevSlug}`);
+
   const hasCustomSections = ["my-blog", "luma", "acm-hackathon", "semantic-email", "resume-roaster", "craftr-docs", "terminal-browser", "portfolios"].includes(slug);
 
   const startIdx = hasCustomSections ? 0 : 1;
@@ -536,33 +541,25 @@ export default async function ProjectDetail({
             <p>{project.outro}</p>
           </div>
 
-          {/* ---- Next Project Link ---- */}
-          <div className="next-project-section">
-            {/* Right Side: Next Project Card */}
-            <div className="next-project-card-container">
-              <span className="next-project-title-label">Next Project</span>
-              <h3 className="next-project-card-label">Check this out!</h3>
-              <div className="next-project-arrows">
-                <span>&darr;</span>
-                <span>&darr;</span>
-                <span>&darr;</span>
-              </div>
-              {nextProjectCard && (
-                <Link href={nextProjectCard.href} className="next-project-card-link">
-                  <div className="next-project-card-graphic" style={nextProjectCard.imageBg ? { background: nextProjectCard.imageBg } : undefined}>
-                    {nextProjectCard.image ? (
-                      <img src={nextProjectCard.image} alt={nextProjectCard.title} />
-                    ) : (
-                      <div className="card-image-empty" />
-                    )}
-                  </div>
-                  <div className="next-project-card-title-hover">
-                    {nextProjectCard.title} &rarr;
-                  </div>
+          {/* ---- Project Navigation Links ---- */}
+          {(prevProjectCard || nextProjectCard) && (
+            <div className="next-project-btn-container">
+              {prevProjectCard ? (
+                <Link href={prevProjectCard.href} className="next-project-capsule-btn">
+                  &larr; Previous project
                 </Link>
+              ) : (
+                <div />
+              )}
+              {nextProjectCard ? (
+                <Link href={nextProjectCard.href} className="next-project-capsule-btn">
+                  Next project &rarr;
+                </Link>
+              ) : (
+                <div />
               )}
             </div>
-          </div>
+          )}
         </div>
       </div>
     </main>
