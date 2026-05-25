@@ -166,22 +166,6 @@ export const homeProjects: Project[] = [
     category: "dev",
   },
   {
-    id: 5,
-    title: "ReadMeFlier",
-    subtitle: "High-performance NLP parsing pipeline that transforms raw text streams into semantic database nodes",
-    image: "/assets/project-cards/readmeflier.svg",
-    href: "/coding/semantic-parser",
-    category: "dev",
-  },
-  {
-    id: 6,
-    title: "Luma",
-    subtitle: "An AI-assisted error management system",
-    image: "/assets/project-cards/luma.svg",
-    href: "/projects/luma",
-    category: "design",
-  },
-  {
     id: 7,
     title: "Terminal Browser",
     subtitle: "A browser that runs in the terminal",
