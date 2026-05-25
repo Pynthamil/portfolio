@@ -800,6 +800,51 @@ body {
   font-weight: 400;
 }
 
+/* ---- Project Type Tag ---- */
+.project-type-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1.5px solid;
+  width: fit-content;
+}
+
+.project-type-tag::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tag-design {
+  color: #9b59b6;
+  border-color: rgba(155, 89, 182, 0.35);
+  background: rgba(155, 89, 182, 0.08);
+}
+
+.tag-design::before {
+  background: #9b59b6;
+}
+
+.tag-dev {
+  color: #0070f3;
+  border-color: rgba(0, 112, 243, 0.35);
+  background: rgba(0, 112, 243, 0.08);
+}
+
+.tag-dev::before {
+  background: #0070f3;
+}
+
 .project-detail-link-btn {
   width: 44px;
   height: 44px;
@@ -2596,5 +2641,104 @@ body {
     max-width: 100% !important;
   }
 }
+
+/* =====================
+   PROJECTS SOCIAL CTA CARD
+   ===================== */
+.projects-social-cta-container {
+  max-width: 800px;
+  margin: 100px auto 40px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.projects-social-cta-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 24px;
+  padding: 24px 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.projects-social-cta-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.cta-card-graphic-wrapper {
+  flex-shrink: 0;
+  width: 140px;
+  height: 90px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+}
+
+.cta-card-graphic {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cta-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  text-align: left;
+}
+
+.cta-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cta-card-body {
+  font-size: 15px;
+  color: #515154;
+  margin: 0;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.cta-card-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s ease;
+}
+
+.projects-social-cta-card:hover .cta-card-link {
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .projects-social-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+  }
+  
+  .cta-card-graphic-wrapper {
+    width: 100%;
+    height: 120px;
+  }
+}
+
 
 

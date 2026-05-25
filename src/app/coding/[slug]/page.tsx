@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import FocusTimerPreview from "@/components/displays/FocusTimerPreview";
 import TextParserVisualizer from "@/components/displays/TextParserVisualizer";
 import ProjectSidebar from "@/components/ProjectSidebar";
-import { codingProjects } from "@/data/projectsData";
+import { codingProjects, productDesignProjects } from "@/data/projectsData";
 import BackButton from "@/components/BackButton";
 
 type ProjectSection = {
@@ -118,17 +118,29 @@ export default async function CodingProjectPage({ params }: Props) {
     notFound();
   }
 
-  const slugList = ["focus-fuel", "codedex-wrapped", "semantic-parser"];
-  const currentIndex = slugList.indexOf(slug);
-  const nextIndex = (currentIndex + 1) % slugList.length;
-  const nextSlug = slugList[nextIndex];
-  const nextProject = projects[nextSlug];
-  const nextProjectCard = codingProjects.find(p => p.href === `/coding/${nextSlug}`);
+  const currentHref = `/coding/${slug}`;
+  const navigationList = [
+    "/projects/my-blog",
+    "/projects/semantic-email",
+    "/projects/terminal-browser",
+    "/projects/luma",
+    "/projects/resume-roaster",
+    "/projects/acm-hackathon",
+    "/projects/craftr-docs",
+    "/projects/portfolios",
+    "/coding/focus-fuel",
+    "/coding/codedex-wrapped",
+    "/coding/semantic-parser"
+  ];
+  const currentIndex = navigationList.indexOf(currentHref);
+  const nextIndex = (currentIndex + 1) % navigationList.length;
+  const nextHref = navigationList[nextIndex];
+  const allProjects = [...productDesignProjects, ...codingProjects];
+  const nextProjectCard = allProjects.find(p => p.href === nextHref);
 
-  const prevIndex = (currentIndex - 1 + slugList.length) % slugList.length;
-  const prevSlug = slugList[prevIndex];
-  const prevProject = projects[prevSlug];
-  const prevProjectCard = codingProjects.find(p => p.href === `/coding/${prevSlug}`);
+  const prevIndex = (currentIndex - 1 + navigationList.length) % navigationList.length;
+  const prevHref = navigationList[prevIndex];
+  const prevProjectCard = allProjects.find(p => p.href === prevHref);
 
   const remainingSections = project.sections;
   const half = Math.ceil(remainingSections.length / 2);
@@ -149,6 +161,7 @@ export default async function CodingProjectPage({ params }: Props) {
           <div className="project-detail-text">
             <h1 className="project-detail-title">{project.title}</h1>
             <p className="project-detail-subtitle">{project.subtitle}</p>
+            <span className="project-type-tag tag-dev">Dev</span>
           </div>
 
           {(project.liveUrl || project.githubUrl) && (

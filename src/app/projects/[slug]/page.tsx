@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { productDesignProjects } from "@/data/projectsData";
+import { productDesignProjects, codingProjects } from "@/data/projectsData";
 import TUIHero from "@/components/TUIHero";
 import TUITabSwitcher from "@/components/TUITabSwitcher";
 import BackButton from "@/components/BackButton";
@@ -286,17 +286,29 @@ export default async function ProjectDetail({
 
   if (!project) notFound();
 
-  const slugList = ["my-blog", "semantic-email", "terminal-browser", "luma", "resume-roaster", "acm-hackathon", "craftr-docs", "portfolios"];
-  const currentIndex = slugList.indexOf(slug);
-  const nextIndex = (currentIndex + 1) % slugList.length;
-  const nextSlug = slugList[nextIndex];
-  const nextProject = projects[nextSlug];
-  const nextProjectCard = productDesignProjects.find(p => p.href === `/projects/${nextSlug}`);
+  const currentHref = `/projects/${slug}`;
+  const navigationList = [
+    "/projects/my-blog",
+    "/projects/semantic-email",
+    "/projects/terminal-browser",
+    "/projects/luma",
+    "/projects/resume-roaster",
+    "/projects/acm-hackathon",
+    "/projects/craftr-docs",
+    "/projects/portfolios",
+    "/coding/focus-fuel",
+    "/coding/codedex-wrapped",
+    "/coding/semantic-parser"
+  ];
+  const currentIndex = navigationList.indexOf(currentHref);
+  const nextIndex = (currentIndex + 1) % navigationList.length;
+  const nextHref = navigationList[nextIndex];
+  const allProjects = [...productDesignProjects, ...codingProjects];
+  const nextProjectCard = allProjects.find(p => p.href === nextHref);
 
-  const prevIndex = (currentIndex - 1 + slugList.length) % slugList.length;
-  const prevSlug = slugList[prevIndex];
-  const prevProject = projects[prevSlug];
-  const prevProjectCard = productDesignProjects.find(p => p.href === `/projects/${prevSlug}`);
+  const prevIndex = (currentIndex - 1 + navigationList.length) % navigationList.length;
+  const prevHref = navigationList[prevIndex];
+  const prevProjectCard = allProjects.find(p => p.href === prevHref);
 
   const hasCustomSections = ["my-blog", "luma", "acm-hackathon", "semantic-email", "resume-roaster", "craftr-docs", "terminal-browser", "portfolios"].includes(slug);
 
@@ -320,6 +332,7 @@ export default async function ProjectDetail({
           <div className="project-detail-text">
             <h1 className="project-detail-title">{project.title}</h1>
             <p className="project-detail-subtitle">{project.subtitle}</p>
+            <span className="project-type-tag tag-design">Product Design</span>
           </div>
 
           {(project.liveUrl || project.githubUrl) && slug === "my-blog" && (
