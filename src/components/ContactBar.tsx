@@ -58,7 +58,7 @@ export default function SocialFooterBar() {
         >
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
-            className="w-8 h-8 md:w-9 md:h-9 text-[#1d1d1f]" 
+            className="w-8 h-8 md:w-9 md:h-9 text-[#0a66c2]" 
             fill="currentColor" 
             viewBox="0 0 16 16"
           >
