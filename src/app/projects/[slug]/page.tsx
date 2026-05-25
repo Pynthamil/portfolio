@@ -453,7 +453,7 @@ export default async function ProjectDetail({
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 900px"
-                style={{ objectFit: "cover", objectPosition: "top center" }}
+                style={{ objectFit: "cover", objectPosition: "top center", transform: "scale(1.12)" }}
                 priority
               />
             </div>

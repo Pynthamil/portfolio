@@ -11,19 +11,25 @@ const mainNavLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const projectDetailLinks = [
-  { id: "overview", label: "Overview" },
-  { id: "design", label: "Design" },
-  { id: "implementation", label: "Implementation" },
-  { id: "results", label: "Results" }
-];
-
 export default function Nav() {
   const pathname = usePathname();
   const router = useRouter();
   
   const isProjectDetail = (pathname.startsWith("/projects/") || pathname.startsWith("/coding/")) && pathname.split("/").length === 3;
   
+  const isDesignProject = pathname.startsWith("/projects/");
+  const projectDetailLinks = isDesignProject ? [
+    { id: "overview", label: "Overview" },
+    { id: "design", label: "Design" },
+    { id: "implementation", label: "Approach" },
+    { id: "results", label: "Outcomes" }
+  ] : [
+    { id: "overview", label: "Overview" },
+    { id: "design", label: "Design" },
+    { id: "implementation", label: "Implementation" },
+    { id: "results", label: "Results" }
+  ];
+
   const [activeSection, setActiveSection] = useState("overview");
 
   useEffect(() => {
