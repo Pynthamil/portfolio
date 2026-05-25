@@ -20,7 +20,7 @@ export default function BrowserDisplay({
 }: BrowserDisplayProps) {
   return (
     <div className={cn(
-      "w-full max-w-[1000px] bg-white rounded-[32px] md:rounded-[40px] shadow-2xl overflow-hidden border border-black/5 mx-auto",
+      "w-full max-w-[1000px] bg-white rounded-[32px] md:rounded-[40px]  overflow-hidden  mx-auto",
       padding,
       className
     )}>

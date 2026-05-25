@@ -20,7 +20,7 @@ export default function TUIPreview({
 }: TUIPreviewProps) {
   return (
     <ProjectPreviewSection title={title} description={description} bgColor={bgColor}>
-      <ImageDisplay src={imageSrc} alt={alt} className="rounded-2xl shadow-2xl" />
+      <ImageDisplay src={imageSrc} alt={alt} className="rounded-2xl " />
     </ProjectPreviewSection>
   );
 }

@@ -91,7 +91,7 @@ export default function FocusTimerPreview() {
   const mascotState = getMascotState();
 
   return (
-    <div className="w-full max-w-[800px] bg-neutral-950 border border-neutral-800 rounded-[32px] p-6 md:p-8 flex flex-col md:flex-row gap-8 shadow-2xl relative overflow-hidden mx-auto my-12 text-white">
+    <div className="w-full max-w-[800px] bg-neutral-950 border border-neutral-800 rounded-[32px] p-6 md:p-8 flex flex-col md:flex-row gap-8  relative overflow-hidden mx-auto my-12 text-white">
       {/* Background glow dots */}
       <div className="absolute -top-24 -left-24 w-48 h-48 rounded-full bg-emerald-500/10 blur-[80px] pointer-events-none" />
       <div className="absolute -bottom-24 -right-24 w-48 h-48 rounded-full bg-cyan-500/10 blur-[80px] pointer-events-none" />
@@ -209,7 +209,7 @@ export default function FocusTimerPreview() {
             onClick={() => setMode(false)}
             className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200 ${
               !isBreak
-                ? "bg-emerald-500 text-neutral-950 shadow-lg shadow-emerald-500/20"
+                ? "bg-emerald-500 text-neutral-950  shadow-emerald-500/20"
                 : "bg-neutral-800 text-neutral-400 hover:text-white"
             }`}
           >
@@ -219,7 +219,7 @@ export default function FocusTimerPreview() {
             onClick={() => setMode(true)}
             className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200 ${
               isBreak
-                ? "bg-cyan-500 text-neutral-950 shadow-lg shadow-cyan-500/20"
+                ? "bg-cyan-500 text-neutral-950  shadow-cyan-500/20"
                 : "bg-neutral-800 text-neutral-400 hover:text-white"
             }`}
           >

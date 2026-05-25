@@ -31,7 +31,7 @@ export default function SocialPostLayout({ post }: SocialPostLayoutProps) {
             href="/social" 
             className="pointer-events-auto group flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase text-black/20 hover:text-black transition-all duration-500"
           >
-            <div className="w-10 h-10 rounded-full border border-black/5 bg-white/40 backdrop-blur-xl grid place-items-center transition-all group-hover:bg-white/80 group-hover:border-black/10 leading-[0] overflow-hidden">
+            <div className="w-10 h-10 rounded-full  bg-white/40 backdrop-blur-xl grid place-items-center transition-all group-hover:bg-white/80 group-hover:border-black/10 leading-[0] overflow-hidden">
               <ArrowLeft size={14} strokeWidth={2.5} className="block relative top-[0.5px]" />
             </div>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">Archive</span>
@@ -132,7 +132,7 @@ export default function SocialPostLayout({ post }: SocialPostLayoutProps) {
               className="group inline-flex items-center gap-4 text-2xl md:text-4xl font-black tracking-tighter text-black/20 hover:text-black transition-all duration-500"
             >
               <span>Back to Archive</span>
-              <div className="w-12 h-12 rounded-full border border-black/5 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-500">
+              <div className="w-12 h-12 rounded-full  flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-500">
                 <ArrowLeft className="rotate-180" size={24} />
               </div>
             </Link>

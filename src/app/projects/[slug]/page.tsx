@@ -29,6 +29,7 @@ type ProjectData = {
   subtitle: string;
   description: string;
   heroImage?: string;
+  imageBg?: string;
   liveUrl?: string;
   githubUrl?: string;
   techStack?: string[];
@@ -44,8 +45,9 @@ const projects: Record<string, ProjectData> = {
     title: "My Blog",
     subtitle: "A blog for my thoughts and ideas",
     description:
-      "I wanted a space that felt personal — somewhere I could write about things I'm learning, projects I'm building, and ideas I'm exploring. Most blogging platforms felt too generic, so I built my own from scratch with a focus on reading experience and minimal design.",
+      "The personal blog platform focusing on performance, minimalism, and a fluid user experience. Designed to showcase both technical articles and casual musings in a distraction-free environment.",
     heroImage: "/assets/project-cards/my-blog.svg",
+    imageBg: "#3b82f6",
     liveUrl: "https://my-blog-tan-tau.vercel.app",
     techStack: ["Next.js", "TypeScript", "Supabase", "Hashnode API", "Tailwind CSS"],
     sections: [
@@ -68,10 +70,12 @@ const projects: Record<string, ProjectData> = {
 
   "semantic-email": {
     title: "Semantic Email Intelligence",
-    subtitle: "A conceptual model for meaning-based communication",
+    subtitle: "A Second Brain for your Emails",
     description:
-      "Email workflows today are defined by cognitive overload and information retrieval friction. We spend significant mental effort sorting through noise to find what matters. Semantic Email Intelligence conceptualizes a shift from message lists to a knowledge-driven interface.\n\nThe design explores how semantic understanding can transform the inbox into an organized system that surfaces relevant context at the right time. By imagining a future where AI supports decision-making rather than replacing user agency, the proposal aims to reduce the mental load of managing digital communication.",
+      "An advanced email client concept that uses natural language processing to categorize, prioritize, and extract actionable insights from your inbox automatically.",
     heroImage: "/assets/project-cards/semantic-email.svg",
+    imageBg: "#1e3a8a",
+    techStack: ["React", "TypeScript", "Node.js", "OpenAI"],
     sections: [
       {
         heading: "Meaning-Based Retrieval",
@@ -92,11 +96,12 @@ const projects: Record<string, ProjectData> = {
 
   "terminal-browser": {
     title: "Terminal Browser",
-    subtitle: "A conceptual interface for text-based web navigation",
+    subtitle: "A browser that runs in the terminal",
     description:
-      "What if the web felt as native as your command line? Terminal Browser explores a future where web browsing is stripped of visual noise and distilled into a purely functional text-based experience.\n\nThis concept imagines a workflow where developers can access documentation, research, and technical articles without breaking their terminal stream. By conceptualizing the web as structured text, the design aims to reduce the cognitive load associated with modern graphical browsers while prioritizing speed and focus.",
+      "A text-based web browser built for developers. Navigate the web without leaving your command line interface, with full keyboard navigation and raw text parsing.",
     liveUrl: "https://my-blog-tan-tau.vercel.app",
     heroImage: "/assets/project-cards/terminal-browser.svg",
+    imageBg: "#10b981",
     githubUrl: "#",
     sections: [
       {
@@ -118,10 +123,12 @@ const projects: Record<string, ProjectData> = {
 
   luma: {
     title: "Luma",
-    subtitle: "A conceptual design for intelligent error management",
+    subtitle: "An AI-assisted error management system",
     description:
-      "Production environments are inherently chaotic. When errors occur, the resulting noise and repetition can lead to severe alert fatigue and exhausted triage workflows. Luma conceptualizes a shift from raw log aggregation to a decision-support system designed to improve signal clarity.\n\nThe design explores how AI can group and explain complex errors to reduce cognitive load in high-stress environments. By imagining a future where technical issues are translated into understandable language and surfacing potential root causes contextually, the proposal aims to support faster, more confident decision-making for the entire team.",
+      "An intelligent error tracking dashboard that not only logs exceptions but uses AI to suggest immediate fixes and traces root causes across microservices.",
     heroImage: "/assets/project-cards/luma.svg",
+    imageBg: "#ef4444",
+    techStack: ["Vue.js", "Python", "Redis", "Elasticsearch"],
     sections: [
       {
         heading: "Intelligent Grouping",
@@ -142,10 +149,11 @@ const projects: Record<string, ProjectData> = {
 
   "resume-roaster": {
     title: "Resume Roaster",
-    subtitle: "AI critique that improves resumes with clarity, precision, and just enough bite.",
+    subtitle: "AI-powered resume roasting platform",
     description:
-      "Getting meaningful feedback on a resume is surprisingly difficult. Peer reviews are often overly polite, while professional services can be inaccessible or slow.\n\nResume Roaster explores how AI can deliver fast, structured, and genuinely useful critique. The product combines natural language analysis with opinionated heuristics to surface weak phrasing, missing impact, and formatting issues that reduce hiring outcomes.\n\nThe experience balances honesty with usability. Feedback is direct, specific, and designed to guide iteration rather than overwhelm.",
+      "A fun, interactive tool that uses AI to brutally (but constructively) roast your resume, highlighting generic phrases, formatting errors, and giving actionable advice to stand out.",
     heroImage: "/assets/project-cards/resume-roaster.svg",
+    imageBg: "#f97316",
     liveUrl: "#",
     sections: [
       {
@@ -167,10 +175,12 @@ const projects: Record<string, ProjectData> = {
 
   "acm-hackathon": {
     title: "ACM Hackathon Portal",
-    subtitle: "A conceptual ecosystem for competitive collaboration",
+    subtitle: "A website for ACM-VIT's Hackathon",
     description:
-      "Hackathon environments are characterized by high-intensity coordination and tight feedback loops. The ACM Hackathon Portal conceptualizes a unified platform designed to streamline the complexities of registration, team synergy, and real-time event navigation.\n\nThe design explores how a centralized information layer can reduce the friction of large-scale competitive events. By imagining a future where participant workflows are handled ephemerally and contextually, the proposal aims to preserve creative energy and foster deeper networking within technical communities.",
+      "The official portal for a massive university hackathon. Handles user registration, team formation, project submissions, and live announcements over a 48-hour event window.",
     heroImage: "/assets/project-cards/acm-hackathon-portal.svg",
+    imageBg: "#7c3aed",
+    githubUrl: "#",
     sections: [
       {
         heading: "Cohesion by Design",
@@ -193,8 +203,9 @@ const projects: Record<string, ProjectData> = {
     title: "Craftr Docs",
     subtitle: "A conceptual exploration of expressive documentation",
     description:
-      "Documentation tools today often force a compromise between structured information and creative freedom. Craftr Docs explores a hybrid model intended to combine the modular logic of block-based editors with the expressive control of design software.\n\nBy conceptualizing the document as an expansive workspace rather than a rigid page, the design aims to reduce the friction of structuring complex ideas. The proposal imagines a future where documentation is both a tool for thinking and a medium for high-fidelity communication, balancing progressive complexity with intuitive, fast-access interaction patterns.",
+      "Documentation tools today often force a compromise between structured information and creative freedom. Craftr Docs explores a hybrid model intended to combine the modular logic of block-based editors with the expressive control of design software.",
     heroImage: "/assets/project-cards/craftr-docs.svg",
+    imageBg: "#f0f0f0",
     sections: [
       {
         heading: "Modular Logic",
@@ -215,10 +226,11 @@ const projects: Record<string, ProjectData> = {
 
   portfolios: {
     title: "Portfolios",
-    subtitle: "Iterative identity exploration through interface design",
+    subtitle: "A collection of portfolios I've designed and built",
     description:
-      "Personal websites serve as a controlled environment for testing structural logic and visual rhythm. This collection documents a multi-year evolution of my personal design language, moving from systematic component libraries to high-density workspace aesthetics and exploratory archival transitions.",
+      "An interactive gallery showcasing the evolution of my personal branding and portfolio designs over the years. A study in iterations, shifting trends, and refining the craft of digital storytelling.",
     heroImage: "/assets/project-cards/portfolios.svg",
+    imageBg: "#6b7280",
     sections: [
       {
         heading: "v1 Expressionist Layer",
@@ -360,56 +372,56 @@ export default async function ProjectDetail({
           <div className="project-detail-intro">
             {slug === "my-blog" && (
               <p>
-                I wanted a space that felt personal — somewhere I could write about things I'm learning, projects I'm building, and ideas I'm exploring. Most blogging platforms felt too generic, so I <span className="highlight-pink">built my own from scratch with a focus on reading experience and minimal design</span>.
+                I wanted a space that felt personal — somewhere I could write about things I'm learning, projects I'm building, and ideas I'm exploring. Most blogging platforms felt too generic, so I built my own from scratch with a focus on reading experience and minimal design.
               </p>
             )}
             {slug === "semantic-email" && (
               <p>
-                Email workflows today are defined by cognitive overload and information retrieval friction. We spend significant mental effort sorting through noise to find what matters. Semantic Email Intelligence conceptualizes a <span className="highlight-pink">shift from message lists to a knowledge-driven interface</span>.
+                Email workflows today are defined by cognitive overload and information retrieval friction. We spend significant mental effort sorting through noise to find what matters. Semantic Email Intelligence conceptualizes a shift from message lists to a knowledge-driven interface.
                 <br /><br />
-                The design explores how <span className="highlight-pink">semantic understanding can transform the inbox into an organized system</span> that surfaces relevant context at the right time. By imagining a future where AI supports decision-making rather than replacing user agency, the proposal aims to reduce the mental load of managing digital communication.
+                The design explores how semantic understanding can transform the inbox into an organized system that surfaces relevant context at the right time. By imagining a future where AI supports decision-making rather than replacing user agency, the proposal aims to reduce the mental load of managing digital communication.
               </p>
             )}
             {slug === "terminal-browser" && (
               <p>
-                What if the web felt as native as your command line? Terminal Browser explores a future where web browsing is <span className="highlight-pink">stripped of visual noise and distilled into a purely functional text-based experience</span>.
+                What if the web felt as native as your command line? Terminal Browser explores a future where web browsing is stripped of visual noise and distilled into a purely functional text-based experience.
                 <br /><br />
-                This concept imagines a workflow where developers can access documentation, research, and technical articles without breaking their terminal stream. By conceptualizing the web as structured text, the design aims to reduce the cognitive load associated with modern graphical browsers while <span className="highlight-pink">prioritizing speed and focus</span>.
+                This concept imagines a workflow where developers can access documentation, research, and technical articles without breaking their terminal stream. By conceptualizing the web as structured text, the design aims to reduce the cognitive load associated with modern graphical browsers while prioritizing speed and focus.
               </p>
             )}
             {slug === "luma" && (
               <p>
-                Production environments are inherently chaotic. When errors occur, the resulting noise and repetition can lead to severe alert fatigue and exhausted triage workflows. Luma conceptualizes a <span className="highlight-pink">shift from raw log aggregation to a decision-support system</span> designed to improve signal clarity.
+                Production environments are inherently chaotic. When errors occur, the resulting noise and repetition can lead to severe alert fatigue and exhausted triage workflows. Luma conceptualizes a shift from raw log aggregation to a decision-support system designed to improve signal clarity.
                 <br /><br />
-                The design explores how AI can group and explain complex errors to reduce cognitive load in high-stress environments. By imagining a future where technical issues are translated into understandable language and surfacing potential root causes contextually, the proposal aims to <span className="highlight-pink">support faster, more confident decision-making</span> for the entire team.
+                The design explores how AI can group and explain complex errors to reduce cognitive load in high-stress environments. By imagining a future where technical issues are translated into understandable language and surfacing potential root causes contextually, the proposal aims to support faster, more confident decision-making for the entire team.
               </p>
             )}
             {slug === "resume-roaster" && (
               <p>
                 Getting meaningful feedback on a resume is surprisingly difficult. Peer reviews are often overly polite, while professional services can be inaccessible or slow.
                 <br /><br />
-                Resume Roaster explores how AI can <span className="highlight-pink">deliver fast, structured, and genuinely useful critique</span>. The product combines natural language analysis with opinionated heuristics to surface weak phrasing, missing impact, and formatting issues that reduce hiring outcomes.
+                Resume Roaster explores how AI can deliver fast, structured, and genuinely useful critique. The product combines natural language analysis with opinionated heuristics to surface weak phrasing, missing impact, and formatting issues that reduce hiring outcomes.
                 <br /><br />
-                The experience <span className="highlight-pink">balances honesty with usability</span>. Feedback is direct, specific, and designed to guide iteration rather than overwhelm.
+                The experience balances honesty with usability. Feedback is direct, specific, and designed to guide iteration rather than overwhelm.
               </p>
             )}
             {slug === "acm-hackathon" && (
               <p>
-                Hackathon environments are characterized by high-intensity coordination and tight feedback loops. The ACM Hackathon Portal conceptualizes a unified platform designed to <span className="highlight-pink">streamline the complexities of registration, team synergy, and real-time event navigation</span>.
+                Hackathon environments are characterized by high-intensity coordination and tight feedback loops. The ACM Hackathon Portal conceptualizes a unified platform designed to streamline the complexities of registration, team synergy, and real-time event navigation.
                 <br /><br />
-                The design explores how a centralized information layer can reduce the friction of large-scale competitive events. By imagining a future where participant workflows are handled ephemerally and contextually, the proposal aims to <span className="highlight-pink">preserve creative energy and foster deeper networking</span> within technical communities.
+                The design explores how a centralized information layer can reduce the friction of large-scale competitive events. By imagining a future where participant workflows are handled ephemerally and contextually, the proposal aims to preserve creative energy and foster deeper networking within technical communities.
               </p>
             )}
             {slug === "craftr-docs" && (
               <p>
-                Documentation tools today often force a compromise between structured information and creative freedom. Craftr Docs explores a hybrid model intended to <span className="highlight-pink">combine the modular logic of block-based editors with the expressive control of design software</span>.
+                Documentation tools today often force a compromise between structured information and creative freedom. Craftr Docs explores a hybrid model intended to combine the modular logic of block-based editors with the expressive control of design software.
                 <br /><br />
-                By conceptualizing the <span className="highlight-pink">document as an expansive workspace rather than a rigid page</span>, the design aims to reduce the friction of structuring complex ideas. The proposal imagines a future where documentation is both a tool for thinking and a medium for high-fidelity communication, balancing progressive complexity with intuitive, fast-access interaction patterns.
+                By conceptualizing the document as an expansive workspace rather than a rigid page, the design aims to reduce the friction of structuring complex ideas. The proposal imagines a future where documentation is both a tool for thinking and a medium for high-fidelity communication, balancing progressive complexity with intuitive, fast-access interaction patterns.
               </p>
             )}
             {slug === "portfolios" && (
               <p>
-                Personal websites serve as a controlled environment for <span className="highlight-pink">testing structural logic and visual rhythm</span>. This collection documents a <span className="highlight-pink">multi-year evolution of my personal design language</span>, moving from systematic component libraries to high-density workspace aesthetics and exploratory archival transitions.
+                Personal websites serve as a controlled environment for testing structural logic and visual rhythm. This collection documents a multi-year evolution of my personal design language, moving from systematic component libraries to high-density workspace aesthetics and exploratory archival transitions.
               </p>
             )}
             {!hasCustomSections && (
@@ -432,7 +444,10 @@ export default async function ProjectDetail({
         {/* ---- Hero image ---- */}
         {project.heroImage && (
           <div className="project-detail-preview">
-            <div className="project-detail-preview-inner">
+            <div 
+              className="project-detail-preview-inner"
+              style={{ aspectRatio: "4/3", minHeight: "600px", background: "transparent" }}
+            >
               <Image
                 src={project.heroImage}
                 alt={project.title}

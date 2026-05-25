@@ -9,7 +9,7 @@ interface CraftrStackedPreviewProps {
   bgColor?: string;
 }
 
-export default function CraftrStackedPreview({ bgColor = "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" }: CraftrStackedPreviewProps) {
+export default function CraftrStackedPreview({ bgColor = "transparent" }: CraftrStackedPreviewProps) {
   const cards = [
     { id: "1", image: "/assets/craftr/pink-qb.svg" },
     { id: "2", image: "/assets/craftr/orange-qb.svg" },
@@ -25,7 +25,7 @@ export default function CraftrStackedPreview({ bgColor = "linear-gradient(135deg
       containerClassName="p-0 overflow-hidden relative"
     >
       {/* Container framing the ScrollStack */}
-      <div className="w-full h-[300px] md:h-[450px] [&_.scroll-stack-inner]:!px-4 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
+      <div className="w-full h-[400px] md:h-[650px] [&_.scroll-stack-inner]:!px-4 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
         <ScrollStack
           itemDistance={80}
           itemScale={0.02}

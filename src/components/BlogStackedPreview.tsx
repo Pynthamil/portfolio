@@ -9,7 +9,7 @@ interface BlogStackedPreviewProps {
   bgColor?: string;
 }
 
-export default function BlogStackedPreview({ bgColor = "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)" }: BlogStackedPreviewProps) {
+export default function BlogStackedPreview({ bgColor = "transparent" }: BlogStackedPreviewProps) {
   const cards = [
     { id: "1", image: "/assets/blog/banner1.svg" },
     { id: "2", image: "/assets/blog/banner2.svg" },
@@ -25,7 +25,7 @@ export default function BlogStackedPreview({ bgColor = "linear-gradient(135deg, 
       containerClassName="p-0 overflow-hidden relative"
     >
       {/* We frame the ScrollStack into a specific viewport height so it scrolls within itself seamlessly */}
-      <div className="w-full h-[300px] md:h-[600px] [&_.scroll-stack-inner]:!px-2 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
+      <div className="w-full h-[400px] md:h-[800px] [&_.scroll-stack-inner]:!px-2 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
         <ScrollStack
           itemDistance={120}
           itemScale={0.02}

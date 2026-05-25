@@ -18,7 +18,7 @@ export default function RoasterShowcase() {
   };
 
   return (
-    <div className="w-full max-w-2xl bg-[#0d0d0d] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl font-mono text-sm">
+    <div className="w-full max-w-2xl bg-[#0d0d0d] rounded-2xl overflow-hidden border border-neutral-800  font-mono text-sm">
       <div className="p-4 border-b border-neutral-800 flex justify-between items-center bg-[#141414]">
         <div className="flex items-center gap-2 text-rose-500 font-bold tracking-widest text-xs uppercase">
           <Cpu size={14} /> AI Critique Engine v2.0

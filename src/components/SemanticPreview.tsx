@@ -19,7 +19,7 @@ export default function SemanticPreview() {
             alt="Semantic Email Thread"
             width={1000}
             height={900}
-            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+            className="object-contain object-center w-full h-auto drop- rounded-xl md:rounded-[20px]"
           />
         </div>
       </ProjectPreviewSection>
@@ -36,7 +36,7 @@ export default function SemanticPreview() {
             alt="Semantic Intelligence Stats"
             width={1000}
             height={900}
-            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+            className="object-contain object-center w-full h-auto drop- rounded-xl md:rounded-[20px]"
           />
         </div>
       </ProjectPreviewSection>
@@ -53,7 +53,7 @@ export default function SemanticPreview() {
             alt="Semantic Mail Compose"
             width={1000}
             height={900}
-            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+            className="object-contain object-center w-full h-auto drop- rounded-xl md:rounded-[20px]"
           />
         </div>
       </ProjectPreviewSection>

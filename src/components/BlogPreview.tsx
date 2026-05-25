@@ -18,7 +18,7 @@ export default function BlogPreview({
   description,
   imageSrc,
   alt,
-  bgColor = "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)",
+  bgColor = "transparent",
   childrenBackground,
 }: BlogPreviewProps) {
   return (
@@ -35,7 +35,7 @@ export default function BlogPreview({
           alt={alt}
           width={1000}
           height={900}
-          className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+          className="object-contain object-center w-full h-auto drop- rounded-xl md:rounded-[20px]"
           priority
         />
       </div>

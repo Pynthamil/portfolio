@@ -8,13 +8,13 @@ export default function CodedexMobileShowcase() {
   return (
     <div className="flex items-center justify-center p-4">
       {/* Phone Frame */}
-      <div className="relative w-[300px] h-[600px] bg-neutral-950 border-[12px] border-neutral-900 rounded-[50px] shadow-2xl overflow-hidden flex flex-col font-sans">
+      <div className="relative w-[300px] h-[600px] bg-neutral-950 border-[12px] border-neutral-900 rounded-[50px]  overflow-hidden flex flex-col font-sans">
         
         {/* Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-neutral-900 rounded-b-3xl z-50"></div>
 
         {/* Header */}
-        <div className="bg-gradient-to-r from-purple-600 to-pink-500 p-6 pt-12 pb-8 rounded-b-3xl shadow-lg relative z-10">
+        <div className="bg-gradient-to-r from-purple-600 to-pink-500 p-6 pt-12 pb-8 rounded-b-3xl  relative z-10">
           <div className="flex justify-between items-center text-white mb-6">
             <h3 className="font-black tracking-wider text-xl">CODÉDEX</h3>
             <div className="flex gap-2">

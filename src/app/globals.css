@@ -968,7 +968,7 @@ body {
   width: 100%;
   aspect-ratio: 16 / 9;
   min-height: 440px;
-  background: #e8e8ed;
+  background: transparent;
   position: relative;
 }
 

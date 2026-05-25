@@ -162,7 +162,7 @@ export default function CodedexWrappedPreview() {
             onClick={() => {
               setCoinInserted(true);
             }}
-            className="px-8 py-3.5 rounded-full bg-pink-500 text-neutral-950 font-bold uppercase tracking-wider text-xs transition-transform active:scale-95 shadow-lg shadow-pink-500/30 hover:bg-pink-400"
+            className="px-8 py-3.5 rounded-full bg-pink-500 text-neutral-950 font-bold uppercase tracking-wider text-xs transition-transform active:scale-95  shadow-pink-500/30 hover:bg-pink-400"
           >
             INSERT COIN 🪙
           </button>

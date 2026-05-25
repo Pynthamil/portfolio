@@ -18,7 +18,7 @@ export default function IPhoneMockup({ children, className, height = "719px" }: 
     <div className={cn("relative mx-auto pointer-events-none select-none", className)}>
       {/* Outer Hardware Frame (Silver/Metallic) */}
       <div 
-        className="relative mx-auto border-gray-300 bg-gray-300 dark:border-gray-800 dark:bg-gray-800 border-[8px] rounded-[3rem] w-[360px] shadow-2xl transition-all duration-300"
+        className="relative mx-auto border-gray-300 bg-gray-300 dark:border-gray-800 dark:bg-gray-800 border-[8px] rounded-[3rem] w-[360px]  transition-all duration-300"
         style={{ height }}
       >
         
@@ -26,12 +26,12 @@ export default function IPhoneMockup({ children, className, height = "719px" }: 
         <div className="absolute -inset-[2px] rounded-[3.1rem] border-2 border-white/50 pointer-events-none"></div>
 
         {/* Side Buttons - Left (Mute/Volume) */}
-        <div className="absolute -left-[12px] top-[124px] w-[4px] h-[34px] bg-gray-400 rounded-l-sm border-l border-white/10 shadow-sm"></div> {/* Action/Mute */}
-        <div className="absolute -left-[12px] top-[180px] w-[4px] h-[64px] bg-gray-400 rounded-l-sm border-l border-white/10 shadow-sm"></div> {/* Vol Up */}
-        <div className="absolute -left-[12px] top-[260px] w-[4px] h-[64px] bg-gray-400 rounded-l-sm border-l border-white/10 shadow-sm"></div> {/* Vol Down */}
+        <div className="absolute -left-[12px] top-[124px] w-[4px] h-[34px] bg-gray-400 rounded-l-sm border-l border-white/10 "></div> {/* Action/Mute */}
+        <div className="absolute -left-[12px] top-[180px] w-[4px] h-[64px] bg-gray-400 rounded-l-sm border-l border-white/10 "></div> {/* Vol Up */}
+        <div className="absolute -left-[12px] top-[260px] w-[4px] h-[64px] bg-gray-400 rounded-l-sm border-l border-white/10 "></div> {/* Vol Down */}
 
         {/* Side Buttons - Right (Power) */}
-        <div className="absolute -right-[12px] top-[242px] w-[4px] h-[100px] bg-gray-400 rounded-r-sm border-r border-white/10 shadow-sm"></div>
+        <div className="absolute -right-[12px] top-[242px] w-[4px] h-[100px] bg-gray-400 rounded-r-sm border-r border-white/10 "></div>
 
         {/* Inner Black Bezel */}
         <div className="relative h-full w-full rounded-[2.5rem] bg-black overflow-hidden border-[4px] border-black shadow-inner">

@@ -21,7 +21,7 @@ export default function RoasterPreview() {
             width={1200}
             height={900}
             priority
-            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+            className="object-contain object-center w-full h-auto drop- rounded-xl md:rounded-[20px]"
           />
         </div>
       </ProjectPreviewSection>
@@ -38,7 +38,7 @@ export default function RoasterPreview() {
             alt="Resume Roaster Annotation Critique"
             width={1100}
             height={800}
-            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+            className="object-contain object-center w-full h-auto drop- rounded-xl md:rounded-[20px]"
           />
         </div>
       </ProjectPreviewSection>
@@ -55,7 +55,7 @@ export default function RoasterPreview() {
             alt="Resume Roaster Deep Analysis"
             width={1100}
             height={800}
-            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+            className="object-contain object-center w-full h-auto drop- rounded-xl md:rounded-[20px]"
           />
         </div>
       </ProjectPreviewSection>
@@ -72,7 +72,7 @@ export default function RoasterPreview() {
             alt="Resume Roaster File Upload"
             width={800}
             height={700}
-            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+            className="object-contain object-center w-full h-auto drop- rounded-xl md:rounded-[20px]"
           />
         </div>
       </ProjectPreviewSection>
@@ -89,7 +89,7 @@ export default function RoasterPreview() {
             alt="Resume Roaster Menu Search"
             width={800}
             height={700}
-            className="object-contain object-center w-full h-auto drop-shadow-2xl rounded-xl md:rounded-[20px]"
+            className="object-contain object-center w-full h-auto drop- rounded-xl md:rounded-[20px]"
           />
         </div>
       </ProjectPreviewSection>

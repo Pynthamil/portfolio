@@ -9,7 +9,7 @@ export default function BlogCodeShowcase() {
   );
 
   return (
-    <div className="w-full max-w-4xl bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-2xl flex flex-col md:flex-row h-[400px]">
+    <div className="w-full max-w-4xl bg-white rounded-2xl overflow-hidden border border-neutral-200  flex flex-col md:flex-row h-[400px]">
       
       {/* Editor Pane */}
       <div className="flex-1 border-r border-neutral-200 flex flex-col bg-[#fdfdfc]">

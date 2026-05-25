@@ -44,7 +44,7 @@ export default function TUITabSwitcher() {
             <Image
               src={activeTab === "wiki" ? "/assets/tui/wikipedia.svg" : "/assets/tui/google.svg"}
               alt={`${activeTab} tab`}
-              className="object-contain object-center rounded-2xl shadow-2xl"
+              className="object-contain object-center rounded-2xl "
               priority
               width={1000}
               height={800}
@@ -55,7 +55,7 @@ export default function TUITabSwitcher() {
 
         {/* Interaction Hint */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-          <div className="bg-black/90 backdrop-blur-md text-sky-400 text-[12px] font-bold px-5 py-2.5 rounded-full border border-sky-400/20 flex items-center gap-3 shadow-xl uppercase tracking-widest">
+          <div className="bg-black/90 backdrop-blur-md text-sky-400 text-[12px] font-bold px-5 py-2.5 rounded-full border border-sky-400/20 flex items-center gap-3  uppercase tracking-widest">
             <div className="flex gap-1">
               <span className="bg-sky-400 text-black px-1.5 py-0.5 rounded text-[10px]">↑</span>
               <span className="bg-sky-400 text-black px-1.5 py-0.5 rounded text-[10px]">↓</span>

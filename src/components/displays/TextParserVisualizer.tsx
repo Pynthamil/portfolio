@@ -61,7 +61,7 @@ export default function TextParserVisualizer() {
   };
 
   return (
-    <div className="w-full max-w-[800px] bg-neutral-950 border border-neutral-800 rounded-[32px] p-6 md:p-8 flex flex-col gap-8 shadow-2xl relative overflow-hidden mx-auto my-12 text-white">
+    <div className="w-full max-w-[800px] bg-neutral-950 border border-neutral-800 rounded-[32px] p-6 md:p-8 flex flex-col gap-8  relative overflow-hidden mx-auto my-12 text-white">
       {/* Background ambient lighting */}
       <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-cyan-500/10 blur-[80px] pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-48 h-48 rounded-full bg-purple-500/10 blur-[80px] pointer-events-none" />
@@ -94,7 +94,7 @@ export default function TextParserVisualizer() {
           <button
             onClick={handleParse}
             disabled={isParsing}
-            className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-cyan-500 text-neutral-950 flex items-center justify-center transition-all hover:bg-cyan-400 active:scale-95 disabled:opacity-50 disabled:pointer-events-none shadow-lg shadow-cyan-500/20"
+            className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-cyan-500 text-neutral-950 flex items-center justify-center transition-all hover:bg-cyan-400 active:scale-95 disabled:opacity-50 disabled:pointer-events-none  shadow-cyan-500/20"
           >
             <Send size={16} />
           </button>

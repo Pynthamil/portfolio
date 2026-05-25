@@ -16,6 +16,7 @@ type ProjectData = {
   subtitle: string;
   description: string;
   heroImage?: string;
+  imageBg?: string;
   liveUrl?: string;
   githubUrl?: string;
   techStack?: string[];
@@ -25,11 +26,12 @@ type ProjectData = {
 
 const projects: Record<string, ProjectData> = {
   "focus-fuel": {
-    title: "FocusFuel",
-    subtitle: "A minimalist study companion and motivational developer hub with custom sprite mascots",
-    description:
-      "FocusFuel was born out of frustration with overly complex, notification-heavy study applications. Developers don't need distracting streaks or loud visual noise; we need pure, minimalist flow environments and a companion that respects our focus. I built FocusFuel as a high-fidelity Pomodoro study app with custom pixel-art mascots that change expressions depending on the current flow state.",
+    title: "GitPerson",
+    subtitle: "You can track everything",
+    description: "GitPerson is a command-line tool that lets you track anything like you track code. Built for developers who want version control semantics for personal data.",
     heroImage: "/assets/project-cards/git-person.svg",
+    imageBg: "#14b8a6",
+    githubUrl: "#",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "React 19"],
     sections: [
       {
@@ -47,10 +49,11 @@ const projects: Record<string, ProjectData> = {
 
   "codedex-wrapped": {
     title: "Codédex App",
-    subtitle: "Spotify-wrapped style retro arcade annual developer recap built with Framer Motion",
-    description:
-      "Every year, developers love to reflect on their learning journey. For the Codédex platform, we conceptualized a Spotify-wrapped style yearly recap feature. Striking a balance between playfulness and technical precision, the recaps are animated like retro-arcade games using Framer Motion and v4 Tailwind layers.",
+    subtitle: "App Proposal for Codedex Platform",
+    description: "A mobile application proposal for the Codédex platform, focusing on bringing gamified learning experiences to mobile devices with a native feel.",
     heroImage: "/assets/project-cards/codedex-app.svg",
+    imageBg: "#eab308",
+    liveUrl: "#",
     techStack: ["React 19", "Framer Motion", "Tailwind CSS v4", "Next.js", "Lucide Icons"],
     sections: [
 
@@ -67,12 +70,58 @@ const projects: Record<string, ProjectData> = {
       "Codédex Wrapped showcases how personality-driven UI elements and robust motion libraries can make platform analytics feel incredibly rewarding.",
   },
 
-  "semantic-parser": {
-    title: "Semantic Parser",
-    subtitle: "High-performance NLP parsing pipeline transforming text streams into knowledge nodes",
+  "semantic-email-intelligence": {
+    title: "Semantic Email Intelligence",
+    subtitle: "High-performance NLP parsing pipeline that transforms raw text streams into semantic database nodes",
     description:
-      "Raw message streams, logs, and emails contain high cognitive load. Semantic Parser is a backend and frontend conceptual utility designed to parse text streams in real-time, extract mentions, tags, and datetime entities, and render them as interconnected database graph entities.",
+      "A robust NLP parsing pipeline that intercepts raw email streams, extracts semantic meaning, and structures the data for intelligent categorization and retrieval.",
+    heroImage: "/assets/project-cards/semantic-email.svg",
+    imageBg: "#1e3a8a",
+    githubUrl: "#",
+    techStack: ["TypeScript", "Regular Expressions", "SVG rendering", "Tailwind CSS", "Lucide Icons"],
+    sections: [
+      {
+        heading: "Streamlined NLP Tokenizer",
+        body: "The core utility implements regex parsing and meaning extraction to isolate contextual parameters (like tag priorities, due dates, action items) as high-value, structured database attributes.",
+      },
+      {
+        heading: "Real-time Entity Graph Linking",
+        body: "To help developers visualize relationships, the parser maps output tokens to an interactive, glowing node-link SVG graph, showing data flowing through the parsing engine to structured database schemas in real-time.",
+      },
+    ],
+    outro:
+      "Semantic Parser is a masterclass in combining high-performance textual processing with highly intuitive, visual data structure rendering.",
+  },
+
+  "resume-roaster": {
+    title: "Resume Roaster",
+    subtitle: "High-performance NLP parsing pipeline that transforms raw text streams into semantic database nodes",
+    description: "A high-performance backend pipeline designed to parse and extract semantic data from unstructured resumes, powering the Resume Roaster AI critique platform.",
+    heroImage: "/assets/project-cards/resume-roaster.svg",
+    imageBg: "#f97316",
+    githubUrl: "#",
+    techStack: ["TypeScript", "Regular Expressions", "SVG rendering", "Tailwind CSS", "Lucide Icons"],
+    sections: [
+      {
+        heading: "Streamlined NLP Tokenizer",
+        body: "The core utility implements regex parsing and meaning extraction to isolate contextual parameters (like tag priorities, due dates, action items) as high-value, structured database attributes.",
+      },
+      {
+        heading: "Real-time Entity Graph Linking",
+        body: "To help developers visualize relationships, the parser maps output tokens to an interactive, glowing node-link SVG graph, showing data flowing through the parsing engine to structured database schemas in real-time.",
+      },
+    ],
+    outro:
+      "Semantic Parser is a masterclass in combining high-performance textual processing with highly intuitive, visual data structure rendering.",
+  },
+
+  "semantic-parser": {
+    title: "ReadMeFlier",
+    subtitle: "High-performance NLP parsing pipeline that transforms raw text streams into semantic database nodes",
+    description: "An advanced NLP pipeline designed to parse unstructured markdown documentation and convert it into a structured semantic knowledge graph.",
     heroImage: "/assets/project-cards/readmeflier.svg",
+    imageBg: "#4f46e5",
+    githubUrl: "#",
     techStack: ["TypeScript", "Regular Expressions", "SVG rendering", "Tailwind CSS", "Lucide Icons"],
     sections: [
       {
@@ -217,7 +266,10 @@ export default async function CodingProjectPage({ params }: Props) {
         {/* ---- Hero image ---- */}
         {project.heroImage && (
           <div className="project-detail-preview">
-            <div className="project-detail-preview-inner">
+            <div 
+              className="project-detail-preview-inner"
+              style={{ background: "transparent" }}
+            >
               <Image
                 src={project.heroImage}
                 alt={project.title}

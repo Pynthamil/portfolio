@@ -16,7 +16,7 @@ export default function HelpdeskShowcase() {
   };
 
   return (
-    <div className="w-full max-w-2xl bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-xl font-sans text-sm">
+    <div className="w-full max-w-2xl bg-white rounded-2xl overflow-hidden border border-neutral-200  font-sans text-sm">
       <div className="bg-[#f8f9fa] border-b border-neutral-200 p-4 flex justify-between items-center">
         <div className="flex items-center gap-2 font-semibold text-neutral-800">
           <Inbox size={18} className="text-blue-500" /> Inbox Queue
@@ -44,7 +44,7 @@ export default function HelpdeskShowcase() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, x: -50, transition: { duration: 0.2 } }}
-                className="bg-white border border-neutral-200 p-4 rounded-xl mb-3 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                className="bg-white border border-neutral-200 p-4 rounded-xl mb-3 flex items-center justify-between  hover:shadow-md transition-shadow cursor-pointer"
               >
                 <div className="flex items-center gap-4">
                   <div className={`w-2 h-2 rounded-full ${

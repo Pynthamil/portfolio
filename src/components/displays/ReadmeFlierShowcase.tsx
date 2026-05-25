@@ -17,7 +17,7 @@ export default function ReadmeFlierShowcase() {
   };
 
   return (
-    <div className="w-full max-w-4xl bg-[#0a0a0a] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl flex flex-col md:flex-row h-[420px] font-sans">
+    <div className="w-full max-w-4xl bg-[#0a0a0a] rounded-2xl overflow-hidden border border-neutral-800  flex flex-col md:flex-row h-[420px] font-sans">
       
       {/* Settings Pane */}
       <div className="flex-1 border-r border-neutral-800 flex flex-col bg-[#111]">
