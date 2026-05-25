@@ -318,45 +318,26 @@ export default async function CodingProjectPage({ params }: Props) {
               </div>
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Design</h2>
-                <div className="detail-showcase-grid is-equal" style={{ marginTop: "32px", marginBottom: "24px" }}>
-                  <div 
-                    className="detail-showcase-card" 
-                    style={{ 
-                      minHeight: "400px", 
-                      background: "#FEC5BA",
-                      borderRadius: "24px",
-                      border: "1px dashed rgba(0,0,0,0.06)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
-                    }}
-                  >
-                    {/* Insert Left Column SVG here */}
+                
+                {/* Vector Brand Assets Showcase */}
+                <div className="detail-showcase-grid is-equal" style={{ marginTop: "32px", marginBottom: "32px" }}>
+                  <div>
+                    <img
+                      src="/assets/codedex/block1.svg"
+                      alt="Codédex Design Block 1"
+                      className="w-full h-auto rounded-[24px] overflow-hidden"
+                    />
                   </div>
-                  <div 
-                    className="detail-showcase-card" 
-                    style={{ 
-                      minHeight: "400px", 
-                      background: "#CADBBB",
-                      borderRadius: "24px",
-                      border: "1px dashed rgba(0,0,0,0.06)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
-                    }}
-                  >
-                    {/* Insert Right Column SVG here */}
+                  <div>
+                    <img
+                      src="/assets/codedex/block1.svg"
+                      alt="Codédex Design Block 1"
+                      className="w-full h-auto rounded-[24px] overflow-hidden"
+                    />
                   </div>
                 </div>
-                <div 
-                  className="detail-showcase-card is-wide-card" 
-                  style={{ 
-                    minHeight: "500px", 
-                    background: "#D5E2EA",
-                    borderRadius: "24px",
-                    border: "1px dashed rgba(0,0,0,0.06)",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.02)",
-                    marginBottom: "24px"
-                  }}
-                >
-                  {/* Insert Full-width SVG here */}
-                </div>
+
+
                 <div className="detail-showcase-grid is-equal" style={{ marginTop: "24px", marginBottom: "24px" }}>
                   <div 
                     className="detail-showcase-card" 
@@ -364,11 +345,19 @@ export default async function CodingProjectPage({ params }: Props) {
                       minHeight: "400px", 
                       background: "#F5D6EB",
                       borderRadius: "24px",
-                      border: "1px dashed rgba(0,0,0,0.06)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+                      border: "1px solid rgba(0,0,0,0.04)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)",
+                      position: "relative",
+                      padding: 0,
+                      overflow: "hidden"
                     }}
                   >
-                    {/* Insert Row 3 Left SVG here */}
+                    <Image
+                      src="/assets/codedex/Course Screen.svg"
+                      alt="Codédex Course Screen"
+                      fill
+                      style={{ objectFit: "contain", padding: "20px" }}
+                    />
                   </div>
                   <div 
                     className="detail-showcase-card" 
@@ -376,37 +365,19 @@ export default async function CodingProjectPage({ params }: Props) {
                       minHeight: "400px", 
                       background: "#FCE4C8",
                       borderRadius: "24px",
-                      border: "1px dashed rgba(0,0,0,0.06)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+                      border: "1px solid rgba(0,0,0,0.04)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)",
+                      position: "relative",
+                      padding: 0,
+                      overflow: "hidden"
                     }}
                   >
-                    {/* Insert Row 3 Right SVG here */}
-                  </div>
-                </div>
-                <div className="detail-showcase-grid is-equal" style={{ marginTop: "24px", marginBottom: "24px" }}>
-                  <div 
-                    className="detail-showcase-card" 
-                    style={{ 
-                      minHeight: "400px", 
-                      background: "#D1E8E2",
-                      borderRadius: "24px",
-                      border: "1px dashed rgba(0,0,0,0.06)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
-                    }}
-                  >
-                    {/* Insert Row 4 Left SVG here */}
-                  </div>
-                  <div 
-                    className="detail-showcase-card" 
-                    style={{ 
-                      minHeight: "400px", 
-                      background: "#E2D4F0",
-                      borderRadius: "24px",
-                      border: "1px dashed rgba(0,0,0,0.06)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
-                    }}
-                  >
-                    {/* Insert Row 4 Right SVG here */}
+                    <Image
+                      src="/assets/codedex/Course Detail.svg"
+                      alt="Codédex Course Detail"
+                      fill
+                      style={{ objectFit: "contain", padding: "20px" }}
+                    />
                   </div>
                 </div>
               </div>
@@ -582,17 +553,6 @@ export default async function CodingProjectPage({ params }: Props) {
 
           {/* ---- Next Project Link ---- */}
           <div className="next-project-section">
-            {/* Left Side: Pointing Character */}
-            <div className="next-project-character-container">
-              <div className="character-doodle-wrapper">
-                <img 
-                  src="/assets/girl_doodle.png" 
-                  alt="Pynthamil pointing illustration" 
-                  className="character-doodle" 
-                />
-              </div>
-            </div>
-
             {/* Right Side: Next Project Card */}
             <div className="next-project-card-container">
               <span className="next-project-title-label">Next Project</span>

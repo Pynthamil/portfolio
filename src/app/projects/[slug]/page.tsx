@@ -538,17 +538,6 @@ export default async function ProjectDetail({
 
           {/* ---- Next Project Link ---- */}
           <div className="next-project-section">
-            {/* Left Side: Pointing Character */}
-            <div className="next-project-character-container">
-              <div className="character-doodle-wrapper">
-                <img 
-                  src="/assets/girl_doodle.png" 
-                  alt="Pynthamil pointing illustration" 
-                  className="character-doodle" 
-                />
-              </div>
-            </div>
-
             {/* Right Side: Next Project Card */}
             <div className="next-project-card-container">
               <span className="next-project-title-label">Next Project</span>
