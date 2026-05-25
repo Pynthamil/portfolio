@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import { productDesignProjects, codingProjects } from "@/data/projectsData";
 import TUIHero from "@/components/TUIHero";
 import TUITabSwitcher from "@/components/TUITabSwitcher";
-import BackButton from "@/components/BackButton";
 
 import TUIStackedPreview from "@/components/TUIStackedPreview";
 import BlogPreview from "@/components/BlogPreview";
@@ -16,7 +15,6 @@ import CraftrStackedPreview from "@/components/CraftrStackedPreview";
 import RoasterPreview from "@/components/RoasterPreview";
 import PortfolioPreview from "@/components/PortfolioPreview";
 import HackathonPreview from "@/components/HackathonPreview";
-import ProjectSidebar from "@/components/ProjectSidebar";
 
 /* ------------------------------------------------------------------ */
 /*  Data model                                                        */
@@ -320,13 +318,7 @@ export default async function ProjectDetail({
 
   return (
     <main>
-      {/* Floating Sticky Navigation Sidebar */}
-      <ProjectSidebar />
-
       <div className="project-detail-wrapper fade-up">
-        {/* Go Back Link */}
-        <BackButton>Back to Projects</BackButton>
-
         {/* ---- Header ---- */}
         <div className="project-detail-header">
           <div className="project-detail-text">
@@ -361,21 +353,6 @@ export default async function ProjectDetail({
           )}
         </div>
 
-        {/* ---- Hero image ---- */}
-        {project.heroImage && (
-          <div className="project-detail-preview">
-            <div className="project-detail-preview-inner">
-              <Image
-                src={project.heroImage}
-                alt={project.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 900px"
-                style={{ objectFit: "cover", objectPosition: "top center" }}
-                priority
-              />
-            </div>
-          </div>
-        )}
 
         {/* ---- Section 1: Overview ---- */}
         <div id="overview" className="scroll-mt-24">
@@ -451,6 +428,22 @@ export default async function ProjectDetail({
             </div>
           )}
         </div>
+
+        {/* ---- Hero image ---- */}
+        {project.heroImage && (
+          <div className="project-detail-preview">
+            <div className="project-detail-preview-inner">
+              <Image
+                src={project.heroImage}
+                alt={project.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 900px"
+                style={{ objectFit: "cover", objectPosition: "top center" }}
+                priority
+              />
+            </div>
+          </div>
+        )}
 
         {/* ---- Section 2: Design (Custom or first standard section) ---- */}
         <div id="design" className="scroll-mt-24">

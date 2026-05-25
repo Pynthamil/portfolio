@@ -4,9 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import FocusTimerPreview from "@/components/displays/FocusTimerPreview";
 import TextParserVisualizer from "@/components/displays/TextParserVisualizer";
-import ProjectSidebar from "@/components/ProjectSidebar";
 import { codingProjects, productDesignProjects } from "@/data/projectsData";
-import BackButton from "@/components/BackButton";
 
 type ProjectSection = {
   heading: string;
@@ -149,13 +147,7 @@ export default async function CodingProjectPage({ params }: Props) {
 
   return (
     <main>
-      {/* Floating Sticky Navigation Sidebar */}
-      <ProjectSidebar />
-
       <div className="project-detail-wrapper fade-up">
-        {/* Go Back Link */}
-        <BackButton>Back to Coding</BackButton>
-
         {/* ---- Header ---- */}
         <div className="project-detail-header">
           <div className="project-detail-text">
@@ -190,6 +182,38 @@ export default async function CodingProjectPage({ params }: Props) {
           )}
         </div>
 
+        {/* ---- Section 1: Overview ---- */}
+        <div id="overview" className="scroll-mt-24">
+          <div className="project-detail-intro">
+            {slug === "focus-fuel" && (
+              <p>
+                FocusFuel was born out of frustration with overly complex, notification-heavy study applications. Developers don&apos;t need distracting streaks or loud visual noise; we need pure, minimalist flow environments and a companion that respects our focus. I built FocusFuel as a high-fidelity Pomodoro study app with custom pixel-art mascots that change expressions depending on the current flow state.
+              </p>
+            )}
+            {slug === "codedex-wrapped" && (
+              <p>
+                Every year, developers love to reflect on their learning journey. For the Codédex platform, we conceptualized a Spotify-wrapped style yearly recap feature. Striking a balance between playfulness and technical precision, the recaps are animated like retro-arcade games using Framer Motion and v4 Tailwind layers.
+              </p>
+            )}
+            {slug === "semantic-parser" && (
+              <p>
+                Raw message streams, logs, and emails contain high cognitive load. Semantic Parser is a backend and frontend conceptual utility designed to parse text streams in real-time, extract mentions, tags, and datetime entities, and render them as interconnected database graph entities.
+              </p>
+            )}
+          </div>
+
+          {/* Tech stack */}
+          {project.techStack && project.techStack.length > 0 && (
+            <div className="project-detail-tech-stack">
+              {project.techStack.map((tech) => (
+                <span key={tech} className="project-detail-tech-pill">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* ---- Hero image ---- */}
         {project.heroImage && (
           <div className="project-detail-preview">
@@ -206,37 +230,16 @@ export default async function CodingProjectPage({ params }: Props) {
           </div>
         )}
 
-        {/* ---- Section 1: Overview ---- */}
-        <div id="overview" className="scroll-mt-24">
-          <div className="project-detail-intro">
-            {slug === "focus-fuel" && (
-              <p>
-                FocusFuel was born out of frustration with overly complex, notification-heavy study applications. Developers don&apos;t need distracting streaks or loud visual noise; <span className="highlight-pink">we need pure, minimalist flow environments</span> and a companion that <span className="highlight-pink">respects our focus</span>. I built FocusFuel as a high-fidelity Pomodoro study app with custom pixel-art mascots that change expressions depending on the current flow state.
-              </p>
-            )}
-            {slug === "codedex-wrapped" && (
-              <p>
-                Every year, developers love to reflect on their learning journey. For the Codédex platform, we conceptualized a Spotify-wrapped style yearly recap feature. Striking a balance between <span className="highlight-pink">playfulness and technical precision</span>, the recaps are <span className="highlight-pink">animated like retro-arcade games</span> using Framer Motion and v4 Tailwind layers.
-              </p>
-            )}
-            {slug === "semantic-parser" && (
-              <p>
-                Raw message streams, logs, and emails contain high cognitive load. Semantic Parser is a backend and frontend conceptual utility designed to parse text streams in real-time, <span className="highlight-pink">extract mentions, tags, and datetime entities</span>, and render them as <span className="highlight-pink">interconnected database graph entities</span>.
-              </p>
-            )}
+        {slug === "codedex-wrapped" && (
+          <div className="project-detail-section" style={{ marginBottom: "48px" }}>
+            <h2 className="project-detail-section-title">Platform Features</h2>
+            <img
+              src="/assets/codedex/Features.svg"
+              alt="Codédex App Features"
+              className="w-full h-auto mt-8 rounded-[24px] overflow-hidden detail-breakout"
+            />
           </div>
-
-          {/* Tech stack */}
-          {project.techStack && project.techStack.length > 0 && (
-            <div className="project-detail-tech-stack">
-              {project.techStack.map((tech) => (
-                <span key={tech} className="project-detail-tech-pill">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
+        )}
 
         {/* ---- Section 2: Design ---- */}
         <div id="design" className="scroll-mt-24">
@@ -326,14 +329,7 @@ export default async function CodingProjectPage({ params }: Props) {
 
           {slug === "codedex-wrapped" && (
             <>
-              <div className="project-detail-section" style={{ marginBottom: "48px" }}>
-                <h2 className="project-detail-section-title">Platform Features</h2>
-                <img
-                  src="/assets/codedex/Features.svg"
-                  alt="Codédex App Features"
-                  className="w-full h-auto mt-8 rounded-[24px] overflow-hidden"
-                />
-              </div>
+
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Design</h2>
                 
@@ -348,56 +344,15 @@ export default async function CodingProjectPage({ params }: Props) {
                   </div>
                   <div>
                     <img
-                      src="/assets/codedex/block1.svg"
-                      alt="Codédex Design Block 1"
+                      src="/assets/codedex/block2.svg"
+                      alt="Codédex Design Block 2"
                       className="w-full h-auto rounded-[24px] overflow-hidden"
                     />
                   </div>
                 </div>
 
 
-                <div className="detail-showcase-grid is-equal" style={{ marginTop: "24px", marginBottom: "24px" }}>
-                  <div 
-                    className="detail-showcase-card" 
-                    style={{ 
-                      minHeight: "400px", 
-                      background: "#F5D6EB",
-                      borderRadius: "24px",
-                      border: "1px solid rgba(0,0,0,0.04)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)",
-                      position: "relative",
-                      padding: 0,
-                      overflow: "hidden"
-                    }}
-                  >
-                    <Image
-                      src="/assets/codedex/Course Screen.svg"
-                      alt="Codédex Course Screen"
-                      fill
-                      style={{ objectFit: "contain", padding: "20px" }}
-                    />
-                  </div>
-                  <div 
-                    className="detail-showcase-card" 
-                    style={{ 
-                      minHeight: "400px", 
-                      background: "#FCE4C8",
-                      borderRadius: "24px",
-                      border: "1px solid rgba(0,0,0,0.04)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.02)",
-                      position: "relative",
-                      padding: 0,
-                      overflow: "hidden"
-                    }}
-                  >
-                    <Image
-                      src="/assets/codedex/Course Detail.svg"
-                      alt="Codédex Course Detail"
-                      fill
-                      style={{ objectFit: "contain", padding: "20px" }}
-                    />
-                  </div>
-                </div>
+
               </div>
             </>
           )}
