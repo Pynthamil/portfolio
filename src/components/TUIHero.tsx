@@ -13,38 +13,17 @@ export default function TUIHero({ bgColor = "transparent" }: TUIHeroProps) {
       <h2 className="project-detail-section-title">Visual Identity</h2>
       <p className="project-detail-section-body !mb-12">
         The Terminal Browser explores a strictly minimalist aesthetic, seeking to
-        combine retro terminal vibes with modern interaction patterns. Hover over
-        the container below to imagine the interface.
+        combine retro terminal vibes with modern interaction patterns.
       </p>
 
-      <motion.div
-        className="tui-hero-container relative flex justify-center items-end overflow-hidden cursor-pointer rounded-[40px] "
-        style={{ height: '480px', background: "transparent" }}
-        initial="initial"
-        whileHover="hover"
-      >
-        <motion.div
-          className="tui-terminal-wrapper relative w-[90%] h-[85%] rounded-t-[24px] overflow-hidden"
-          variants={{
-            initial: { y: 60 },
-            hover: { y: 10 }
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 300,
-            damping: 30
-          }}
-        >
-          <Image
-            src="/assets/tui/tui-default.svg"
-            alt="Terminal Browser TUI"
-            fill
-            style={{ objectFit: "contain", objectPosition: "top center" }}
-            priority
-            className=""
-          />
-        </motion.div>
-      </motion.div>
+      <div className="w-full flex justify-center mt-8">
+        <img 
+          src="/assets/tui/tui-default.svg" 
+          alt="Terminal Browser TUI" 
+          className="w-full h-auto rounded-[24px]"
+          style={{ maxWidth: "960px", filter: "drop-shadow(0 12px 36px rgba(0, 0, 0, 0.05))" }}
+        />
+      </div>
     </div>
   );
 }
