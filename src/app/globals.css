@@ -77,6 +77,7 @@ body {
 
 .nav-item.active {
   color: #1d1d1f;
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .nav-dot {
