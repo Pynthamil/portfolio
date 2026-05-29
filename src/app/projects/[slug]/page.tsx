@@ -49,6 +49,7 @@ const projects: Record<string, ProjectData> = {
     heroImage: "/assets/project-cards/my-blog.svg",
     imageBg: "#3b82f6",
     liveUrl: "https://my-blog-tan-tau.vercel.app",
+    githubUrl: "https://github.com/Pynthamil/my-blog",
     techStack: ["Next.js", "TypeScript", "Supabase", "Hashnode API", "Tailwind CSS"],
     sections: [
       {
@@ -354,30 +355,52 @@ export default async function ProjectDetail({
             <span className="project-type-tag tag-design">Product Design</span>
           </div>
 
-          {(project.liveUrl || project.githubUrl) && slug === "my-blog" && (
-            <a
-              href={project.liveUrl || project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Visit ${project.title}`}
-              className="project-detail-link-btn"
-            >
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+          <div style={{ display: "flex", gap: "12px" }}>
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${project.title} on GitHub`}
+                className="project-detail-link-btn"
               >
-                <path
-                  d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6464L10.2929 4H6C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3H11.5C11.7761 3 12 3.22386 12 3.5V9C12 9.27614 11.7761 9.5 11.5 9.5C11.2239 9.5 11 9.27614 11 9V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
-                  fill="currentColor"
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
-          )}
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="15" 
+                  height="15" 
+                  fill="currentColor" 
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                </svg>
+              </a>
+            )}
+            
+            {project.liveUrl && slug === "my-blog" && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${project.title}`}
+                className="project-detail-link-btn"
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6464L10.2929 4H6C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3H11.5C11.7761 3 12 3.22386 12 3.5V9C12 9.27614 11.7761 9.5 11.5 9.5C11.2239 9.5 11 9.27614 11 9V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+            )}
+          </div>
         </div>
 
 

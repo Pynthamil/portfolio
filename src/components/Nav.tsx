@@ -18,7 +18,10 @@ export default function Nav() {
   const isProjectDetail = (pathname.startsWith("/projects/") || pathname.startsWith("/coding/")) && pathname.split("/").length === 3;
   
   const isDesignProject = pathname.startsWith("/projects/");
-  const projectDetailLinks = isDesignProject ? [
+  const isMyBlog = pathname === "/projects/my-blog";
+  const useDesignLabels = isDesignProject && !isMyBlog;
+
+  const projectDetailLinks = useDesignLabels ? [
     { id: "overview", label: "Overview", color: "#ff3b30" },
     { id: "design", label: "Design", color: "#007aff" },
     { id: "implementation", label: "Approach", color: "#34c759" },
@@ -35,25 +38,66 @@ export default function Nav() {
   useEffect(() => {
     if (!isProjectDetail) return;
 
-    const handleScroll = () => {
+    const ids = ["overview", "design", "implementation", "results"];
+
+    const getActiveSection = () => {
       let currentActive = "overview";
-      for (const link of projectDetailLinks) {
-        const el = document.getElementById(link.id);
+      for (const id of ids) {
+        const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 160) {
-            currentActive = link.id;
+          // We consider a section active if its top is above the middle of the screen
+          if (rect.top <= window.innerHeight / 2 + 80) {
+            currentActive = id;
           }
         }
       }
-      setActiveSection(currentActive);
+      return currentActive;
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    const updateActive = () => {
+      const active = getActiveSection();
+      setActiveSection(active);
+    };
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isProjectDetail]);
+    // 1. Intersection Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: "-10% 0px -50% 0px",
+      threshold: [0, 0.1],
+    };
+
+    const observer = new IntersectionObserver(() => {
+      updateActive();
+    }, observerOptions);
+
+    const observedElements: Element[] = [];
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        observer.observe(el);
+        observedElements.push(el);
+      }
+    });
+
+    // 2. Scroll listener
+    window.addEventListener("scroll", updateActive, { passive: true });
+    
+    // Initial check
+    updateActive();
+
+    // Delayed checks for initial render / hydration
+    const timer1 = setTimeout(updateActive, 100);
+    const timer2 = setTimeout(updateActive, 500);
+
+    return () => {
+      observedElements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+      window.removeEventListener("scroll", updateActive);
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, [pathname, isProjectDetail]);
 
   const handleScrollClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();

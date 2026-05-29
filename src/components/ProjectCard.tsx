@@ -14,6 +14,7 @@ type Project = {
   imageBg?: string;
   href: string;
   category?: "design" | "dev";
+  locked?: boolean;
 };
 
 type Props = {
