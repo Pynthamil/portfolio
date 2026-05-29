@@ -532,6 +532,42 @@ export default async function CodingProjectPage({ params }: Props) {
                   </svg>
                 </div>
               )}
+
+              {slug === "codedex-wrapped" && section.heading === "Implementation" && (
+                <div className="detail-showcase-grid is-equal" style={{ marginTop: "32px", marginBottom: "32px", alignItems: "center" }}>
+                  <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <img 
+                      src="/assets/codedex/techdialogue.svg" 
+                      alt="Codédex Technical Dialogue" 
+                      style={{ 
+                        width: "100%", 
+                        height: "auto", 
+                        maxWidth: "640px",
+                        filter: "drop-shadow(0 10px 25px rgba(0, 0, 0, 0.04))"
+                      }}
+                    />
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "0 24px" }}>
+                    <h3 style={{ 
+                      fontSize: "11px", 
+                      fontWeight: "700", 
+                      letterSpacing: "0.15em", 
+                      color: "#86868b", 
+                      textTransform: "uppercase",
+                      marginBottom: "16px"
+                    }}>
+                      TEch stack
+                    </h3>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                      {project.techStack?.map((tech) => (
+                        <span key={tech} className="project-detail-tech-pill" style={{ margin: 0 }}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
