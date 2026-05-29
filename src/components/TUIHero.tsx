@@ -21,7 +21,7 @@ export default function TUIHero({ bgColor = "transparent" }: TUIHeroProps) {
           src="/assets/tui/tui-default.svg" 
           alt="Terminal Browser TUI" 
           className="w-full h-auto rounded-[24px]"
-          style={{ maxWidth: "960px", filter: "drop-shadow(0 12px 36px rgba(0, 0, 0, 0.05))" }}
+          style={{ maxWidth: "760px", filter: "drop-shadow(0 12px 36px rgba(0, 0, 0, 0.05))" }}
         />
       </div>
     </div>
