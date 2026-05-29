@@ -418,12 +418,11 @@ export default async function CodingProjectPage({ params }: Props) {
 
           {slug === "codedex-wrapped" && (
             <>
-
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Design</h2>
                 
                 {/* Vector Brand Assets Showcase */}
-                <div className="detail-showcase-grid is-equal" style={{ marginTop: "32px", marginBottom: "32px" }}>
+                <div className="detail-showcase-grid is-equal" style={{ marginTop: "32px", marginBottom: "16px" }}>
                   <div>
                     <img
                       src="/assets/codedex/block1.svg"
@@ -443,14 +442,13 @@ export default async function CodingProjectPage({ params }: Props) {
                 <div 
                   className="detail-breakout" 
                   style={{ 
-                    marginTop: "32px", 
-                    background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
+                    marginTop: "8px", 
+                    background: "#FDFFE5",
                     borderRadius: "24px",
                     padding: "48px 24px",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    border: "1px solid rgba(0, 0, 0, 0.04)",
                   }}
                 >
                   <img
