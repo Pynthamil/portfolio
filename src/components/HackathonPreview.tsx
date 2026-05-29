@@ -21,37 +21,24 @@ export default function HackathonPreview() {
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-16">
       {/* 1. Core Event Experience */}
       <ProjectPreviewSection
         title="Event Ecosystem"
         description="The concept proposes a centralized information layer designed to support hundreds of participants through real-time updates and seamless team management. The interface prioritizes high-stress usability, aiming to make critical event data immediate and accessible."
         containerClassName="p-0 overflow-hidden relative"
       >
-        <div className="relative z-10 w-full h-[400px] md:h-[650px] [&_.scroll-stack-inner]:!px-4 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
-          <ScrollStack
-            itemDistance={100}
-            itemScale={0.02}
-            itemStackDistance={40}
-            stackPosition="10%"
-            baseScale={0.95}
-          >
-            {dashboardCards.map((card) => (
-              <ScrollStackItem
-                key={card.id}
-                label={card.title}
-                itemClassName="!h-auto w-full max-w-[1400px] mx-auto aspect-[4/3] md:aspect-video !p-0 !border-0 overflow-hidden rounded-md md:rounded-lg relative !shadow-none"
-              >
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  className="object-contain"
-                  priority={card.id === "landing"}
-                />
-              </ScrollStackItem>
-            ))}
-          </ScrollStack>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-8">
+          {dashboardCards.map((card) => (
+            <div key={card.id} className="flex flex-col items-center w-full">
+              <img
+                src={card.image}
+                alt={card.title}
+                className="w-full h-auto rounded-[24px] hover:scale-[1.02] transition-transform duration-300 shadow-sm border border-gray-100"
+              />
+              <span className="text-[12px] font-bold text-gray-400 uppercase tracking-widest mt-4">{card.title}</span>
+            </div>
+          ))}
         </div>
       </ProjectPreviewSection>
 
@@ -61,29 +48,17 @@ export default function HackathonPreview() {
         description="Designed to manage the complexity of team-based submissions. The proposed workflow imagines a friction-free transition from registration to final project tracking, intended to preserve participant mental energy for the creative work."
         containerClassName="p-0 overflow-hidden relative"
       >
-        <div className="relative z-10 w-full h-[400px] md:h-[650px] [&_.scroll-stack-inner]:!px-4 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
-          <ScrollStack
-            itemDistance={100}
-            itemScale={0.02}
-            itemStackDistance={40}
-            stackPosition="10%"
-            baseScale={0.95}
-          >
-            {submissionCards.map((card) => (
-              <ScrollStackItem
-                key={card.id}
-                label={card.title}
-                itemClassName="!h-auto w-full max-w-[1400px] mx-auto aspect-[4/3] md:aspect-video !p-0 !border-0 overflow-hidden rounded-md md:rounded-lg relative !shadow-none"
-              >
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  className="object-contain"
-                />
-              </ScrollStackItem>
-            ))}
-          </ScrollStack>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-8">
+          {submissionCards.map((card) => (
+            <div key={card.id} className="flex flex-col items-center w-full">
+              <img
+                src={card.image}
+                alt={card.title}
+                className="w-full h-auto rounded-[24px] hover:scale-[1.02] transition-transform duration-300 shadow-sm border border-gray-100"
+              />
+              <span className="text-[12px] font-bold text-gray-400 uppercase tracking-widest mt-4">{card.title}</span>
+            </div>
+          ))}
         </div>
       </ProjectPreviewSection>
 
