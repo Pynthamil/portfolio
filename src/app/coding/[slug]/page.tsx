@@ -180,14 +180,29 @@ export default async function CodingProjectPage({ params }: Props) {
     "/coding/semantic-parser"
   ];
   const currentIndex = navigationList.indexOf(currentHref);
-  const nextIndex = (currentIndex + 1) % navigationList.length;
-  const nextHref = navigationList[nextIndex];
   const allProjects = [...productDesignProjects, ...codingProjects];
-  const nextProjectCard = allProjects.find(p => p.href === nextHref);
 
-  const prevIndex = (currentIndex - 1 + navigationList.length) % navigationList.length;
-  const prevHref = navigationList[prevIndex];
-  const prevProjectCard = allProjects.find(p => p.href === prevHref);
+  let nextIndex = (currentIndex + 1) % navigationList.length;
+  let nextHref = navigationList[nextIndex];
+  let nextProjectCard = allProjects.find(p => p.href === nextHref);
+  let nextLimit = navigationList.length;
+  while ((!nextProjectCard || nextProjectCard.locked) && nextLimit > 0) {
+    nextIndex = (nextIndex + 1) % navigationList.length;
+    nextHref = navigationList[nextIndex];
+    nextProjectCard = allProjects.find(p => p.href === nextHref);
+    nextLimit--;
+  }
+
+  let prevIndex = (currentIndex - 1 + navigationList.length) % navigationList.length;
+  let prevHref = navigationList[prevIndex];
+  let prevProjectCard = allProjects.find(p => p.href === prevHref);
+  let prevLimit = navigationList.length;
+  while ((!prevProjectCard || prevProjectCard.locked) && prevLimit > 0) {
+    prevIndex = (prevIndex - 1 + navigationList.length) % navigationList.length;
+    prevHref = navigationList[prevIndex];
+    prevProjectCard = allProjects.find(p => p.href === prevHref);
+    prevLimit--;
+  }
 
   const remainingSections = project.sections;
   const half = Math.ceil(remainingSections.length / 2);

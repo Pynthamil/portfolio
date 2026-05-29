@@ -7,6 +7,7 @@ export interface Project {
   imageBg?: string;
   href: string;
   category?: "design" | "dev";
+  locked?: boolean;
 }
 
 export const productDesignProjects: Project[] = [
@@ -85,6 +86,7 @@ export const codingProjects: Project[] = [
     imageBg: "#14b8a6",
     href: "/coding/focus-fuel",
     category: "dev",
+    locked: true,
   },
   {
     id: 2,
@@ -103,6 +105,7 @@ export const codingProjects: Project[] = [
     imageBg: "#4f46e5",
     href: "/coding/semantic-parser",
     category: "dev",
+    locked: true,
   },
   {
     id: 4,
@@ -164,6 +167,7 @@ export const homeProjects: Project[] = [
     image: "/assets/project-cards/git-person.svg",
     href: "/coding/focus-fuel",
     category: "dev",
+    locked: true,
   },
   {
     id: 7,

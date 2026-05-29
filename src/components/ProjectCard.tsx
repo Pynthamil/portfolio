@@ -23,7 +23,7 @@ type Props = {
 
 export default function ProjectCard({ project, onClick }: Props) {
   const router = useRouter();
-  const isLocked = project.title === "GitPerson" || project.title === "ReadMeFlier";
+  const isLocked = !!project.locked;
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
