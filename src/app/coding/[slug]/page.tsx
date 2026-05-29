@@ -421,28 +421,10 @@ export default async function CodingProjectPage({ params }: Props) {
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Design</h2>
                 
-                {/* Vector Brand Assets Showcase */}
-                <div className="detail-showcase-grid is-equal" style={{ marginTop: "32px", marginBottom: "16px" }}>
-                  <div>
-                    <img
-                      src="/assets/codedex/block1.svg"
-                      alt="Codédex Design Block 1"
-                      className="w-full h-auto rounded-[24px] overflow-hidden"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      src="/assets/codedex/block2.svg"
-                      alt="Codédex Design Block 2"
-                      className="w-full h-auto rounded-[24px] overflow-hidden"
-                    />
-                  </div>
-                </div>
-
                 <div 
                   className="detail-breakout" 
                   style={{ 
-                    marginTop: "8px", 
+                    marginTop: "32px", 
                     background: "#FDFFE5",
                     borderRadius: "24px",
                     padding: "48px 24px",
@@ -461,6 +443,24 @@ export default async function CodingProjectPage({ params }: Props) {
                       filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.04))"
                     }}
                   />
+                </div>
+
+                {/* Vector Brand Assets Showcase */}
+                <div className="detail-showcase-grid is-equal" style={{ marginTop: "16px", marginBottom: "16px" }}>
+                  <div>
+                    <img
+                      src="/assets/codedex/block1.svg"
+                      alt="Codédex Design Block 1"
+                      className="w-full h-auto rounded-[24px] overflow-hidden"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src="/assets/codedex/block2.svg"
+                      alt="Codédex Design Block 2"
+                      className="w-full h-auto rounded-[24px] overflow-hidden"
+                    />
+                  </div>
                 </div>
 
               </div>
