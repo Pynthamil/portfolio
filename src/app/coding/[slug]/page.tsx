@@ -532,7 +532,7 @@ export default async function CodingProjectPage({ params }: Props) {
               )}
 
               {slug === "codedex-wrapped" && section.heading === "Implementation" && (
-                <div className="detail-showcase-grid is-equal" style={{ marginTop: "32px", marginBottom: "32px", alignItems: "center" }}>
+                <div className="detail-showcase-grid is-equal" style={{ marginTop: "32px", marginBottom: "32px", alignItems: "flex-start" }}>
                   <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <img 
                       src="/assets/codedex/techdialogue.svg" 
@@ -545,23 +545,57 @@ export default async function CodingProjectPage({ params }: Props) {
                       }}
                     />
                   </div>
-                  <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "0 24px" }}>
+                  <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", padding: "16px 24px" }}>
                     <h3 style={{ 
                       fontSize: "11px", 
                       fontWeight: "700", 
                       letterSpacing: "0.15em", 
                       color: "#86868b", 
                       textTransform: "uppercase",
-                      marginBottom: "16px"
+                      marginBottom: "24px"
                     }}>
                       TEch stack
                     </h3>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                      {project.techStack?.map((tech) => (
-                        <span key={tech} className="project-detail-tech-pill" style={{ margin: 0 }}>
-                          {tech}
-                        </span>
-                      ))}
+                    <div style={{ display: "flex", flexDirection: "column", gap: "24px", width: "100%" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                        <img 
+                          src="/assets/codedex/xcode.svg" 
+                          alt="Xcode Logo" 
+                          style={{ width: "40px", height: "40px", flexShrink: 0, borderRadius: "10px" }} 
+                        />
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                          <span style={{ fontSize: "14px", fontWeight: "600", color: "#1d1d1f" }}>Xcode</span>
+                          <span style={{ fontSize: "13px", color: "#6e6e73", marginTop: "2px", lineHeight: "1.4" }}>
+                            Xcode was my primary editor for this project
+                          </span>
+                        </div>
+                      </div>
+                      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                        <img 
+                          src="/assets/codedex/expo.svg" 
+                          alt="Expo Logo" 
+                          style={{ width: "40px", height: "40px", flexShrink: 0, borderRadius: "10px" }} 
+                        />
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                          <span style={{ fontSize: "14px", fontWeight: "600", color: "#1d1d1f" }}>Expo</span>
+                          <span style={{ fontSize: "13px", color: "#6e6e73", marginTop: "2px", lineHeight: "1.4" }}>
+                            Along with the ios simulator, Expo was such a great help during the making and testing of this app
+                          </span>
+                        </div>
+                      </div>
+                      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                        <img 
+                          src="/assets/codedex/react.svg" 
+                          alt="React Native Logo" 
+                          style={{ width: "40px", height: "40px", flexShrink: 0 }} 
+                        />
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                          <span style={{ fontSize: "14px", fontWeight: "600", color: "#1d1d1f" }}>React Native</span>
+                          <span style={{ fontSize: "13px", color: "#6e6e73", marginTop: "2px", lineHeight: "1.4" }}>
+                            Since i have a few years of experience with react and nextjs I decided to use react native to develop faster
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
