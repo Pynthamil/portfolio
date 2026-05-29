@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import ProjectPreviewSection from "./ProjectPreviewSection";
-import ScrollStack, { ScrollStackItem } from "./ScrollStack";
 
 interface BlogStackedPreviewProps {
   bgColor?: string;
@@ -20,34 +19,27 @@ export default function BlogStackedPreview({ bgColor = "transparent" }: BlogStac
   return (
     <ProjectPreviewSection
       title="Dynamic Article Covers"
-      description="Scroll through the uniquely designed vibrant covers crafted to capture attention and set the energetic mood."
+      description="A matrix of uniquely designed vibrant covers crafted to capture attention and set the energetic mood."
       bgColor={bgColor}
-      containerClassName="p-0 overflow-hidden relative"
+      containerClassName="p-0 overflow-hidden relative w-full"
+      className="project-sub-section"
     >
-      {/* We frame the ScrollStack into a specific viewport height so it scrolls within itself seamlessly */}
-      <div className="w-full h-[400px] md:h-[800px] [&_.scroll-stack-inner]:!px-2 sm:[&_.scroll-stack-inner]:!px-4 md:[&_.scroll-stack-inner]:!px-10">
-        <ScrollStack
-          itemDistance={120}
-          itemScale={0.02}
-          itemStackDistance={40}
-          stackPosition="10%"
-          baseScale={0.95}
-        >
-          {cards.map((card) => (
-            <ScrollStackItem
-              key={card.id}
-              itemClassName="!h-auto w-full max-w-[1400px] mx-auto aspect-[4/3] md:aspect-video !p-0 !border-0 overflow-hidden rounded-md md:rounded-lg relative shadow-[0_0_40px_rgba(0,0,0,0.15)]"
-            >
-              <Image
-                src={card.image}
-                alt={`Cover ${card.id}`}
-                fill
-                className="object-cover"
-                priority={card.id === "1"}
-              />
-            </ScrollStackItem>
-          ))}
-        </ScrollStack>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        {cards.map((card) => (
+          <div
+            key={card.id}
+            className="w-full aspect-[1241/725] rounded-[24px] overflow-hidden relative shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-transform duration-300"
+          >
+            <Image
+              src={card.image}
+              alt={`Cover ${card.id}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 600px"
+              className="object-cover"
+              priority={card.id === "1"}
+            />
+          </div>
+        ))}
       </div>
     </ProjectPreviewSection>
   );

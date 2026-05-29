@@ -27,6 +27,7 @@ export default function BlogPreview({
       description={description}
       bgColor={bgColor}
       containerClassName="p-10 md:p-20 lg:p-32 h-[600px] overflow-hidden relative"
+      className="project-sub-section"
     >
       {childrenBackground}
       <div className="relative z-10 w-[85%] h-[95%] max-w-[800px] flex items-center justify-center">

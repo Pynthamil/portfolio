@@ -502,6 +502,9 @@ export default async function ProjectDetail({
         <div id="design" className="scroll-mt-24">
           {slug === "my-blog" && (
             <>
+              <div className="project-detail-section" style={{ marginBottom: "32px" }}>
+                <h2 className="project-detail-section-title">Design</h2>
+              </div>
               <BlogPreview
                 title="Reading Experience"
                 description="Designed for focus and clarity. The interface adapts to provide the best reading environment for long-form content."
@@ -578,8 +581,13 @@ export default async function ProjectDetail({
 
         {/* ---- Section 3: Implementation ---- */}
         <div id="implementation" className="scroll-mt-24">
+          {slug === "my-blog" && (
+            <div className="project-detail-section" style={{ marginBottom: "32px" }}>
+              <h2 className="project-detail-section-title">Implementation</h2>
+            </div>
+          )}
           {approachSections.map((section, i) => (
-            <div key={i} className="project-detail-section">
+            <div key={i} className={`project-detail-section ${slug === "my-blog" ? "project-sub-section" : ""}`}>
               <h2 className="project-detail-section-title">{section.heading}</h2>
               <p className="project-detail-section-body">{section.body}</p>
             </div>
@@ -588,8 +596,13 @@ export default async function ProjectDetail({
 
         {/* ---- Section 4: Results ---- */}
         <div id="results" className="scroll-mt-24">
+          {slug === "my-blog" && (
+            <div className="project-detail-section" style={{ marginBottom: "32px" }}>
+              <h2 className="project-detail-section-title">Results</h2>
+            </div>
+          )}
           {outcomesSections.map((section, i) => (
-            <div key={i} className="project-detail-section">
+            <div key={i} className={`project-detail-section ${slug === "my-blog" ? "project-sub-section" : ""}`}>
               <h2 className="project-detail-section-title">{section.heading}</h2>
               <p className="project-detail-section-body">{section.body}</p>
             </div>

@@ -1037,6 +1037,20 @@ body {
   max-width: 100%;
 }
 
+/* Sub-section hierarchy styles to distinguish them from main page section titles */
+.project-sub-section .project-detail-section-title {
+  font-size: 21px !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+  letter-spacing: -0.02em !important;
+}
+
+.project-sub-section .project-detail-section-body {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #6e6e73 !important;
+}
+
 @media (min-width: 1024px) {
   .project-detail-section {
     position: relative;

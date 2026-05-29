@@ -35,16 +35,12 @@ export default function ProjectsPage() {
         <div className="projects-social-cta-container">
           <Link href="/social" className="projects-social-cta-card">
             <div className="cta-card-graphic-wrapper">
-              <svg className="cta-card-graphic" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="120" height="80" rx="8" fill="#1d1d1f"/>
-                <rect x="25" y="20" width="45" height="40" rx="4" fill="#2d2d30" stroke="#3d3d40" strokeWidth="1"/>
-                <rect x="45" y="25" width="45" height="40" rx="4" fill="#3a3a3c" stroke="#48484a" strokeWidth="1"/>
-                <path d="M85 20L86.5 23L89.5 23.5L87 25.5L88 28.5L85 26.5L82 28.5L83 25.5L80.5 23.5L83.5 23L85 20Z" fill="#ffb300"/>
-                <path d="M35 50L36 52L38 52.3L36.3 53.7L37 55.7L35 54.3L33 55.7L33.7 53.7L32 52.3L34 52L35 50Z" fill="#ffb300"/>
-                <line x1="52" y1="35" x2="72" y2="35" stroke="#86868b" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="52" y1="42" x2="80" y2="42" stroke="#86868b" strokeWidth="2" strokeLinecap="round"/>
-                <circle cx="56" cy="53" r="3" fill="#007aff"/>
-              </svg>
+              <img 
+                src="/assets/blog/banner3.svg" 
+                alt="Social Media Designs Banner" 
+                className="cta-card-graphic"
+                style={{ objectFit: "cover", transform: "scale(1.25)", transformOrigin: "center" }}
+              />
             </div>
             <div className="cta-card-info">
               <h3 className="cta-card-title">Want to see my social media designs?</h3>
