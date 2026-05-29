@@ -5,10 +5,10 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const mainNavLinks = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", color: "#ff3b30" },
+  { href: "/projects", label: "Projects", color: "#007aff" },
+  { href: "/about", label: "About", color: "#34c759" },
+  { href: "/contact", label: "Contact", color: "#ffcc00" },
 ];
 
 export default function Nav() {
@@ -19,15 +19,15 @@ export default function Nav() {
   
   const isDesignProject = pathname.startsWith("/projects/");
   const projectDetailLinks = isDesignProject ? [
-    { id: "overview", label: "Overview" },
-    { id: "design", label: "Design" },
-    { id: "implementation", label: "Approach" },
-    { id: "results", label: "Outcomes" }
+    { id: "overview", label: "Overview", color: "#ff3b30" },
+    { id: "design", label: "Design", color: "#007aff" },
+    { id: "implementation", label: "Approach", color: "#34c759" },
+    { id: "results", label: "Outcomes", color: "#ffcc00" }
   ] : [
-    { id: "overview", label: "Overview" },
-    { id: "design", label: "Design" },
-    { id: "implementation", label: "Implementation" },
-    { id: "results", label: "Results" }
+    { id: "overview", label: "Overview", color: "#ff3b30" },
+    { id: "design", label: "Design", color: "#007aff" },
+    { id: "implementation", label: "Implementation", color: "#34c759" },
+    { id: "results", label: "Results", color: "#ffcc00" }
   ];
 
   const [activeSection, setActiveSection] = useState("overview");
@@ -87,7 +87,7 @@ export default function Nav() {
                 onClick={(e) => handleScrollClick(e, link.id)}
                 className={`nav-item${isActive ? " active" : ""}`}
               >
-                {isActive && <span className="nav-dot" aria-hidden="true" />}
+                <span className="nav-dot" aria-hidden="true" style={{ backgroundColor: link.color }} />
                 {link.label}
               </a>
             );
@@ -105,7 +105,7 @@ export default function Nav() {
               href={link.href}
               className={`nav-item${isActive ? " active" : ""}`}
             >
-              {isActive && <span className="nav-dot" aria-hidden="true" />}
+              <span className="nav-dot" aria-hidden="true" style={{ backgroundColor: link.color }} />
               {link.label}
             </Link>
           );
