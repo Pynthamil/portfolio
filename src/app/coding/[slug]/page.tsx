@@ -440,11 +440,28 @@ export default async function CodingProjectPage({ params }: Props) {
                   </div>
                 </div>
 
-                <div style={{ marginTop: "32px" }}>
+                <div 
+                  className="detail-breakout" 
+                  style={{ 
+                    marginTop: "32px", 
+                    background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
+                    borderRadius: "24px",
+                    padding: "48px 24px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    border: "1px solid rgba(0, 0, 0, 0.04)",
+                  }}
+                >
                   <img
                     src="/assets/codedex/sketch1.svg"
                     alt="Codédex Design Sketch"
-                    className="w-full h-auto rounded-[24px] overflow-hidden detail-breakout"
+                    style={{ 
+                      width: "100%", 
+                      height: "auto", 
+                      borderRadius: "16px",
+                      filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.04))"
+                    }}
                   />
                 </div>
 
