@@ -477,13 +477,33 @@ export default async function CodingProjectPage({ params }: Props) {
                   </div>
                 </div>
 
-                <div style={{ width: "100%", marginTop: "0", marginBottom: "16px" }}>
-                  <img
-                    src="/assets/codedex/img2.svg"
-                    alt="Codédex Design Asset"
-                    className="w-full h-auto rounded-[24px] overflow-hidden"
-                    style={{ width: "100%" }}
-                  />
+                <div style={{ width: "100%", marginTop: "16px", marginBottom: "16px", background: "#DEFFD9", borderRadius: "28px", padding: "24px" }}>
+                  <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+                    <div style={{ flex: "1 1 220px", minWidth: "200px" }}>
+                      <img
+                        src="/assets/codedex/HomeScreen.svg"
+                        alt="Codédex Home Screen"
+                        className="w-full h-auto rounded-[24px] overflow-hidden"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                    <div style={{ flex: "1 1 220px", minWidth: "200px" }}>
+                      <img
+                        src="/assets/codedex/Course%20Screen.svg"
+                        alt="Codédex Course Screen"
+                        className="w-full h-auto rounded-[24px] overflow-hidden"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                    <div style={{ flex: "1 1 220px", minWidth: "200px" }}>
+                      <img
+                        src="/assets/codedex/Course%20Detail.svg"
+                        alt="Codédex Course Detail"
+                        className="w-full h-auto rounded-[24px] overflow-hidden"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                  </div>
                 </div>
 
               </div>
