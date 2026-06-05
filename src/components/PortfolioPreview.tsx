@@ -26,9 +26,9 @@ export default function PortfolioPreview() {
 
   return (
     <div className="space-y-4">
-      {/* 1. v1 Expressionist Layer */}
+      {/* 1. v1 */}
       <ProjectPreviewSection
-        title="v1 Expressionist Layer"
+        title="v1"
         description=""
         containerClassName="p-0 overflow-hidden relative rounded-none"
       >
@@ -49,9 +49,9 @@ export default function PortfolioPreview() {
         </div>
       </ProjectPreviewSection>
 
-      {/* 2. v2 Terminal Directive */}
+      {/* 2. v2 */}
       <ProjectPreviewSection
-        title="v2 Terminal Directive"
+        title="v2"
         description=""
         containerClassName="p-0 overflow-hidden relative rounded-none"
       >
@@ -72,9 +72,9 @@ export default function PortfolioPreview() {
         </div>
       </ProjectPreviewSection>
 
-      {/* 3. v3 Speculative Fragments */}
+      {/* 3. v3 */}
       <ProjectPreviewSection
-        title="v3 Speculative Fragments"
+        title="v3"
         description=""
         containerClassName="p-0 overflow-hidden relative rounded-none"
       >

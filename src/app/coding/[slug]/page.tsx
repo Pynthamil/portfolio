@@ -421,27 +421,21 @@ export default async function CodingProjectPage({ params }: Props) {
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Design</h2>
                 
-                <div 
-                  className="detail-breakout" 
-                  style={{ 
-                    marginTop: "32px", 
-                    background: "#FDFFE5",
-                    borderRadius: "24px",
-                    padding: "48px 24px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
+                <div style={{ width: "100%", marginTop: "32px", marginBottom: "16px" }}>
                   <img
-                    src="/assets/codedex/sketch1.svg"
-                    alt="Codédex Design Sketch"
-                    style={{ 
-                      width: "100%", 
-                      height: "auto", 
-                      borderRadius: "16px",
-                      filter: "drop-shadow(0 8px 24px rgba(0, 0, 0, 0.04))"
-                    }}
+                    src="/assets/codedex/codedex1.svg"
+                    alt="Codédex Design Asset"
+                    className="w-full h-auto rounded-[24px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+
+                <div style={{ width: "100%", marginTop: "0", marginBottom: "16px" }}>
+                  <img
+                    src="/assets/codedex/img2.svg"
+                    alt="Codédex Design Asset"
+                    className="w-full h-auto rounded-[24px] overflow-hidden"
+                    style={{ width: "100%" }}
                   />
                 </div>
 
