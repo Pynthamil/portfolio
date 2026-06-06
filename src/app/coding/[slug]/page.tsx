@@ -421,10 +421,16 @@ export default async function CodingProjectPage({ params }: Props) {
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Design</h2>
                 
-                <div style={{ width: "100%", marginTop: "32px", marginBottom: "16px" }}>
+                <div style={{ width: "100%", marginTop: "32px", marginBottom: "16px", display: "flex", flexDirection: "column", gap: "24px" }}>
                   <img
                     src="/assets/codedex/codedex1.svg"
-                    alt="Codédex Design Asset"
+                    alt="Codédex Design Asset 1"
+                    className="w-full h-auto rounded-[24px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
+                  <img
+                    src="/assets/codedex/codedex2.svg"
+                    alt="Codédex Design Asset 2"
                     className="w-full h-auto rounded-[24px] overflow-hidden"
                     style={{ width: "100%" }}
                   />
