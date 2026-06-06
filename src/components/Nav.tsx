@@ -17,28 +17,112 @@ export default function Nav() {
   
   const isProjectDetail = (pathname.startsWith("/projects/") || pathname.startsWith("/coding/")) && pathname.split("/").length === 3;
   
-  const isDesignProject = pathname.startsWith("/projects/");
-  const isMyBlog = pathname === "/projects/my-blog";
-  const useDesignLabels = isDesignProject && !isMyBlog;
+  const slug = pathname.split("/")[2] ?? "";
 
-  const projectDetailLinks = useDesignLabels ? [
-    { id: "overview", label: "Overview", color: "#ff3b30" },
-    { id: "design", label: "Design", color: "#007aff" },
-    { id: "implementation", label: "Approach", color: "#34c759" },
-    { id: "results", label: "Outcomes", color: "#ffcc00" }
-  ] : [
-    { id: "overview", label: "Overview", color: "#ff3b30" },
-    { id: "design", label: "Design", color: "#007aff" },
-    { id: "implementation", label: "Implementation", color: "#34c759" },
-    { id: "results", label: "Results", color: "#ffcc00" }
-  ];
+  // Per-slug nav label maps — IDs stay fixed, only visible labels change
+  const navLabelsBySlug: Record<string, { id: string; label: string; color: string }[]> = {
+    "my-blog": [
+      { id: "overview", label: "Overview",   color: "#ff3b30" },
+      { id: "design",   label: "Design",     color: "#007aff" },
+      { id: "implementation", label: "Build",color: "#34c759" },
+      { id: "results",  label: "Takeaways",  color: "#ffcc00" },
+    ],
+    "semantic-email": [
+      { id: "overview", label: "Overview",   color: "#ff3b30" },
+      { id: "design",   label: "Interface",  color: "#007aff" },
+      { id: "implementation", label: "Approach", color: "#34c759" },
+      { id: "results",  label: "Privacy",    color: "#ffcc00" },
+    ],
+    "terminal-browser": [
+      { id: "overview", label: "Overview",   color: "#ff3b30" },
+      { id: "design",   label: "Interface",  color: "#007aff" },
+      { id: "implementation", label: "Rendering", color: "#34c759" },
+      { id: "results",  label: "Efficiency", color: "#ffcc00" },
+    ],
+    "luma": [
+      { id: "overview", label: "Overview",     color: "#ff3b30" },
+      { id: "design",   label: "Interface",    color: "#007aff" },
+      { id: "implementation", label: "Intelligence", color: "#34c759" },
+      { id: "results",  label: "Integration",  color: "#ffcc00" },
+    ],
+    "resume-roaster": [
+      { id: "overview", label: "Overview",  color: "#ff3b30" },
+      { id: "design",   label: "Interface", color: "#007aff" },
+      { id: "implementation", label: "Critique", color: "#34c759" },
+      { id: "results",  label: "Trust",     color: "#ffcc00" },
+    ],
+    "acm-hackathon": [
+      { id: "overview", label: "Overview",  color: "#ff3b30" },
+      { id: "design",   label: "Interface", color: "#007aff" },
+      { id: "implementation", label: "Flow", color: "#34c759" },
+      { id: "results",  label: "Momentum",  color: "#ffcc00" },
+    ],
+    "craftr-docs": [
+      { id: "overview", label: "Overview",  color: "#ff3b30" },
+      { id: "design",   label: "Canvas",    color: "#007aff" },
+      { id: "implementation", label: "Structure", color: "#34c759" },
+      { id: "results",  label: "Collab",    color: "#ffcc00" },
+    ],
+    "portfolios": [
+      { id: "overview", label: "Overview",    color: "#ff3b30" },
+      { id: "design",   label: "Iterations",  color: "#007aff" },
+      { id: "implementation", label: "Philosophy", color: "#34c759" },
+    ],
+  };
+
+  // Coding projects
+  const codingNavLabels: Record<string, { id: string; label: string; color: string }[]> = {
+    "focus-fuel": [
+      { id: "overview", label: "Overview",   color: "#ff3b30" },
+      { id: "design",   label: "Design",     color: "#007aff" },
+      { id: "implementation", label: "Implementation", color: "#34c759" },
+      { id: "results",  label: "Results",    color: "#ffcc00" },
+    ],
+    "codedex-wrapped": [
+      { id: "overview",   label: "Overview",   color: "#ff3b30" },
+      { id: "design",     label: "Mascot",     color: "#007aff" },
+      { id: "app-design", label: "App Design", color: "#bf5af2" },
+      { id: "implementation", label: "Impact", color: "#ffcc00" },
+    ],
+    "semantic-parser": [
+      { id: "overview", label: "Overview",   color: "#ff3b30" },
+      { id: "design",   label: "Design",     color: "#007aff" },
+      { id: "implementation", label: "Implementation", color: "#34c759" },
+      { id: "results",  label: "Results",    color: "#ffcc00" },
+    ],
+  };
+
+  const isDesignProject = pathname.startsWith("/projects/");
+  const isCodingProject = pathname.startsWith("/coding/");
+
+  const projectDetailLinks =
+    isDesignProject
+      ? (navLabelsBySlug[slug] ?? [
+          { id: "overview", label: "Overview",  color: "#ff3b30" },
+          { id: "design",   label: "Design",    color: "#007aff" },
+          { id: "implementation", label: "Approach", color: "#34c759" },
+          { id: "results",  label: "Outcomes",  color: "#ffcc00" },
+        ])
+      : isCodingProject
+      ? (codingNavLabels[slug] ?? [
+          { id: "overview", label: "Overview",  color: "#ff3b30" },
+          { id: "design",   label: "Design",    color: "#007aff" },
+          { id: "implementation", label: "Implementation", color: "#34c759" },
+          { id: "results",  label: "Results",   color: "#ffcc00" },
+        ])
+      : [
+          { id: "overview", label: "Overview",  color: "#ff3b30" },
+          { id: "design",   label: "Design",    color: "#007aff" },
+          { id: "implementation", label: "Implementation", color: "#34c759" },
+          { id: "results",  label: "Results",   color: "#ffcc00" },
+        ];
 
   const [activeSection, setActiveSection] = useState("overview");
 
   useEffect(() => {
     if (!isProjectDetail) return;
 
-    const ids = ["overview", "design", "implementation", "results"];
+    const ids = projectDetailLinks.map((l) => l.id);
 
     const getActiveSection = () => {
       let currentActive = "overview";

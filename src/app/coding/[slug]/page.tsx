@@ -54,16 +54,11 @@ const projects: Record<string, ProjectData> = {
     heroImage: "/assets/project-cards/codedex-app.svg",
     imageBg: "#eab308",
     liveUrl: "#",
-    techStack: ["React 19", "Framer Motion", "Tailwind CSS v4", "Next.js", "Lucide Icons"],
+    techStack: ["React 19", "Tailwind CSS v4", "Next.js", "Lucide Icons"],
     sections: [
-
       {
-        heading: "Implementation",
-        body: "Framer Motion drives the technical implementation. Staggered element entrances, custom Bezier transitions, and GPU-accelerated transforms achieve a fluid, native-feeling app flow. Tailwind layers structure modular layouts to maintain clean spacing across screens.",
-      },
-      {
-        heading: "Results",
-        body: "The recap experience yielded exceptional platform engagement, driving a substantial spike in user social shares. Optimized asset packing and static build pipelines ensure the animations load instantaneously without page weight penalties.",
+        heading: "Impact",
+        body: "The proposal demonstrates how personality-driven UI and robust motion libraries can make a learning platform feel alive on mobile. Optimized asset pipelines ensure animations load instantly without page weight penalties — showing that polish and performance can coexist.",
       },
     ],
     outro:
@@ -325,7 +320,7 @@ export default async function CodingProjectPage({ params }: Props) {
             <img
               src="/assets/codedex/Features.svg"
               alt="Codédex App Features"
-              className="w-full h-auto mt-8 rounded-[24px] overflow-hidden detail-breakout"
+              className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout"
             />
           </div>
         )}
@@ -418,22 +413,22 @@ export default async function CodingProjectPage({ params }: Props) {
 
           {slug === "codedex-wrapped" && (
             <>
+              {/* ---- Mascot Design ---- */}
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
-                <h2 className="project-detail-section-title">Design</h2>
-                
-                <div style={{ width: "100%", marginTop: "32px", marginBottom: "16px", display: "flex", flexDirection: "column", gap: "24px" }}>
+                <h2 className="project-detail-section-title">Mascot Design</h2>
+                <div style={{ width: "100%", marginTop: "16px", marginBottom: "16px", display: "flex", flexDirection: "column", gap: "16px" }}>
                   <img
                     src="/assets/codedex/codedex2.svg"
                     alt="Codédex Design Asset 2"
-                    className="w-full h-auto rounded-[24px] overflow-hidden"
+                    className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
                   />
-                  <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", alignItems: "stretch" }}>
+                  <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", alignItems: "stretch" }}>
                     <div style={{ flex: "1 1 320px", minWidth: "280px", display: "flex" }}>
                       <img
                         src="/assets/codedex/codedex1.svg"
                         alt="Codédex Design Asset 1"
-                        className="rounded-[24px] overflow-hidden"
+                        className="rounded-[16px] overflow-hidden"
                         style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       />
                     </div>
@@ -441,123 +436,62 @@ export default async function CodingProjectPage({ params }: Props) {
                       <img
                         src="/assets/codedex/codedex3.svg"
                         alt="Codédex Design Asset 3"
-                        className="rounded-[24px] overflow-hidden"
+                        className="rounded-[16px] overflow-hidden"
                         style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       />
                     </div>
                   </div>
                 </div>
+              </div>
+            </>
+          )}
+        </div>
 
-                <div style={{ width: "100%", marginTop: "16px", marginBottom: "24px", background: "#DEFFD9", borderRadius: "28px", padding: "24px" }}>
-                  <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-                    <div style={{ flex: "1 1 220px", minWidth: "200px" }}>
-                      <img
-                        src="/assets/codedex/HomeScreen.svg"
-                        alt="Codédex Home Screen"
-                        className="w-full h-auto rounded-[24px] overflow-hidden"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                    <div style={{ flex: "1 1 220px", minWidth: "200px" }}>
-                      <img
-                        src="/assets/codedex/Course%20Screen.svg"
-                        alt="Codédex Course Screen"
-                        className="w-full h-auto rounded-[24px] overflow-hidden"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                    <div style={{ flex: "1 1 220px", minWidth: "200px" }}>
-                      <img
-                        src="/assets/codedex/Course%20Detail.svg"
-                        alt="Codédex Course Detail"
-                        className="w-full h-auto rounded-[24px] overflow-hidden"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
+        {/* ---- App Design Section (codedex only) ---- */}
+        {slug === "codedex-wrapped" && (
+          <div id="app-design" className="scroll-mt-24">
+            <div className="project-detail-section" style={{ marginBottom: "48px" }}>
+              <h2 className="project-detail-section-title">App Design</h2>
+              <div style={{ width: "100%", marginTop: "16px", display: "flex", flexDirection: "column", gap: "16px" }}>
+                <div style={{ width: "100%" }}>
+                  <img
+                    src="/assets/codedex/color-palette.svg"
+                    alt="Codédex Color Palette"
+                    className="w-full h-auto rounded-[16px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
                 </div>
 
                 {/* Vector Brand Assets Showcase */}
-                <div className="detail-showcase-grid is-equal" style={{ marginTop: "16px", marginBottom: "16px" }}>
+                <div className="detail-showcase-grid is-equal" style={{ margin: 0, gap: "16px", width: "100%", left: 0 }}>
                   <div>
                     <img
                       src="/assets/codedex/block1.svg"
                       alt="Codédex Design Block 1"
-                      className="w-full h-auto rounded-[24px] overflow-hidden"
+                      className="w-full h-auto rounded-[16px] overflow-hidden"
                     />
                   </div>
                   <div>
                     <img
                       src="/assets/codedex/block2.svg"
                       alt="Codédex Design Block 2"
-                      className="w-full h-auto rounded-[24px] overflow-hidden"
+                      className="w-full h-auto rounded-[16px] overflow-hidden"
                     />
                   </div>
                 </div>
 
-                <div className="color-palette-section">
-                  <div className="color-palette-label">Color palette</div>
-                  <div className="color-palette-row">
-                    <div className="color-swatch" style={{ background: "#ffb703" }}>
-                      <span>#FFB703</span>
-                    </div>
-                    <div className="color-swatch" style={{ background: "#69e094" }}>
-                      <span>#69E094</span>
-                    </div>
-                    <div className="color-swatch" style={{ background: "#6db2f2" }}>
-                      <span>#6DB2F2</span>
-                    </div>
-                    <div className="color-swatch" style={{ background: "#d46aef" }}>
-                      <span>#D46AEF</span>
-                    </div>
-                    <div className="color-swatch" style={{ background: "#ff6b6b" }}>
-                      <span>#FF6B6B</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="color-palette-screen-preview" style={{ width: "100%", marginTop: "16px", marginBottom: "24px" }}>
+                <div className="color-palette-screen-preview" style={{ width: "100%" }}>
                   <img
                     src="/assets/codedex/screens1.svg"
                     alt="Codédex Screens Preview"
-                    className="w-full h-auto rounded-[24px] overflow-hidden"
+                    className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
                   />
                 </div>
-
-                <div style={{ width: "100%", marginTop: "16px", marginBottom: "16px", background: "#DEFFD9", borderRadius: "28px", padding: "24px" }}>
-                  <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-                    <div style={{ flex: "1 1 220px", minWidth: "200px" }}>
-                      <img
-                        src="/assets/codedex/HomeScreen.svg"
-                        alt="Codédex Home Screen"
-                        className="w-full h-auto rounded-[24px] overflow-hidden"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                    <div style={{ flex: "1 1 220px", minWidth: "200px" }}>
-                      <img
-                        src="/assets/codedex/Course%20Screen.svg"
-                        alt="Codédex Course Screen"
-                        className="w-full h-auto rounded-[24px] overflow-hidden"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                    <div style={{ flex: "1 1 220px", minWidth: "200px" }}>
-                      <img
-                        src="/assets/codedex/Course%20Detail.svg"
-                        alt="Codédex Course Detail"
-                        className="w-full h-auto rounded-[24px] overflow-hidden"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
               </div>
-            </>
-          )}
-        </div>
+            </div>
+          </div>
+        )}
 
         {/* ---- Section 3: Implementation ---- */}
         <div id="implementation" className="scroll-mt-24">

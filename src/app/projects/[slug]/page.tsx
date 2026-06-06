@@ -579,30 +579,85 @@ export default async function ProjectDetail({
           )}
         </div>
 
-        {/* ---- Section 3: Implementation ---- */}
+        {/* ---- Section 3: Approach / Build / Intelligence etc ---- */}
         <div id="implementation" className="scroll-mt-24">
           {slug === "my-blog" && (
             <div className="project-detail-section" style={{ marginBottom: "32px" }}>
-              <h2 className="project-detail-section-title">Implementation</h2>
+              <h2 className="project-detail-section-title">Build</h2>
             </div>
           )}
-          {approachSections.map((section, i) => (
-            <div key={i} className={`project-detail-section ${slug === "my-blog" ? "project-sub-section" : ""}`}>
+          {slug === "semantic-email" && approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+          {slug === "terminal-browser" && approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+          {slug === "luma" && approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+          {slug === "resume-roaster" && approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+          {slug === "acm-hackathon" && approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+          {slug === "craftr-docs" && approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+          {slug === "portfolios" && approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+          {slug === "my-blog" && approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section project-sub-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+          {!hasCustomSections && approachSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
               <h2 className="project-detail-section-title">{section.heading}</h2>
               <p className="project-detail-section-body">{section.body}</p>
             </div>
           ))}
         </div>
 
-        {/* ---- Section 4: Results ---- */}
+        {/* ---- Section 4: Takeaways / Privacy / Integration etc (portfolios skips this) ---- */}
+        {slug !== "portfolios" && (
         <div id="results" className="scroll-mt-24">
           {slug === "my-blog" && (
             <div className="project-detail-section" style={{ marginBottom: "32px" }}>
-              <h2 className="project-detail-section-title">Results</h2>
+              <h2 className="project-detail-section-title">Takeaways</h2>
             </div>
           )}
-          {outcomesSections.map((section, i) => (
-            <div key={i} className={`project-detail-section ${slug === "my-blog" ? "project-sub-section" : ""}`}>
+          {slug === "my-blog" && outcomesSections.map((section, i) => (
+            <div key={i} className="project-detail-section project-sub-section">
+              <h2 className="project-detail-section-title">{section.heading}</h2>
+              <p className="project-detail-section-body">{section.body}</p>
+            </div>
+          ))}
+          {slug !== "my-blog" && outcomesSections.map((section, i) => (
+            <div key={i} className="project-detail-section">
               <h2 className="project-detail-section-title">{section.heading}</h2>
               <p className="project-detail-section-body">{section.body}</p>
             </div>
@@ -633,6 +688,32 @@ export default async function ProjectDetail({
             </div>
           )}
         </div>
+        )}
+
+        {/* portfolios: nav buttons after the philosophy section */}
+        {slug === "portfolios" && (prevProjectCard || nextProjectCard) && (
+          <div className="next-project-btn-container">
+            {prevProjectCard ? (
+              <Link href={prevProjectCard.href} className="next-project-capsule-btn">
+                &larr; Previous project
+              </Link>
+            ) : (
+              <div />
+            )}
+            {nextProjectCard ? (
+              <Link href={nextProjectCard.href} className="next-project-capsule-btn">
+                Next project &rarr;
+              </Link>
+            ) : (
+              <div />
+            )}
+          </div>
+        )}
+        {slug === "portfolios" && (
+          <div className="project-detail-outro">
+            <p>{project.outro}</p>
+          </div>
+        )}
       </div>
     </main>
   );

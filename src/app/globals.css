@@ -967,7 +967,7 @@ body {
   position: relative;
   width: 92vw;
   left: calc(50% - 46vw);
-  border-radius: 24px;
+  border-radius: 8px;
   overflow: hidden;
   margin-bottom: 80px;
 }
@@ -2154,14 +2154,17 @@ body {
 }
 
 .project-detail-section-doodle {
-  margin: 24px 0;
+  margin: 32px 0 48px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 32px 24px;
   background: #fafafc;
   border-radius: 24px;
   border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
+  width: 92vw;
+  left: calc(50% - 46vw);
 }
 
 /* =====================
