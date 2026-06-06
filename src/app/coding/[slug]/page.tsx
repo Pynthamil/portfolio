@@ -50,19 +50,19 @@ const projects: Record<string, ProjectData> = {
   "codedex-wrapped": {
     title: "Codédex App",
     subtitle: "App Proposal for Codedex Platform",
-    description: "A mobile application proposal for the Codédex platform, focusing on bringing gamified learning experiences to mobile devices with a native feel.",
+    description: "A concept proposal for a native Codédex mobile app — bringing the platform's gamified coding curriculum, pixel-art mascots, and streak-driven progression system to iOS and Android.",
     heroImage: "/assets/project-cards/codedex-app.svg",
     imageBg: "#eab308",
     liveUrl: "#",
-    techStack: ["React 19", "Tailwind CSS v4", "Next.js", "Lucide Icons"],
+    techStack: [],
     sections: [
       {
         heading: "Impact",
-        body: "The proposal demonstrates how personality-driven UI and robust motion libraries can make a learning platform feel alive on mobile. Optimized asset pipelines ensure animations load instantly without page weight penalties — showing that polish and performance can coexist.",
+        body: "A dedicated mobile app would unlock Codédex's core loop — learn, earn XP, level up — for the majority of users who primarily learn on their phones. Native gestures, offline lesson caching, and push-based streak reminders would meaningfully improve retention and daily active engagement.",
       },
     ],
     outro:
-      "Codédex Wrapped showcases how personality-driven UI elements and robust motion libraries can make platform analytics feel incredibly rewarding.",
+      "This proposal shows how Codédex's existing brand identity — pixel characters, vibrant palettes, and gamified feedback — translates naturally to a mobile-first experience. The goal was to prove the concept feels native, not just a responsive web view.",
   },
 
   "semantic-email-intelligence": {
@@ -212,7 +212,11 @@ export default async function CodingProjectPage({ params }: Props) {
           <div className="project-detail-text">
             <h1 className="project-detail-title">{project.title}</h1>
             <p className="project-detail-subtitle">{project.subtitle}</p>
-            <span className="project-type-tag tag-dev">Dev</span>
+            {slug === "codedex-wrapped" ? (
+              <span className="project-type-tag tag-design">Design</span>
+            ) : (
+              <span className="project-type-tag tag-dev">Dev</span>
+            )}
           </div>
 
           <div style={{ display: "flex", gap: "12px" }}>
@@ -236,7 +240,7 @@ export default async function CodingProjectPage({ params }: Props) {
               </a>
             )}
             
-            {project.liveUrl && (
+            {project.liveUrl && slug !== "codedex-wrapped" && (
               <a
                 href={project.liveUrl}
                 target="_blank"
@@ -273,7 +277,9 @@ export default async function CodingProjectPage({ params }: Props) {
             )}
             {slug === "codedex-wrapped" && (
               <p>
-                Every year, developers love to reflect on their learning journey. For the Codédex platform, we conceptualized a Spotify-wrapped style yearly recap feature. Striking a balance between playfulness and technical precision, the recaps are animated like retro-arcade games using Framer Motion and v4 Tailwind layers.
+                Codédex has built one of the most personality-rich coding education platforms on the web — but its experience is entirely browser-based. This proposal explores what a dedicated mobile app could look like: a native-feeling product that carries the platform's pixel-art identity, gamified progression, and community energy to iOS and Android.
+                <br /><br />
+                The design prioritises the core Codédex loop — open a lesson, write code, earn XP, level up your character — reimagined for thumb-first interaction, smaller viewports, and the expectation of native responsiveness.
               </p>
             )}
             {slug === "semantic-parser" && (
