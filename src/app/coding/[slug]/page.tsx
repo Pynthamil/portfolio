@@ -423,17 +423,29 @@ export default async function CodingProjectPage({ params }: Props) {
                 
                 <div style={{ width: "100%", marginTop: "32px", marginBottom: "16px", display: "flex", flexDirection: "column", gap: "24px" }}>
                   <img
-                    src="/assets/codedex/codedex1.svg"
-                    alt="Codédex Design Asset 1"
-                    className="w-full h-auto rounded-[24px] overflow-hidden"
-                    style={{ width: "100%" }}
-                  />
-                  <img
                     src="/assets/codedex/codedex2.svg"
                     alt="Codédex Design Asset 2"
                     className="w-full h-auto rounded-[24px] overflow-hidden"
                     style={{ width: "100%" }}
                   />
+                  <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", alignItems: "stretch" }}>
+                    <div style={{ flex: "1 1 320px", minWidth: "280px", display: "flex" }}>
+                      <img
+                        src="/assets/codedex/codedex1.svg"
+                        alt="Codédex Design Asset 1"
+                        className="rounded-[24px] overflow-hidden"
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                    </div>
+                    <div style={{ flex: "1 1 320px", minWidth: "280px", display: "flex" }}>
+                      <img
+                        src="/assets/codedex/codedex3.svg"
+                        alt="Codédex Design Asset 3"
+                        className="rounded-[24px] overflow-hidden"
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <div style={{ width: "100%", marginTop: "16px", marginBottom: "24px", background: "#DEFFD9", borderRadius: "28px", padding: "24px" }}>
