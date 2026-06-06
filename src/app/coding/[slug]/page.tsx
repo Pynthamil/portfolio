@@ -495,6 +495,36 @@ export default async function CodingProjectPage({ params }: Props) {
                   </div>
                 </div>
 
+                <div className="color-palette-section">
+                  <div className="color-palette-label">Color palette</div>
+                  <div className="color-palette-row">
+                    <div className="color-swatch" style={{ background: "#ffb703" }}>
+                      <span>#FFB703</span>
+                    </div>
+                    <div className="color-swatch" style={{ background: "#69e094" }}>
+                      <span>#69E094</span>
+                    </div>
+                    <div className="color-swatch" style={{ background: "#6db2f2" }}>
+                      <span>#6DB2F2</span>
+                    </div>
+                    <div className="color-swatch" style={{ background: "#d46aef" }}>
+                      <span>#D46AEF</span>
+                    </div>
+                    <div className="color-swatch" style={{ background: "#ff6b6b" }}>
+                      <span>#FF6B6B</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="color-palette-screen-preview" style={{ width: "100%", marginTop: "16px", marginBottom: "24px" }}>
+                  <img
+                    src="/assets/codedex/screens1.svg"
+                    alt="Codédex Screens Preview"
+                    className="w-full h-auto rounded-[24px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+
                 <div style={{ width: "100%", marginTop: "16px", marginBottom: "16px", background: "#DEFFD9", borderRadius: "28px", padding: "24px" }}>
                   <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
                     <div style={{ flex: "1 1 220px", minWidth: "200px" }}>

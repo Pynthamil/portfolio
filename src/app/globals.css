@@ -2099,6 +2099,49 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
 }
 
+.color-palette-section {
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.color-palette-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #55606a;
+  margin-bottom: 12px;
+}
+
+.color-palette-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.color-swatch {
+  min-height: 112px;
+  border-radius: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 18px;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.color-swatch span {
+  font-size: 0.92rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .color-palette-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .glow-backdrop-circle {
   position: absolute;
   width: 250px;
