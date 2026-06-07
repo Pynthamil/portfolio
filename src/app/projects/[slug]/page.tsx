@@ -663,6 +663,24 @@ export default async function ProjectDetail({
             </div>
           ))}
 
+          {slug === "my-blog" && (
+            <div className="project-detail-section" style={{ marginTop: "48px", marginBottom: "48px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                <h2 className="project-detail-section-title" style={{ margin: 0 }}>Read my latest post</h2>
+                <a href="https://my-blog-tan-tau.vercel.app/posts/my-first-post" target="_blank" rel="noopener noreferrer" className="next-project-capsule-btn">
+                  Check out the post &rarr;
+                </a>
+              </div>
+              <a href="https://my-blog-tan-tau.vercel.app/posts/my-first-post" target="_blank" rel="noopener noreferrer" className="block w-full">
+                <img 
+                  src="https://my-blog-tan-tau.vercel.app/banners/Post1.svg" 
+                  alt="print('Hello World') was not enough, so I built a blog." 
+                  className="w-full h-auto rounded-[16px] overflow-hidden detail-breakout"
+                />
+              </a>
+            </div>
+          )}
+
           {/* ---- Outro ---- */}
           <div className="project-detail-outro">
             <p>{project.outro}</p>
