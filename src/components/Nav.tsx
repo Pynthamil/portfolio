@@ -25,7 +25,7 @@ export default function Nav() {
       { id: "overview", label: "Overview",   color: "#ff3b30" },
       { id: "design",   label: "Design",     color: "#007aff" },
       { id: "implementation", label: "Build",color: "#34c759" },
-      { id: "results",  label: "Takeaways",  color: "#ffcc00" },
+      { id: "results",  label: "Posts",      color: "#ffcc00" },
     ],
     "semantic-email": [
       { id: "overview", label: "Overview",   color: "#ff3b30" },

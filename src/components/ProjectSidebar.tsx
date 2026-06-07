@@ -11,7 +11,7 @@ export default function ProjectSidebar() {
   const [isVisible, setIsVisible] = useState(false);
 
   const sectionsBySlug: Record<string, { id: string; label: string }[]> = {
-    "my-blog":          [{ id: "overview", label: "Overview" }, { id: "design", label: "Design" }, { id: "implementation", label: "Build" }, { id: "results", label: "Takeaways" }],
+    "my-blog":          [{ id: "overview", label: "Overview" }, { id: "design", label: "Design" }, { id: "implementation", label: "Build" }, { id: "results", label: "Posts" }],
     "semantic-email":   [{ id: "overview", label: "Overview" }, { id: "design", label: "Interface" }, { id: "implementation", label: "Approach" }, { id: "results", label: "Privacy" }],
     "terminal-browser": [{ id: "overview", label: "Overview" }, { id: "design", label: "Interface" }, { id: "implementation", label: "Rendering" }, { id: "results", label: "Efficiency" }],
     "luma":             [{ id: "overview", label: "Overview" }, { id: "design", label: "Interface" }, { id: "implementation", label: "Intelligence" }, { id: "results", label: "Integration" }],
