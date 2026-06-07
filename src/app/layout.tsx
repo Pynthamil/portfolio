@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import SplashScreen from "@/components/SplashScreen";
 
 export default function RootLayout({
   children,
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn(inter.className, "font-sans", geist.variable, caveat.variable)}>
       <body>
+        <SplashScreen />
         <Nav />
         {children}
         <Footer />

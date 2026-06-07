@@ -494,6 +494,15 @@ export default async function CodingProjectPage({ params }: Props) {
                     style={{ width: "100%" }}
                   />
                 </div>
+                
+                <div className="color-palette-screen-preview" style={{ width: "100%" }}>
+                  <img
+                    src="/assets/codedex/Screens2.svg"
+                    alt="Codédex Screens Preview 2"
+                    className="w-full h-auto rounded-[16px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
+                </div>
               </div>
             </div>
           </div>
