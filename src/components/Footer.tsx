@@ -18,9 +18,9 @@ export default function Footer() {
         <Link href="/resume">
           Resume
         </Link>
-        <Link href="/contact">
+        <a href="mailto:pavendanpynthamil@gmail.com">
           Contact
-        </Link>
+        </a>
       </div>
     </footer>
   );
