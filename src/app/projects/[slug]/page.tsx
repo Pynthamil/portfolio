@@ -509,12 +509,21 @@ export default async function ProjectDetail({
                 <h2 className="project-detail-section-title">Reading Experience</h2>
                 <p className="project-detail-section-body">Designed for focus and clarity. The interface adapts to provide the best reading environment for long-form content.</p>
                 <img loading="lazy" decoding="async"
-                  src="/assets/blog/blog-1.svg"
+                  src="/assets/blog/blog-1.webp"
                   alt="Blog Reader Interface"
                   className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
                 />
               </div>
-              <BlogStackedPreview />
+              <div className="project-detail-section" style={{ marginBottom: "48px" }}>
+                <h2 className="project-detail-section-title">Dynamic Article Covers</h2>
+                <p className="project-detail-section-body">A set of uniquely designed vibrant covers crafted to capture attention and set the energetic mood.</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 w-full detail-breakout">
+                  <img loading="lazy" decoding="async" src="/assets/blog/banner1.webp" alt="Cover 1" className="w-full h-full object-cover rounded-[16px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-transform duration-300 aspect-video border border-black/10" />
+                  <img loading="lazy" decoding="async" src="/assets/blog/banner2.webp" alt="Cover 2" className="w-full h-full object-cover rounded-[16px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-transform duration-300 aspect-video border border-black/10" />
+                  <img loading="lazy" decoding="async" src="/assets/blog/banner3.webp" alt="Cover 3" className="w-full h-full object-cover rounded-[16px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-transform duration-300 aspect-video border border-black/10" />
+                  <img loading="lazy" decoding="async" src="/assets/blog/banner4.webp" alt="Cover 4" className="w-full h-full object-cover rounded-[16px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-transform duration-300 aspect-video border border-black/10" />
+                </div>
+              </div>
               <div className="project-detail-section" style={{ marginTop: "48px", marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Brand Identity</h2>
                 <p className="project-detail-section-body">A crisp, minimal logo mark that establishes a distinct aesthetic tone while remaining adaptable across both light and dark modes.</p>
@@ -546,7 +555,7 @@ export default async function ProjectDetail({
                 <h2 className="project-detail-section-title">Light Mode</h2>
                 <p className="project-detail-section-body">A crisp, airy feel designed for daytime reading, ensuring high legibility and an inviting atmosphere.</p>
                 <img loading="lazy" decoding="async"
-                  src="/assets/blog/LightMode.svg"
+                  src="/assets/blog/LightMode.webp"
                   alt="Light Mode"
                   className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
                 />
@@ -555,7 +564,7 @@ export default async function ProjectDetail({
                 <h2 className="project-detail-section-title">Dark Mode</h2>
                 <p className="project-detail-section-body">A carefully crafted dark theme that reduces eye strain while maintaining vibrant accent colors for late-night focus.</p>
                 <img loading="lazy" decoding="async"
-                  src="/assets/blog/DarkMode.svg"
+                  src="/assets/blog/DarkMode.webp"
                   alt="Dark Mode"
                   className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
                 />
@@ -564,7 +573,7 @@ export default async function ProjectDetail({
                 <h2 className="project-detail-section-title">Categorization with Tags</h2>
                 <p className="project-detail-section-body">Posts are organized with intuitive tags, making it easy to navigate through specific topics and technical deep-dives.</p>
                 <img loading="lazy" decoding="async"
-                  src="/assets/blog/Tags.svg"
+                  src="/assets/blog/Tags.webp"
                   alt="Tags Navigation"
                   className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
                 />
@@ -573,7 +582,7 @@ export default async function ProjectDetail({
                 <h2 className="project-detail-section-title">All Posts Archive</h2>
                 <p className="project-detail-section-body">A comprehensive archive of all writing, designed for quick scanning and easy discovery of past content.</p>
                 <img loading="lazy" decoding="async"
-                  src="/assets/blog/AllPosts.svg"
+                  src="/assets/blog/AllPosts.webp"
                   alt="All Posts Archive"
                   className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
                 />
@@ -582,7 +591,7 @@ export default async function ProjectDetail({
                 <h2 className="project-detail-section-title">Blog Details Page</h2>
                 <p className="project-detail-section-body">A clean, distraction-free reading experience for individual blog posts, ensuring maximum legibility.</p>
                 <img loading="lazy" decoding="async"
-                  src="/assets/blog/BlogDetails.svg"
+                  src="/assets/blog/BlogDetails.webp"
                   alt="Blog Details Page"
                   className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
                 />

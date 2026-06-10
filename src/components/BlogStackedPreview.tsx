@@ -10,10 +10,10 @@ interface BlogStackedPreviewProps {
 
 export default function BlogStackedPreview({ bgColor = "transparent" }: BlogStackedPreviewProps) {
   const cards = [
-    { id: "1", image: "/assets/blog/banner1.svg" },
-    { id: "2", image: "/assets/blog/banner2.svg" },
-    { id: "3", image: "/assets/blog/banner3.svg" },
-    { id: "4", image: "/assets/blog/banner4.svg" },
+    { id: "1", image: "/assets/blog/banner1.webp" },
+    { id: "2", image: "/assets/blog/banner2.webp" },
+    { id: "3", image: "/assets/blog/banner3.webp" },
+    { id: "4", image: "/assets/blog/banner4.webp" },
   ];
 
   return (
