@@ -1,6 +1,6 @@
 <svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g clip-path="url(#clip0_235_1985)">
-<rect width="1600" height="1200" fill="url(#paint0_linear_235_1985)"/>
+<rect width="1600" height="1200" fill="#DEFFD9"/>
 <g filter="url(#filter0_d_235_1985)">
 <g clip-path="url(#clip1_235_1985)">
 <rect x="865.696" y="133.196" width="430.193" height="931.51" fill="url(#pattern0_235_1985)"/>
@@ -26,7 +26,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_235_1985" result="shape"/>
 </filter>
 <pattern id="pattern0_235_1985" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_235_1985" transform="matrix(0.00254453 0 0 0.00117512 0 -0.000601653)"/>
+<use xlink:href="#image0_235_1985" transform="matrix(0.00254453 0 0 0.00117512 0 -0.000601656)"/>
 </pattern>
 <pattern id="pattern1_235_1985" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image1_235_1985" transform="scale(0.000572082 0.000283126)"/>
@@ -42,15 +42,11 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_235_1985" result="shape"/>
 </filter>
 <pattern id="pattern2_235_1985" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image2_235_1985" transform="matrix(0.00254453 0 0 0.00117512 0 -0.000601653)"/>
+<use xlink:href="#image2_235_1985" transform="matrix(0.00254453 0 0 0.00117512 0 -0.000601656)"/>
 </pattern>
 <pattern id="pattern3_235_1985" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image1_235_1985" transform="scale(0.000572082 0.000283126)"/>
 </pattern>
-<linearGradient id="paint0_linear_235_1985" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
-<stop stop-color="#E0EAFC"/>
-<stop offset="1" stop-color="#CFDEF3"/>
-</linearGradient>
 <clipPath id="clip0_235_1985">
 <rect width="1600" height="1200" fill="white"/>
 </clipPath>

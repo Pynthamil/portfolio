@@ -70,7 +70,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_233_1964" result="shape"/>
 </filter>
 <pattern id="pattern4_233_1964" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image3_233_1964" transform="matrix(0.00254453 0 0 0.00117512 0 -0.000601653)"/>
+<use xlink:href="#image3_233_1964" transform="matrix(0.00254453 0 0 0.00117512 0 -0.000601656)"/>
 </pattern>
 <pattern id="pattern5_233_1964" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image1_233_1964" transform="scale(0.000572082 0.000283126)"/>
@@ -86,14 +86,14 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_233_1964" result="shape"/>
 </filter>
 <pattern id="pattern6_233_1964" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image4_233_1964" transform="matrix(0.00254453 0 0 0.00117512 0 -0.000601653)"/>
+<use xlink:href="#image4_233_1964" transform="matrix(0.00254453 0 0 0.00117512 0 -0.000601656)"/>
 </pattern>
 <pattern id="pattern7_233_1964" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image1_233_1964" transform="scale(0.000572082 0.000283126)"/>
 </pattern>
 <linearGradient id="paint0_linear_233_1964" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
-<stop stop-color="#E0EAFC"/>
-<stop offset="1" stop-color="#CFDEF3"/>
+<stop stop-color="#DEFFD9"/>
+<stop offset="1" stop-color="#DDF2DD"/>
 </linearGradient>
 <clipPath id="clip0_233_1964">
 <rect width="1600" height="1200" fill="white"/>
