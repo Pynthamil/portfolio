@@ -3,8 +3,7 @@ import Link from "next/link";
 export default function SocialFooterBar() {
   return (
     <footer 
-      className="w-full max-w-[800px] mx-auto bg-white border border-[#000000]/[0.08] h-24 rounded-[20px] flex items-center justify-between"
-      style={{ paddingLeft: "32px", paddingRight: "32px" }}
+      className="w-full max-w-[800px] mx-auto bg-white border border-[#000000]/[0.08] rounded-[20px] flex items-center justify-between flex-wrap gap-4 px-6 sm:px-8 py-5"
     >
       {/* Email */}
       <Link
@@ -17,7 +16,7 @@ export default function SocialFooterBar() {
           fill="none"
           stroke="currentColor"
           strokeWidth={2}
-          className="w-4.5 h-4.5 -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-gray-400 group-hover:text-black"
+          className="w-4.5 h-4.5 -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-gray-400 group-hover:text-black flex-shrink-0"
         >
           <path
             strokeLinecap="round"
@@ -31,7 +30,7 @@ export default function SocialFooterBar() {
       </Link>
 
       {/* Social Icons */}
-      <div className="flex items-center" style={{ gap: "20px" }}>
+      <div className="flex items-center gap-5">
         <a
           href="https://github.com/Pynthamil"
           target="_blank"
