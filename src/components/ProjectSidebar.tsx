@@ -30,36 +30,50 @@ export default function ProjectSidebar() {
   ];
 
   useEffect(() => {
+    // Show/hide sidebar based on scroll position
     const handleScroll = () => {
-      // 1. Visibility: show after scrolling past the header
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-
-      // 2. Active section detection (Scrollspy) — derived from sections list
-      const sectionIds = sections.map((s) => s.id);
-      let currentActive = "overview";
-
-      for (const id of sectionIds) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 160) {
-            currentActive = id;
-          }
-        }
-      }
-      setActiveSection(currentActive);
+      setIsVisible(window.scrollY > 300);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+  useEffect(() => {
+    const sectionIds = sections.map((s) => s.id);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the entry closest to but above the top of the viewport
+        let best: string | null = null;
+        let bestTop = -Infinity;
+
+        // Re-check all tracked sections on every callback
+        sectionIds.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) {
+            const top = el.getBoundingClientRect().top;
+            if (top <= 180 && top > bestTop) {
+              bestTop = top;
+              best = id;
+            }
+          }
+        });
+
+        if (best) setActiveSection(best);
+      },
+      {
+        rootMargin: "-10% 0px -55% 0px",
+        threshold: 0,
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, [sections]);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
