@@ -323,8 +323,8 @@ export default async function CodingProjectPage({ params }: Props) {
         {slug === "codedex-wrapped" && (
           <div className="project-detail-section" style={{ marginBottom: "48px" }}>
             <h2 className="project-detail-section-title">Platform Features</h2>
-            <img
-              src="/assets/codedex/Features.svg"
+            <img loading="lazy" decoding="async"
+              src="/assets/codedex/Features.webp"
               alt="Codédex App Features"
               className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout"
             />
@@ -423,24 +423,24 @@ export default async function CodingProjectPage({ params }: Props) {
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Mascot Design</h2>
                 <div style={{ width: "100%", marginTop: "16px", marginBottom: "16px", display: "flex", flexDirection: "column", gap: "16px" }}>
-                  <img
-                    src="/assets/codedex/codedex2.svg"
+                  <img loading="lazy" decoding="async"
+                    src="/assets/codedex/codedex2.webp"
                     alt="Codédex Design Asset 2"
                     className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
                   />
                   <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", alignItems: "stretch" }}>
                     <div style={{ flex: "1 1 320px", minWidth: "280px", display: "flex" }}>
-                      <img
-                        src="/assets/codedex/codedex1.svg"
+                      <img loading="lazy" decoding="async"
+                        src="/assets/codedex/codedex1.webp"
                         alt="Codédex Design Asset 1"
                         className="rounded-[16px] overflow-hidden"
                         style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       />
                     </div>
                     <div style={{ flex: "1 1 320px", minWidth: "280px", display: "flex" }}>
-                      <img
-                        src="/assets/codedex/codedex3.svg"
+                      <img loading="lazy" decoding="async"
+                        src="/assets/codedex/codedex3.webp"
                         alt="Codédex Design Asset 3"
                         className="rounded-[16px] overflow-hidden"
                         style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -460,8 +460,8 @@ export default async function CodingProjectPage({ params }: Props) {
               <h2 className="project-detail-section-title">App Design</h2>
               <div style={{ width: "100%", marginTop: "16px", display: "flex", flexDirection: "column", gap: "16px" }}>
                 <div className="color-palette-screen-preview" style={{ width: "100%" }}>
-                  <img
-                    src="/assets/codedex/Screens1.svg"
+                  <img loading="lazy" decoding="async"
+                    src="/assets/codedex/Screens1.webp"
                     alt="Codédex Screens Preview 1"
                     className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
@@ -469,8 +469,8 @@ export default async function CodingProjectPage({ params }: Props) {
                 </div>
                 
                 <div className="color-palette-screen-preview" style={{ width: "100%" }}>
-                  <img
-                    src="/assets/codedex/Screens2.svg"
+                  <img loading="lazy" decoding="async"
+                    src="/assets/codedex/Screens2.webp"
                     alt="Codédex Screens Preview 2"
                     className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
@@ -479,15 +479,15 @@ export default async function CodingProjectPage({ params }: Props) {
 
                 <div className="detail-showcase-grid is-equal" style={{ margin: 0, gap: "16px", width: "100%", left: 0 }}>
                   <div>
-                    <img
-                      src="/assets/codedex/Screens3.svg"
+                    <img loading="lazy" decoding="async"
+                      src="/assets/codedex/Screens3.webp"
                       alt="Codédex Screens Preview 3"
                       className="w-full h-auto rounded-[16px] overflow-hidden"
                     />
                   </div>
                   <div>
-                    <img
-                      src="/assets/codedex/Screens4.svg"
+                    <img loading="lazy" decoding="async"
+                      src="/assets/codedex/Screens4.webp"
                       alt="Codédex Screens Preview 4"
                       className="w-full h-auto rounded-[16px] overflow-hidden"
                     />
@@ -495,8 +495,8 @@ export default async function CodingProjectPage({ params }: Props) {
                 </div>
 
                 <div className="color-palette-screen-preview" style={{ width: "100%" }}>
-                  <img
-                    src="/assets/codedex/Screens5.svg"
+                  <img loading="lazy" decoding="async"
+                    src="/assets/codedex/Screens5.webp"
                     alt="Codédex Screens Preview 5"
                     className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
@@ -505,15 +505,15 @@ export default async function CodingProjectPage({ params }: Props) {
 
                 <div className="detail-showcase-grid is-equal" style={{ margin: 0, gap: "16px", width: "100%", left: 0 }}>
                   <div>
-                    <img
-                      src="/assets/codedex/Screens6.svg"
+                    <img loading="lazy" decoding="async"
+                      src="/assets/codedex/Screens6.webp"
                       alt="Codédex Screens Preview 6"
                       className="w-full h-auto rounded-[16px] overflow-hidden"
                     />
                   </div>
                   <div>
-                    <img
-                      src="/assets/codedex/Screens7.svg"
+                    <img loading="lazy" decoding="async"
+                      src="/assets/codedex/Screens7.webp"
                       alt="Codédex Screens Preview 7"
                       className="w-full h-auto rounded-[16px] overflow-hidden"
                     />
@@ -521,8 +521,8 @@ export default async function CodingProjectPage({ params }: Props) {
                 </div>
 
                 <div className="color-palette-screen-preview" style={{ width: "100%" }}>
-                  <img
-                    src="/assets/codedex/Screens8.svg"
+                  <img loading="lazy" decoding="async"
+                    src="/assets/codedex/Screens8.webp"
                     alt="Codédex Screens Preview 8"
                     className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
@@ -530,8 +530,17 @@ export default async function CodingProjectPage({ params }: Props) {
                 </div>
 
                 <div className="color-palette-screen-preview" style={{ width: "100%" }}>
-                  <img
-                    src="/assets/codedex/Screens10.svg"
+                  <img loading="lazy" decoding="async"
+                    src="/assets/codedex/Screens9.webp"
+                    alt="Codédex Screens Preview 9"
+                    className="w-full h-auto rounded-[16px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+
+                <div className="color-palette-screen-preview" style={{ width: "100%" }}>
+                  <img loading="lazy" decoding="async"
+                    src="/assets/codedex/Screens10.webp"
                     alt="Codédex Screens Preview 10"
                     className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
@@ -544,8 +553,8 @@ export default async function CodingProjectPage({ params }: Props) {
               <h2 className="project-detail-section-title">Color Palette & Brand Assets</h2>
               <div style={{ width: "100%", marginTop: "16px", display: "flex", flexDirection: "column", gap: "16px" }}>
                 <div style={{ width: "100%" }}>
-                  <img
-                    src="/assets/codedex/color-palette.svg"
+                  <img loading="lazy" decoding="async"
+                    src="/assets/codedex/color-palette.webp"
                     alt="Codédex Color Palette"
                     className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
@@ -713,8 +722,8 @@ export default async function CodingProjectPage({ params }: Props) {
 
               {slug === "codedex-wrapped" && section.heading === "Fluid Slideshow Choreography" && (
                 <div className="project-detail-section-image-container" style={{ marginTop: "32px", display: "flex", justifyContent: "center", alignItems: "center", padding: "16px 0" }}>
-                  <img 
-                    src="/assets/codedex/documentation.svg" 
+                  <img loading="lazy" decoding="async"
+                    src="/assets/codedex/documentation.webp" 
                     alt="Codédex App Design Assets" 
                     style={{ 
                       width: "100%", 
