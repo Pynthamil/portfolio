@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function SplashScreen() {
   const [showSplash, setShowSplash] = useState(true);
@@ -31,13 +32,12 @@ export default function SplashScreen() {
   return (
     <div className={`premium-loader-wrapper ${isFadingOut ? "fade-out" : ""}`}>
       <div className="premium-loader-glow" />
-      <div className="premium-loader-content">
-        <div className="premium-loader-ring-container">
-          <div className="premium-loader-ring-outer" />
-          <div className="premium-loader-ring-inner" />
-          <span className="premium-loader-monogram">P</span>
-        </div>
-        <p className="premium-loader-text">Loading</p>
+      <div className="premium-loader-content" style={{ width: "150px", height: "150px" }}>
+        <DotLottieReact
+          src="/assets/loading-animation.lottie"
+          loop
+          autoplay
+        />
       </div>
     </div>
   );

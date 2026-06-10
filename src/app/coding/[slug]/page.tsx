@@ -459,37 +459,10 @@ export default async function CodingProjectPage({ params }: Props) {
             <div className="project-detail-section" style={{ marginBottom: "48px" }}>
               <h2 className="project-detail-section-title">App Design</h2>
               <div style={{ width: "100%", marginTop: "16px", display: "flex", flexDirection: "column", gap: "16px" }}>
-                <div style={{ width: "100%" }}>
-                  <img
-                    src="/assets/codedex/color-palette.svg"
-                    alt="Codédex Color Palette"
-                    className="w-full h-auto rounded-[16px] overflow-hidden"
-                    style={{ width: "100%" }}
-                  />
-                </div>
-
-                {/* Vector Brand Assets Showcase */}
-                <div className="detail-showcase-grid is-equal" style={{ margin: 0, gap: "16px", width: "100%", left: 0 }}>
-                  <div>
-                    <img
-                      src="/assets/codedex/block1.svg"
-                      alt="Codédex Design Block 1"
-                      className="w-full h-auto rounded-[16px] overflow-hidden"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      src="/assets/codedex/block2.svg"
-                      alt="Codédex Design Block 2"
-                      className="w-full h-auto rounded-[16px] overflow-hidden"
-                    />
-                  </div>
-                </div>
-
                 <div className="color-palette-screen-preview" style={{ width: "100%" }}>
                   <img
-                    src="/assets/codedex/screens1.svg"
-                    alt="Codédex Screens Preview"
+                    src="/assets/codedex/Screens1.svg"
+                    alt="Codédex Screens Preview 1"
                     className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
                   />
@@ -499,6 +472,81 @@ export default async function CodingProjectPage({ params }: Props) {
                   <img
                     src="/assets/codedex/Screens2.svg"
                     alt="Codédex Screens Preview 2"
+                    className="w-full h-auto rounded-[16px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+
+                <div className="detail-showcase-grid is-equal" style={{ margin: 0, gap: "16px", width: "100%", left: 0 }}>
+                  <div>
+                    <img
+                      src="/assets/codedex/Screens3.svg"
+                      alt="Codédex Screens Preview 3"
+                      className="w-full h-auto rounded-[16px] overflow-hidden"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src="/assets/codedex/Screens4.svg"
+                      alt="Codédex Screens Preview 4"
+                      className="w-full h-auto rounded-[16px] overflow-hidden"
+                    />
+                  </div>
+                </div>
+
+                <div className="color-palette-screen-preview" style={{ width: "100%" }}>
+                  <img
+                    src="/assets/codedex/Screens5.svg"
+                    alt="Codédex Screens Preview 5"
+                    className="w-full h-auto rounded-[16px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+
+                <div className="detail-showcase-grid is-equal" style={{ margin: 0, gap: "16px", width: "100%", left: 0 }}>
+                  <div>
+                    <img
+                      src="/assets/codedex/Screens6.svg"
+                      alt="Codédex Screens Preview 6"
+                      className="w-full h-auto rounded-[16px] overflow-hidden"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src="/assets/codedex/Screens7.svg"
+                      alt="Codédex Screens Preview 7"
+                      className="w-full h-auto rounded-[16px] overflow-hidden"
+                    />
+                  </div>
+                </div>
+
+                <div className="color-palette-screen-preview" style={{ width: "100%" }}>
+                  <img
+                    src="/assets/codedex/Screens8.svg"
+                    alt="Codédex Screens Preview 8"
+                    className="w-full h-auto rounded-[16px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+
+                <div className="color-palette-screen-preview" style={{ width: "100%" }}>
+                  <img
+                    src="/assets/codedex/Screens10.svg"
+                    alt="Codédex Screens Preview 10"
+                    className="w-full h-auto rounded-[16px] overflow-hidden"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="project-detail-section" style={{ marginBottom: "48px" }}>
+              <h2 className="project-detail-section-title">Color Palette & Brand Assets</h2>
+              <div style={{ width: "100%", marginTop: "16px", display: "flex", flexDirection: "column", gap: "16px" }}>
+                <div style={{ width: "100%" }}>
+                  <img
+                    src="/assets/codedex/color-palette.svg"
+                    alt="Codédex Color Palette"
                     className="w-full h-auto rounded-[16px] overflow-hidden"
                     style={{ width: "100%" }}
                   />
