@@ -36,7 +36,7 @@ export default function ProjectsPage() {
           <Link href="/social" className="projects-social-cta-card">
             <div className="cta-card-graphic-wrapper">
               <img 
-                src="/assets/blog/banner3.svg" 
+                src="/assets/blog/banner1.webp" 
                 alt="Social Media Designs Banner" 
                 className="cta-card-graphic"
                 style={{ objectFit: "cover", transform: "scale(1.25)", transformOrigin: "center" }}
