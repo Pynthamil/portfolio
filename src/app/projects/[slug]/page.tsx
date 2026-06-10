@@ -11,6 +11,7 @@ import BlogPreview from "@/components/BlogPreview";
 import LumaPreview from "@/components/LumaPreview";
 import BlogStackedPreview from "@/components/BlogStackedPreview";
 import SemanticPreview from "@/components/SemanticPreview";
+import BlogColorPalette from "@/components/displays/BlogColorPalette";
 import CraftrStackedPreview from "@/components/CraftrStackedPreview";
 import RoasterPreview from "@/components/RoasterPreview";
 import PortfolioPreview from "@/components/PortfolioPreview";
@@ -50,23 +51,35 @@ const projects: Record<string, ProjectData> = {
     imageBg: "#3b82f6",
     liveUrl: "https://my-blog-tan-tau.vercel.app",
     githubUrl: "https://github.com/Pynthamil/my-blog",
-    techStack: ["Next.js", "TypeScript", "Supabase", "Hashnode API", "Tailwind CSS"],
+    techStack: ["Next.js", "TypeScript", "Supabase", "MDX", "Tailwind CSS"],
     sections: [
       {
-        heading: "The Reading Experience",
-        body: "Every design decision was made with the reader in mind. Large, comfortable typography with generous line-height. A muted color palette that doesn't fight for attention. Code blocks with syntax highlighting that actually looks good. The goal was to make long-form content feel effortless to read.",
+        heading: "Local MDX Content Pipeline",
+        body: "Posts live as local MDX files — no external CMS, no API calls, no rate limits. Each file is co-located with its metadata via frontmatter. At build time, Next.js reads and compiles them directly, so the content is always in sync with the codebase. Total ownership, zero dependency on third-party services.",
       },
       {
-        heading: "Content Pipeline",
-        body: "Posts are authored on Hashnode and pulled in via their GraphQL API. This gives me a proper editor with drafts, scheduling, and media management — while the frontend stays completely custom. Views and likes are tracked through a Supabase backend with real-time counters.",
+        heading: "Engagement Without a Backend",
+        body: "Views and likes are tracked in real-time using Supabase. Each post has its own row — the like action is debounced client-side and written directly to the Supabase table via a lightweight API route. No auth required. It just works, quietly, in the background.",
+      },
+      {
+        heading: "Static Generation + ISR",
+        body: "Every post page is statically generated at build time using Next.js. For new posts, Incremental Static Regeneration kicks in — pages revalidate in the background without a full rebuild. This gives blog-speed load times with near-zero cold starts, even as the content grows.",
+      },
+      {
+        heading: "Dark Mode as a First-Class Feature",
+        body: "Dark mode isn't an afterthought — it's a core part of the reading experience. The theme is detected from system preferences and persisted in localStorage. The transition between modes is smooth, with CSS custom properties doing the heavy lifting to avoid a flash of unstyled content.",
+      },
+      {
+        heading: "Search & Discovery",
+        body: "Search is powered entirely client-side — no external service needed. Posts are indexed at build time into a lightweight JSON manifest, and filtering happens in real-time as you type. Tags let you slice across content by topic, with each tag having its own shareable URL.",
       },
       {
         heading: "Performance & SEO",
-        body: "Built on Next.js with static generation for fast page loads. Every post gets proper meta tags, Open Graph images, and structured data. The site scores 95+ on Lighthouse across all metrics. RSS feed included for the few people who still use RSS readers.",
+        body: "The site scores 95+ on Lighthouse across all metrics. Every post gets proper Open Graph images, JSON-LD structured data, and a canonical URL. Images are served via Next.js's optimized pipeline. An RSS feed is included for readers who still prefer their feed reader.",
       },
     ],
     outro:
-      "This blog is a living project — I'm constantly tweaking the design and adding features. It's where I practice writing clearly about technical topics, which honestly might be the hardest skill in software engineering.",
+      "This blog is a living project — actively written, designed, and engineered. It's where I work on writing clearly about technical topics, which is honestly one of the hardest skills in software engineering.",
   },
 
   "semantic-email": {
@@ -509,7 +522,7 @@ export default async function ProjectDetail({
                 <h2 className="project-detail-section-title">Reading Experience</h2>
                 <p className="project-detail-section-body">Designed for focus and clarity. The interface adapts to provide the best reading environment for long-form content.</p>
                 <img loading="lazy" decoding="async"
-                  src="/assets/blog/blog-1.webp"
+                  src="/assets/blog/blog1.webp"
                   alt="Blog Reader Interface"
                   className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
                 />
@@ -524,32 +537,26 @@ export default async function ProjectDetail({
                   <img loading="lazy" decoding="async" src="/assets/blog/banner4.webp" alt="Cover 4" className="w-full h-full object-cover rounded-[16px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-transform duration-300 aspect-video border border-black/10" />
                 </div>
               </div>
-              <div className="project-detail-section" style={{ marginTop: "48px", marginBottom: "48px" }}>
-                <h2 className="project-detail-section-title">Brand Identity</h2>
-                <p className="project-detail-section-body">A crisp, minimal logo mark that establishes a distinct aesthetic tone while remaining adaptable across both light and dark modes.</p>
-                <img loading="lazy" decoding="async"
-                  src="/assets/blog/blog-logo.svg"
-                  alt="Blog Logo Identity"
-                  className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
-                />
-              </div>
+
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Color Palette</h2>
                 <p className="project-detail-section-body">Carefully selected thematic colors that evoke a soft but vibrant energy, preventing eye strain during long reading sessions.</p>
                 <img loading="lazy" decoding="async"
-                  src="/assets/blog/blog-color.svg"
+                  src="/assets/blog/color-myblg.webp"
                   alt="Blog Color Palette"
-                  className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
+                  className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout border border-black/10"
                 />
               </div>
               <div className="project-detail-section" style={{ marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Textured Backgrounds</h2>
                 <p className="project-detail-section-body">Subtle background textures add depth and warmth, helping combat pure white harshness while keeping the content feeling grounded.</p>
-                <img loading="lazy" decoding="async"
-                  src="/assets/blog/blog-bg.svg"
-                  alt="Blog Background Aesthetics"
-                  className="w-full h-auto mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
-                />
+                <div className="w-full mt-4 rounded-[16px] overflow-hidden detail-breakout shadow-[0_8px_32px_rgba(0,0,0,0.04)] bg-white dark:bg-black/20">
+                  <img loading="lazy" decoding="async"
+                    src="/assets/blog/blog-bg.webp"
+                    alt="Blog Background Aesthetics"
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
               <div className="project-detail-section" style={{ marginTop: "48px", marginBottom: "48px" }}>
                 <h2 className="project-detail-section-title">Light Mode</h2>
